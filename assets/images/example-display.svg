@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" fill="none">
+  <rect width="400" height="260" rx="16" fill="#EBF4FF"/>
+  <!-- Phone before (cracked) -->
+  <rect x="30" y="30" width="120" height="200" rx="16" fill="#1A1A2E" stroke="#334" stroke-width="2"/>
+  <rect x="40" y="50" width="100" height="160" rx="8" fill="#111827"/>
+  <!-- Crack lines -->
+  <path d="M80 50 L110 130 L70 210" stroke="rgba(255,255,255,.6)" stroke-width="1.5"/>
+  <path d="M110 130 L145 170" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+  <path d="M100 50 L85 100" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+  <!-- Screen shards -->
+  <path d="M80 50 L95 80 L75 100 L80 50Z" fill="rgba(180,200,255,.15)"/>
+  <path d="M110 130 L130 140 L125 160 L110 130Z" fill="rgba(180,200,255,.12)"/>
+  <!-- Badge БЫЛО -->
+  <rect x="30" y="220" width="120" height="30" rx="8" fill="#EF4444"/>
+  <text x="90" y="240" font-family="Arial" font-size="14" font-weight="bold" fill="white" text-anchor="middle">БЫЛО</text>
+  
+  <!-- Arrow -->
+  <path d="M175 130 L225 130" stroke="#1A5EFF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M215 120 L230 130 L215 140" stroke="#1A5EFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="200" cy="130" r="22" fill="white" stroke="#E0EAFF" stroke-width="1.5"/>
+  <path d="M191 130 L209 130M200 121 L209 130 L200 139" stroke="#1A5EFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Phone after (perfect screen) -->
+  <rect x="250" y="30" width="120" height="200" rx="16" fill="#1A1A2E" stroke="#1A5EFF" stroke-width="2"/>
+  <rect x="260" y="50" width="100" height="160" rx="8" fill="#0F172A"/>
+  <!-- Working screen content -->
+  <rect x="265" y="58" width="90" height="6" rx="3" fill="#1A5EFF" opacity=".6"/>
+  <rect x="265" y="72" width="60" height="4" rx="2" fill="#334" opacity=".8"/>
+  <rect x="265" y="90" width="90" height="50" rx="6" fill="#1E293B"/>
+  <rect x="270" y="95" width="50" height="4" rx="2" fill="#60A5FA" opacity=".8"/>
+  <rect x="270" y="105" width="70" height="3" rx="2" fill="#475569"/>
+  <rect x="270" y="113" width="55" height="3" rx="2" fill="#475569"/>
+  <circle cx="340" cy="108" r="14" fill="#1A5EFF" opacity=".3"/>
+  <!-- App grid -->
+  <rect x="265" y="150" width="20" height="20" rx="5" fill="#EF4444" opacity=".7"/>
+  <rect x="291" y="150" width="20" height="20" rx="5" fill="#3B82F6" opacity=".7"/>
+  <rect x="317" y="150" width="20" height="20" rx="5" fill="#10B981" opacity=".7"/>
+  <rect x="265" y="177" width="20" height="20" rx="5" fill="#F59E0B" opacity=".7"/>
+  <rect x="291" y="177" width="20" height="20" rx="5" fill="#8B5CF6" opacity=".7"/>
+  <!-- Green checkmark overlay -->
+  <circle cx="335" cy="60" r="14" fill="#10B981"/>
+  <path d="M329 60 L333 64 L341 56" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Badge СТАЛО -->
+  <rect x="250" y="220" width="120" height="30" rx="8" fill="#10B981"/>
+  <text x="310" y="240" font-family="Arial" font-size="14" font-weight="bold" fill="white" text-anchor="middle">СТАЛО</text>
+</svg>

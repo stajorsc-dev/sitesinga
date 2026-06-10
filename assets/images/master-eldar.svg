@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" fill="none">
+  <rect width="240" height="280" rx="20" fill="#E6FAF5"/>
+  <circle cx="200" cy="50" r="55" fill="#C0F0E0" opacity=".5"/>
+  <circle cx="25" cy="230" r="45" fill="#B0EDD8" opacity=".4"/>
+  <!-- Body -->
+  <rect x="60" y="180" width="120" height="100" rx="16" fill="#00B894"/>
+  <path d="M100 180 L120 200 L140 180" fill="#009070"/>
+  <rect x="108" y="210" width="24" height="16" rx="4" fill="white" opacity=".25"/>
+  <!-- Head -->
+  <ellipse cx="120" cy="128" rx="46" ry="50" fill="#F5C5A0"/>
+  <!-- Hair — dark, short -->
+  <path d="M74 116 Q76 78 120 73 Q164 78 166 116 Q156 90 120 88 Q84 90 74 116Z" fill="#1A0A00"/>
+  <ellipse cx="73" cy="130" rx="8" ry="10" fill="#F5C5A0"/>
+  <ellipse cx="167" cy="130" rx="8" ry="10" fill="#F5C5A0"/>
+  <!-- Eyes -->
+  <ellipse cx="105" cy="128" rx="7" ry="7.5" fill="white"/>
+  <ellipse cx="135" cy="128" rx="7" ry="7.5" fill="white"/>
+  <circle cx="107" cy="129" r="4.5" fill="#1A0A00"/>
+  <circle cx="137" cy="129" r="4.5" fill="#1A0A00"/>
+  <circle cx="108.5" cy="127.5" r="1.5" fill="white"/>
+  <circle cx="138.5" cy="127.5" r="1.5" fill="white"/>
+  <!-- Eyebrows -->
+  <path d="M97 119 Q105 115 113 118" stroke="#1A0A00" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M127 118 Q135 115 143 119" stroke="#1A0A00" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Big smile -->
+  <path d="M105 147 Q120 162 135 147" stroke="#B07050" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Phone in hand -->
+  <rect x="75" y="200" width="22" height="36" rx="5" fill="#222" transform="rotate(10 75 200)"/>
+  <rect x="78" y="204" width="16" height="24" rx="2" fill="#4488FF" transform="rotate(10 78 204)" opacity=".8"/>
+</svg>

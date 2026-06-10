@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" fill="none">
+  <rect width="400" height="260" rx="16" fill="#FFF5F0"/>
+  <!-- Coffee machine silhouette before (broken) -->
+  <rect x="40" y="30" width="120" height="180" rx="14" fill="#D4A574"/>
+  <rect x="55" y="45" width="90" height="60" rx="8" fill="#C8975A"/>
+  <!-- Display with X -->
+  <rect x="62" y="52" width="76" height="42" rx="5" fill="#1A0A00"/>
+  <text x="100" y="80" font-family="Arial" font-size="24" fill="#EF4444" text-anchor="middle">✕</text>
+  <!-- Buttons -->
+  <circle cx="72" cy="130" r="9" fill="#B8824A"/>
+  <circle cx="100" cy="130" r="9" fill="#B8824A"/>
+  <circle cx="128" cy="130" r="9" fill="#B8824A"/>
+  <!-- Coffee group/spout — dripping wrong -->
+  <rect x="75" y="155" width="50" height="12" rx="4" fill="#9A6A35"/>
+  <!-- Error drops -->
+  <ellipse cx="95" cy="178" rx="4" ry="6" fill="#C8975A" opacity=".6"/>
+  <ellipse cx="108" cy="185" rx="3" ry="4" fill="#C8975A" opacity=".4"/>
+  <!-- Badge -->
+  <rect x="40" y="218" width="120" height="28" rx="8" fill="#EF4444"/>
+  <text x="100" y="237" font-family="Arial" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Не варит кофе</text>
+
+  <!-- Arrow -->
+  <path d="M178 125 L222 125" stroke="#E67E22" stroke-width="3" stroke-linecap="round"/>
+  <path d="M212 115 L227 125 L212 135" stroke="#E67E22" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Coffee machine after (fixed) -->
+  <rect x="240" y="30" width="120" height="180" rx="14" fill="#D4A574"/>
+  <rect x="255" y="45" width="90" height="60" rx="8" fill="#C8975A"/>
+  <!-- Display showing coffee -->
+  <rect x="262" y="52" width="76" height="42" rx="5" fill="#1A0A00"/>
+  <!-- Coffee cup icon on display -->
+  <path d="M288 65 L312 65 L308 85 L292 85Z" fill="rgba(212,167,74,.6)"/>
+  <path d="M312 70 Q320 70 320 77 Q320 84 312 84" stroke="rgba(212,167,74,.6)" stroke-width="2" fill="none"/>
+  <!-- Green check on display -->
+  <circle cx="327" cy="57" r="10" fill="#10B981" opacity=".9"/>
+  <path d="M322 57 L325 61 L332 53" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Buttons lit up -->
+  <circle cx="272" cy="130" r="9" fill="#10B981" opacity=".8"/>
+  <circle cx="300" cy="130" r="9" fill="#B8824A"/>
+  <circle cx="328" cy="130" r="9" fill="#B8824A"/>
+  <!-- Perfect pour -->
+  <rect x="275" y="155" width="50" height="12" rx="4" fill="#9A6A35"/>
+  <!-- Cup and perfect coffee stream -->
+  <rect x="285" y="178" width="30" height="22" rx="4" fill="#6B3F1A"/>
+  <path d="M297 168 L297 178" stroke="#6B3F1A" stroke-width="3" stroke-linecap="round"/>
+  <!-- Steam -->
+  <path d="M294 170 Q292 163 294 156" stroke="#AAA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".6"/>
+  <path d="M300 168 Q302 161 300 154" stroke="#AAA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5"/>
+  <!-- Badge -->
+  <rect x="240" y="218" width="120" height="28" rx="8" fill="#10B981"/>
+  <text x="300" y="237" font-family="Arial" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Работает отлично</text>
+</svg>

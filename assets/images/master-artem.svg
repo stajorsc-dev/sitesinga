@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" fill="none">
+  <rect width="240" height="280" rx="20" fill="#FFF5E6"/>
+  <circle cx="195" cy="45" r="55" fill="#FFE5C0" opacity=".5"/>
+  <circle cx="30" cy="235" r="45" fill="#FFD5A0" opacity=".4"/>
+  <!-- Body -->
+  <rect x="60" y="180" width="120" height="100" rx="16" fill="#E67E22"/>
+  <path d="M100 180 L120 200 L140 180" fill="#C0621A"/>
+  <rect x="108" y="210" width="24" height="16" rx="4" fill="white" opacity=".25"/>
+  <!-- Head -->
+  <ellipse cx="120" cy="130" rx="47" ry="51" fill="#FDDCB5"/>
+  <!-- Hair — brown, side part -->
+  <path d="M73 115 Q78 76 125 73 Q165 78 167 115 Q155 88 118 87 Q83 90 73 115Z" fill="#5C3A1E"/>
+  <ellipse cx="73" cy="132" rx="8" ry="10" fill="#FDDCB5"/>
+  <ellipse cx="167" cy="132" rx="8" ry="10" fill="#FDDCB5"/>
+  <!-- Glasses -->
+  <rect x="96" y="124" width="22" height="16" rx="8" stroke="#555" stroke-width="2.2" fill="rgba(200,220,255,.3)"/>
+  <rect x="122" y="124" width="22" height="16" rx="8" stroke="#555" stroke-width="2.2" fill="rgba(200,220,255,.3)"/>
+  <line x1="118" y1="131" x2="122" y2="131" stroke="#555" stroke-width="2"/>
+  <line x1="74" y1="131" x2="96" y2="131" stroke="#555" stroke-width="1.8"/>
+  <line x1="144" y1="131" x2="166" y2="131" stroke="#555" stroke-width="1.8"/>
+  <!-- Eyes inside glasses -->
+  <circle cx="107" cy="131" r="3.5" fill="#2C1810"/>
+  <circle cx="133" cy="131" r="3.5" fill="#2C1810"/>
+  <!-- Eyebrows -->
+  <path d="M98 121 Q107 117 115 120" stroke="#5C3A1E" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M125 120 Q133 117 142 121" stroke="#5C3A1E" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Focused expression -->
+  <path d="M109 149 Q120 157 131 149" stroke="#B07050" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Soldering iron -->
+  <rect x="150" y="195" width="6" height="44" rx="3" fill="#FDDCB5" transform="rotate(-20 150 195)"/>
+  <path d="M146 192 L160 188 L163 198 L149 202Z" fill="#888" opacity=".9"/>
+  <!-- Smoke wisps -->
+  <path d="M156 186 Q160 178 156 170" stroke="#AAA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".6"/>
+</svg>
