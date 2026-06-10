@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Оцените ремонт — Синга Сервис</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="styles.css?v=20">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+body{background:linear-gradient(135deg,#f0f5ff,#e8f0ff);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.rate-box{background:#fff;border-radius:28px;padding:40px 36px;max-width:480px;width:100%;text-align:center;box-shadow:0 16px 56px rgba(26,94,255,.12)}
+.rate-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:28px}
+.rate-logo-mark{width:40px;height:40px;border-radius:12px;background:#1a5eff;display:flex;align-items:center;justify-content:center}
+.rate-emoji{font-size:56px;display:block;margin-bottom:16px;transition:transform .3s}
+.rate-title{font-size:24px;font-weight:900;font-family:'Onest',sans-serif;margin-bottom:8px;color:#07152e}
+.rate-sub{font-size:15px;color:#556070;margin-bottom:28px;line-height:1.6}
+.stars{display:flex;gap:8px;justify-content:center;margin-bottom:24px}
+.star{font-size:44px;cursor:pointer;transition:transform .2s,filter .2s;filter:grayscale(1);opacity:.4;user-select:none}
+.star:hover,.star.is-active{filter:none;opacity:1;transform:scale(1.15)}
+.rate-btn{display:none;margin-top:16px}
+.review-links{display:none;flex-direction:column;gap:10px;margin-top:20px}
+.review-link{display:flex;align-items:center;gap:12px;background:#f5f8ff;border:1.5px solid #dde8f8;border-radius:16px;padding:14px 18px;text-decoration:none;color:#07152e;font-weight:700;font-size:15px;transition:all .18s}
+.review-link:hover{border-color:#1a5eff;color:#1a5eff}
+.review-link__ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.thankyou{display:none;text-align:center}
+.thankyou__big{font-size:72px;display:block;margin-bottom:16px}
+</style>
+</head>
+<body>
+<div class="rate-box">
+  <!-- Логотип -->
+  <div class="rate-logo">
+    <div class="rate-logo-mark"><svg viewBox="0 0 100 100" width="22" height="22"><path d="M54 20 30 56h16l-6 24 26-38H50z" fill="#fff"/></svg></div>
+    <span style="font-size:18px;font-weight:900;font-family:'Onest',sans-serif;color:#07152e">Синга Сервис</span>
+  </div>
+
+  <!-- Форма оценки -->
+  <div id="rateForm">
+    <span class="rate-emoji" id="rateEmoji">😊</span>
+    <h1 class="rate-title">Как прошёл ремонт?</h1>
+    <p class="rate-sub">Нажмите на звёздочку — ваша оценка помогает нам становиться лучше</p>
+
+    <div class="stars" id="stars">
+      <span class="star" data-val="1">⭐</span>
+      <span class="star" data-val="2">⭐</span>
+      <span class="star" data-val="3">⭐</span>
+      <span class="star" data-val="4">⭐</span>
+      <span class="star" data-val="5">⭐</span>
+    </div>
+
+    <div id="rateHint" style="font-size:14px;color:#8a9bb5;margin-bottom:16px;min-height:20px"></div>
+
+    <button class="btn btn--primary btn--lg" id="rateSubmit" onclick="submitRating()" style="display:none;width:100%">
+      Отправить оценку
+    </button>
+  </div>
+
+  <!-- Предложение написать отзыв (только для 5★) -->
+  <div id="writeReview" style="display:none">
+    <span class="rate-emoji">🎉</span>
+    <h2 class="rate-title">Спасибо! Рады что всё прошло хорошо</h2>
+    <p class="rate-sub">Не могли бы вы написать пару слов отзыва? Это очень поможет другим клиентам нас найти.</p>
+
+    <div class="review-links" id="reviewLinks" style="display:flex">
+      <a class="review-link" href="https://yandex.ru/profile/3884649995" target="_blank" rel="noopener">
+        <div class="review-link__ico" style="background:#fc3f1d;color:#fff">Я</div>
+        <div style="text-align:left"><b>Яндекс.Карты</b><span style="display:block;font-size:12px;color:#8a9bb5">Самый важный источник</span></div>
+      </a>
+      <a class="review-link" href="https://go.2gis.com/SzQBu" target="_blank" rel="noopener">
+        <div class="review-link__ico" style="background:#179652;color:#fff">2Г</div>
+        <div style="text-align:left"><b>2ГИС</b><span style="display:block;font-size:12px;color:#8a9bb5">Тоже очень помогает</span></div>
+      </a>
+    </div>
+    <button style="margin-top:16px;background:none;border:none;color:#8a9bb5;font-size:13px;cursor:pointer" onclick="skipReview()">
+      Пропустить →
+    </button>
+  </div>
+
+  <!-- Страница для плохой оценки (1-3 ★) -->
+  <div id="badReview" style="display:none">
+    <span class="rate-emoji">😔</span>
+    <h2 class="rate-title">Жаль, что что-то пошло не так</h2>
+    <p class="rate-sub">Расскажите нам что произошло — мы разберёмся и исправим.</p>
+    <a class="btn btn--primary btn--lg" href="tel:+79281618789" style="display:block;width:100%;text-align:center;margin-bottom:10px">
+      📞 Позвонить руководителю
+    </a>
+    <a class="btn btn--tg btn--lg" href="https://t.me/+79281618789" target="_blank" rel="noopener" style="display:block;width:100%;text-align:center">
+      ✈ Написать в Telegram
+    </a>
+  </div>
+
+  <!-- Финальное спасибо -->
+  <div id="thankyou" class="thankyou">
+    <span class="thankyou__big">🙏</span>
+    <h2 class="rate-title">Спасибо за отзыв!</h2>
+    <p class="rate-sub">Ваше мнение помогает нам становиться лучше.</p>
+    <a class="btn btn--ghost btn--lg" href="index.html" style="margin-top:8px">Вернуться на сайт</a>
+  </div>
+</div>
+
+<script>
+const HINTS = {1:'Очень плохо',2:'Плохо',3:'Нормально',4:'Хорошо',5:'Отлично!'};
+const EMOJIS = {1:'😞',2:'😕',3:'😐',4:'🙂',5:'😄'};
+let rating = 0;
+
+document.querySelectorAll('.star').forEach(star => {
+  star.addEventListener('mouseenter', () => {
+    const v = parseInt(star.dataset.val);
+    document.querySelectorAll('.star').forEach((s,i) => s.classList.toggle('is-active', i < v));
+    document.getElementById('rateHint').textContent = HINTS[v];
+    document.getElementById('rateEmoji').textContent = EMOJIS[v];
+  });
+  star.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.star').forEach((s,i) => s.classList.toggle('is-active', i < rating));
+    document.getElementById('rateHint').textContent = rating ? HINTS[rating] : '';
+    document.getElementById('rateEmoji').textContent = rating ? EMOJIS[rating] : '😊';
+  });
+  star.addEventListener('click', () => {
+    rating = parseInt(star.dataset.val);
+    document.querySelectorAll('.star').forEach((s,i) => s.classList.toggle('is-active', i < rating));
+    document.getElementById('rateHint').textContent = HINTS[rating];
+    document.getElementById('rateEmoji').textContent = EMOJIS[rating];
+    document.getElementById('rateSubmit').style.display = '';
+  });
+});
+
+function submitRating() {
+  document.getElementById('rateForm').style.display = 'none';
+  if (rating >= 4) {
+    document.getElementById('writeReview').style.display = 'block';
+    // Optionally send to Telegram
+  } else {
+    document.getElementById('badReview').style.display = 'block';
+  }
+}
+
+function skipReview() {
+  document.getElementById('writeReview').style.display = 'none';
+  document.getElementById('thankyou').style.display = 'block';
+}
+
+// Auto-hide review links after clicking
+document.querySelectorAll('.review-link').forEach(a => {
+  a.addEventListener('click', () => setTimeout(skipReview, 1500));
+});
+</script>
+</body>
+</html>

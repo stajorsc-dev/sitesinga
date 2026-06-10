@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<script>
+(function(){
+  var s=localStorage.getItem('singa-theme');
+  var d=window.matchMedia('(prefers-color-scheme:dark)').matches;
+  document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));
+})();
+</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Выкуп техники в Ростове-на-Дону — Синга Сервис</title>
+<meta name="description" content="Выкуп сломанных и б/у телефонов, ноутбуков, планшетов в Ростове-на-Дону. Оценка за 5 минут, оплата сразу. Синга Сервис — 8 точек приёма.">
+<link rel="canonical" href="https://singaservice.ru/vykup.html">
+<link rel="stylesheet" href="styles.css?v=19">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://singaservice.ru/"},{"@type":"ListItem","position":2,"name":"Выкуп техники","item":"https://singaservice.ru/vykup.html"}]}</script>
+</head>
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
+</g></defs></svg>
+
+<nav class="breadcrumb-nav" aria-label="Хлебные крошки"><div class="container">
+  <ol class="breadcrumb"><li><a href="index.html">Главная</a></li><li aria-current="page">Выкуп техники</li></ol>
+</div></nav>
+
+<section class="section" style="padding-top:56px"><div class="container">
+  <div class="section-head section-head--center reveal">
+    <span class="eyebrow">Деньги сразу</span>
+    <h1 class="section-title">Выкуп б/у и сломанной техники</h1>
+    <p class="section-lead">Привезите телефон, ноутбук или планшет — оценим за 5 минут и заплатим сразу наличными или на карту</p>
+  </div>
+
+  <!-- Онлайн-оценщик -->
+  <div class="calc-widget reveal" style="max-width:720px;margin:0 auto 48px">
+    <div class="calc-widget__label">Узнайте примерную стоимость вашего устройства</div>
+    <div id="vykupStep1">
+      <div class="calc-widget__label" style="font-size:13px;color:var(--ink-soft);margin-bottom:12px;text-transform:none;letter-spacing:0">Шаг 1 — Что продаёте?</div>
+      <div class="calc-widget__grid">
+        <button class="cw-btn" data-vtype="iphone">📱 iPhone</button>
+        <button class="cw-btn" data-vtype="samsung">📱 Samsung</button>
+        <button class="cw-btn" data-vtype="laptop">💻 Ноутбук</button>
+        <button class="cw-btn" data-vtype="tablet">📱 Планшет</button>
+        <button class="cw-btn" data-vtype="other">🔧 Другое</button>
+      </div>
+    </div>
+    <div id="vykupStep2" style="display:none">
+      <div class="calc-widget__label" style="font-size:13px;color:var(--ink-soft);margin-bottom:12px;text-transform:none;letter-spacing:0">Шаг 2 — Состояние</div>
+      <div class="calc-widget__grid">
+        <button class="cw-btn" data-vcond="perfect">✅ Рабочий, отличное состояние</button>
+        <button class="cw-btn" data-vcond="good">🙂 Рабочий, небольшие царапины</button>
+        <button class="cw-btn" data-vcond="broken">⚠️ Сломан (не включается, разбит)</button>
+        <button class="cw-btn" data-vcond="parts">🔩 На запчасти</button>
+      </div>
+      <button class="cw-back" onclick="document.getElementById('vykupStep2').style.display='none';document.getElementById('vykupStep1').style.display=''">← Назад</button>
+    </div>
+    <div class="calc-widget__result" id="vykupResult" style="display:none">
+      <div class="calc-widget__result-icon" id="vykupIcon">📱</div>
+      <div class="calc-widget__result-body">
+        <div class="calc-widget__result-label">Ориентировочная стоимость выкупа</div>
+        <div class="calc-widget__result-price" id="vykupPrice">5 000 – 15 000 ₽</div>
+        <div class="calc-widget__result-note">Точная цена после осмотра в нашей точке. Оплата сразу.</div>
+      </div>
+      <div class="calc-widget__result-actions">
+        <a class="btn btn--primary btn--lg" href="tel:+79281618789">Позвонить и уточнить цену</a>
+        <a class="btn btn--tg btn--lg" href="https://t.me/+79281618789" target="_blank" rel="noopener">Написать фото в Telegram</a>
+        <button class="cw-back" onclick="document.getElementById('vykupResult').style.display='none';document.getElementById('vykupStep1').style.display=''">↺ Оценить другое</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Что принимаем -->
+  <div class="section-head section-head--center reveal"><span class="eyebrow">Принимаем</span><h2 class="section-title">Что выкупаем</h2></div>
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:48px">
+    <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:18px;padding:20px;text-align:center"><div style="font-size:36px;margin-bottom:8px">📱</div><b>iPhone любых моделей</b><p style="font-size:13px;color:var(--ink-soft);margin-top:6px">Рабочие и сломанные, 6 – 15 Pro Max</p></div>
+    <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:18px;padding:20px;text-align:center"><div style="font-size:36px;margin-bottom:8px">🤖</div><b>Android-смартфоны</b><p style="font-size:13px;color:var(--ink-soft);margin-top:6px">Samsung, Xiaomi, Honor, Huawei и др.</p></div>
+    <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:18px;padding:20px;text-align:center"><div style="font-size:36px;margin-bottom:8px">💻</div><b>Ноутбуки</b><p style="font-size:13px;color:var(--ink-soft);margin-top:6px">MacBook, Lenovo, ASUS, Dell и др.</p></div>
+    <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:18px;padding:20px;text-align:center"><div style="font-size:36px;margin-bottom:8px">📱</div><b>Планшеты</b><p style="font-size:13px;color:var(--ink-soft);margin-top:6px">iPad, Samsung Tab и другие</p></div>
+    <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:18px;padding:20px;text-align:center"><div style="font-size:36px;margin-bottom:8px">⌚</div><b>Apple Watch</b><p style="font-size:13px;color:var(--ink-soft);margin-top:6px">Series 3 и новее</p></div>
+    <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:18px;padding:20px;text-align:center"><div style="font-size:36px;margin-bottom:8px">🔩</div><b>На запчасти</b><p style="font-size:13px;color:var(--ink-soft);margin-top:6px">Сломанные, без экрана, после воды</p></div>
+  </div>
+
+  <!-- Как это работает -->
+  <div class="section-head section-head--center reveal"><span class="eyebrow">Процесс</span><h2 class="section-title">Как продать технику</h2></div>
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:48px">
+    <div style="text-align:center"><div class="step__num" style="margin:0 auto 12px;width:48px;height:48px;font-size:20px">1</div><b>Напишите или позвоните</b><p style="font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.6">Опишите устройство или пришлите фото в Telegram</p></div>
+    <div style="text-align:center"><div class="step__num" style="margin:0 auto 12px;width:48px;height:48px;font-size:20px">2</div><b>Получите предварительную цену</b><p style="font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.6">Назовём диапазон по фото за 15 минут</p></div>
+    <div style="text-align:center"><div class="step__num" style="margin:0 auto 12px;width:48px;height:48px;font-size:20px">3</div><b>Приедьте в точку</b><p style="font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.6">Мастер осмотрит и назовёт финальную цену</p></div>
+    <div style="text-align:center"><div class="step__num" style="margin:0 auto 12px;width:48px;height:48px;font-size:20px">4</div><b>Получите деньги сразу</b><p style="font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.6">Наличными или переводом на карту</p></div>
+  </div>
+
+  <div class="promo-banner reveal">
+    <div class="promo-banner__content">
+      <div class="promo-banner__badge">💰 Продайте сломанный телефон</div>
+      <h2>Пришлите фото — оценим за 15 минут</h2>
+      <p>Не знаете сколько стоит ваше устройство? Напишите в Telegram с фото — ответим быстро и честно.</p>
+      <div class="promo-banner__actions">
+        <a class="promo-banner__cta" href="https://t.me/+79281618789" target="_blank" rel="noopener">Написать фото в Telegram</a>
+        <a class="promo-banner__ghost" href="tel:+79281618789">Позвонить</a>
+      </div>
+    </div>
+    <div class="promo-banner__num"><b>5 мин</b><span>оценка</span></div>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="container">
+  <div style="text-align:center;padding:20px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <a href="index.html" style="color:rgba(255,255,255,.6);font-size:14px">Главная</a>
+    <a href="calculator.html" style="color:rgba(255,255,255,.6);font-size:14px">Калькулятор ремонта</a>
+    <a href="kontakty.html" style="color:rgba(255,255,255,.6);font-size:14px">Адреса</a>
+  </div>
+</div></footer>
+
+<script>
+const VYKUP = {
+  iphone: {perfect:'20 000 – 50 000 ₽', good:'12 000 – 35 000 ₽', broken:'3 000 – 12 000 ₽', parts:'500 – 3 000 ₽', icon:'📱'},
+  samsung:{perfect:'8 000 – 30 000 ₽',  good:'5 000 – 20 000 ₽',  broken:'1 000 – 6 000 ₽',  parts:'300 – 1 500 ₽', icon:'📱'},
+  laptop: {perfect:'15 000 – 50 000 ₽', good:'8 000 – 30 000 ₽',  broken:'2 000 – 8 000 ₽',  parts:'500 – 2 000 ₽', icon:'💻'},
+  tablet: {perfect:'5 000 – 25 000 ₽',  good:'3 000 – 15 000 ₽',  broken:'500 – 3 000 ₽',   parts:'200 – 800 ₽',  icon:'📱'},
+  other:  {perfect:'уточним',            good:'уточним',             broken:'уточним',            parts:'уточним',      icon:'🔧'},
+};
+let vtype = null;
+document.querySelectorAll('[data-vtype]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    vtype = btn.dataset.vtype;
+    document.getElementById('vykupStep1').style.display = 'none';
+    document.getElementById('vykupStep2').style.display = '';
+  });
+});
+document.querySelectorAll('[data-vcond]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const d = VYKUP[vtype] || VYKUP.other;
+    document.getElementById('vykupIcon').textContent = d.icon;
+    document.getElementById('vykupPrice').textContent = d[btn.dataset.vcond];
+    document.getElementById('vykupStep2').style.display = 'none';
+    document.getElementById('vykupResult').style.display = '';
+  });
+});
+</script>
+</body></html>

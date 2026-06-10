@@ -1,0 +1,54 @@
+# Синга Сервис — .htaccess v1
+
+# === КОДИРОВКА ===
+AddDefaultCharset UTF-8
+
+# === 301 www → без www ===
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.singaservice\.ru [NC]
+RewriteRule ^(.*)$ https://singaservice.ru/$1 [R=301,L]
+
+# === HTTPS ===
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# === GZIP ===
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml font/woff2
+</IfModule>
+
+# === КЭШИРОВАНИЕ ===
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html                  "access plus 1 hour"
+  ExpiresByType text/css                   "access plus 1 month"
+  ExpiresByType application/javascript     "access plus 1 month"
+  ExpiresByType image/svg+xml              "access plus 1 month"
+  ExpiresByType image/png                  "access plus 6 months"
+  ExpiresByType image/jpeg                 "access plus 6 months"
+  ExpiresByType image/webp                 "access plus 6 months"
+  ExpiresByType font/woff2                 "access plus 1 year"
+  ExpiresByType application/manifest+json  "access plus 1 week"
+</IfModule>
+
+# === SECURITY HEADERS ===
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# === КАСТОМНАЯ 404 ===
+ErrorDocument 404 /404.html
+
+# === УБИРАЕМ .HTML ИЗ URL ===
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# === ЗАПРЕТ ЛИСТИНГА ДИРЕКТОРИЙ ===
+Options -Indexes

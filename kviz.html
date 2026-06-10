@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>
+(function(){
+  var s=localStorage.getItem('singa-theme');
+  var d=window.matchMedia('(prefers-color-scheme:dark)').matches;
+  document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));
+})();
+</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Узнайте стоимость ремонта за 1 минуту — квиз Синга Сервис</title>
+<meta name="description" content="Ответьте на 4 вопроса — получите персональную цену ремонта и запись в ближайшую точку. Синга Сервис, Ростов-на-Дону.">
+<link rel="canonical" href="https://singaservice.ru/kviz.html">
+<link rel="stylesheet" href="styles.css?v=20">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+.quiz-wrap{max-width:640px;margin:0 auto;background:#fff;border:1.5px solid #dde8f8;border-radius:28px;padding:40px;box-shadow:0 12px 48px rgba(26,94,255,.08)}
+.quiz-progress{display:flex;gap:6px;margin-bottom:28px}
+.quiz-progress__dot{flex:1;height:4px;border-radius:99px;background:#e4edf8;transition:background .3s}
+.quiz-progress__dot.is-done{background:#1a5eff}
+.quiz-step{display:none}.quiz-step.is-active{display:block}
+.quiz-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#8a9bb5;margin-bottom:10px}
+.quiz-q{font-size:24px;font-weight:900;font-family:'Onest',sans-serif;letter-spacing:-.03em;margin-bottom:24px;color:#07152e;line-height:1.2}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quiz-opt{background:#f5f8ff;border:1.5px solid #dde8f8;border-radius:16px;padding:16px 14px;cursor:pointer;text-align:left;transition:all .18s;font-size:15px;font-weight:700;color:#07152e;display:flex;align-items:center;gap:10px}
+.quiz-opt:hover,.quiz-opt.is-sel{background:#1a5eff;border-color:#1a5eff;color:#fff}
+.quiz-opt__ico{font-size:22px;flex-shrink:0}
+.quiz-next{margin-top:20px;width:100%}
+.quiz-result{text-align:center}
+.quiz-result__icon{font-size:56px;display:block;margin-bottom:12px}
+.quiz-result__label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#8a9bb5;margin-bottom:8px}
+.quiz-result__price{font-size:42px;font-weight:900;font-family:'Onest',sans-serif;color:#1a5eff;margin-bottom:8px}
+.quiz-result__note{font-size:14px;color:#556070;margin-bottom:24px;line-height:1.6}
+.quiz-field{width:100%;padding:14px 16px;border:1.5px solid #dde8f8;border-radius:14px;font-size:15px;margin-bottom:10px;outline:none;font-family:inherit}
+.quiz-field:focus{border-color:#1a5eff;box-shadow:0 0 0 3px rgba(26,94,255,.12)}
+@media(max-width:500px){.quiz-opts{grid-template-columns:1fr}.quiz-wrap{padding:24px 16px}}
+</style>
+</head>
+<body class="premium-v5 design-v6" style="background:#f5f8ff;min-height:100vh">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
+</g></defs></svg>
+
+<section style="padding:48px 20px">
+  <div style="text-align:center;margin-bottom:32px">
+    <a href="index.html" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-bottom:16px">
+      <span style="width:36px;height:36px;border-radius:10px;background:#1a5eff;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 100 100" width="20" height="20"><path d="M54 20 30 56h16l-6 24 26-38H50z" fill="#fff"/></svg></span>
+      <span style="font-size:18px;font-weight:900;font-family:'Onest',sans-serif;color:#07152e">Синга Сервис</span>
+    </a>
+    <h1 style="font-size:clamp(24px,4vw,38px);font-weight:900;font-family:'Onest',sans-serif;letter-spacing:-.04em;color:#07152e;margin-bottom:8px">Узнайте стоимость ремонта</h1>
+    <p style="font-size:16px;color:#556070">Ответьте на 4 вопроса — получите персональную цену</p>
+  </div>
+
+  <div class="quiz-wrap">
+    <!-- Прогресс -->
+    <div class="quiz-progress">
+      <div class="quiz-progress__dot is-done" id="qp1"></div>
+      <div class="quiz-progress__dot" id="qp2"></div>
+      <div class="quiz-progress__dot" id="qp3"></div>
+      <div class="quiz-progress__dot" id="qp4"></div>
+    </div>
+
+    <!-- Шаг 1: Что сломалось -->
+    <div class="quiz-step is-active" id="qs1">
+      <div class="quiz-label">Вопрос 1 из 4</div>
+      <div class="quiz-q">Что нужно отремонтировать?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" data-step="1" data-val="phone" data-price-min="1300" data-price-max="3500"><span class="quiz-opt__ico">📱</span>Телефон / планшет</button>
+        <button class="quiz-opt" data-step="1" data-val="laptop" data-price-min="2000" data-price-max="8000"><span class="quiz-opt__ico">💻</span>Ноутбук / ПК</button>
+        <button class="quiz-opt" data-step="1" data-val="tv" data-price-min="2500" data-price-max="6000"><span class="quiz-opt__ico">📺</span>Телевизор</button>
+        <button class="quiz-opt" data-step="1" data-val="coffee" data-price-min="1500" data-price-max="5000"><span class="quiz-opt__ico">☕</span>Кофемашина</button>
+        <button class="quiz-opt" data-step="1" data-val="printer" data-price-min="1000" data-price-max="3000"><span class="quiz-opt__ico">🖨</span>Принтер / МФУ</button>
+        <button class="quiz-opt" data-step="1" data-val="dyson" data-price-min="1500" data-price-max="4500"><span class="quiz-opt__ico">🌀</span>Dyson / пылесос</button>
+      </div>
+    </div>
+
+    <!-- Шаг 2: Проблема -->
+    <div class="quiz-step" id="qs2">
+      <div class="quiz-label">Вопрос 2 из 4</div>
+      <div class="quiz-q">В чём проблема?</div>
+      <div class="quiz-opts" id="q2opts"></div>
+      <button class="quiz-opt" style="margin-top:10px;grid-column:1/-1;background:none;border-color:#dde8f8;color:#8a9bb5;font-size:13px" onclick="prevStep(2)">← Назад</button>
+    </div>
+
+    <!-- Шаг 3: Срочность -->
+    <div class="quiz-step" id="qs3">
+      <div class="quiz-label">Вопрос 3 из 4</div>
+      <div class="quiz-q">Как срочно нужен ремонт?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" data-step="3" data-val="today"><span class="quiz-opt__ico">⚡</span>Сегодня / срочно</button>
+        <button class="quiz-opt" data-step="3" data-val="week"><span class="quiz-opt__ico">📅</span>В ближайшие дни</button>
+        <button class="quiz-opt" data-step="3" data-val="any"><span class="quiz-opt__ico">🗓</span>Не принципиально</button>
+        <button class="quiz-opt" data-step="3" data-val="consult"><span class="quiz-opt__ico">💬</span>Хочу сначала проконсультироваться</button>
+      </div>
+      <button class="quiz-opt" style="margin-top:10px;grid-column:1/-1;background:none;border-color:#dde8f8;color:#8a9bb5;font-size:13px" onclick="prevStep(3)">← Назад</button>
+    </div>
+
+    <!-- Шаг 4: Район -->
+    <div class="quiz-step" id="qs4">
+      <div class="quiz-label">Вопрос 4 из 4</div>
+      <div class="quiz-q">Какой район вам ближе?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" data-step="4" data-val="sov" data-point="Жданова 18 / Дмитрия Петрова 7"><span class="quiz-opt__ico">🏙</span>Советский</button>
+        <button class="quiz-opt" data-step="4" data-val="okt" data-point="Стачки 200с2 / Заводская 25"><span class="quiz-opt__ico">🏗</span>Октябрьский</button>
+        <button class="quiz-opt" data-step="4" data-val="per" data-point="Ткачева 22 / Заводская 25"><span class="quiz-opt__ico">🏘</span>Первомайский</button>
+        <button class="quiz-opt" data-step="4" data-val="pro" data-point="Еременко 58/2 / Петренко 18"><span class="quiz-opt__ico">🏭</span>Пролетарский</button>
+        <button class="quiz-opt" data-step="4" data-val="len" data-point="Шеболдаева 2м / Заводская 25"><span class="quiz-opt__ico">🏛</span>Ленинский</button>
+        <button class="quiz-opt" data-step="4" data-val="other" data-point="Заводская 25 (главный цех)"><span class="quiz-opt__ico">📍</span>Другой район</button>
+      </div>
+      <button class="quiz-opt" style="margin-top:10px;grid-column:1/-1;background:none;border-color:#dde8f8;color:#8a9bb5;font-size:13px" onclick="prevStep(4)">← Назад</button>
+    </div>
+
+    <!-- Результат -->
+    <div class="quiz-step" id="qs5">
+      <div class="quiz-result">
+        <span class="quiz-result__icon" id="qrIcon">📱</span>
+        <div class="quiz-result__label">Ориентировочная стоимость</div>
+        <div class="quiz-result__price" id="qrPrice">от 1 500 ₽</div>
+        <div class="quiz-result__note" id="qrNote">Точная цена — после бесплатной диагностики<br>Ближайшая точка: <b id="qrPoint">Жданова 18</b></div>
+
+        <div style="background:#f0f5ff;border-radius:18px;padding:20px;margin:20px 0;text-align:left">
+          <p style="font-size:14px;font-weight:700;margin-bottom:12px">Оставьте контакт — мастер перезвонит за 7 минут:</p>
+          <input type="tel" id="qPhone" class="quiz-field" placeholder="+7 (___) ___-__-__" inputmode="tel">
+          <input type="text" id="qName" class="quiz-field" placeholder="Ваше имя (необязательно)">
+          <button class="btn btn--primary btn--lg quiz-next" onclick="submitQuiz()">Получить точную цену →</button>
+        </div>
+
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+          <a class="btn btn--call" href="tel:+79281618789"><svg><use href="#i-call"/></svg> Позвонить</a>
+          <a class="btn btn--tg" href="https://t.me/+79281618789" target="_blank" rel="noopener"><svg><use href="#i-tg"/></svg> Telegram</a>
+        </div>
+        <button style="margin-top:16px;background:none;border:none;color:#8a9bb5;font-size:13px;cursor:pointer" onclick="resetQuiz()">↺ Пройти заново</button>
+      </div>
+    </div>
+
+  </div>
+  <p style="text-align:center;margin-top:20px;font-size:13px;color:#8a9bb5">Синга Сервис · 8 точек в Ростове-на-Дону · 8 928 161-87-89</p>
+</section>
+
+<script>
+const PROBLEMS = {
+  phone:  [{v:'screen',l:'📱 Разбитый экран',pMin:1500,pMax:3500},{v:'bat',l:'🔋 Не держит заряд',pMin:1300,pMax:2200},{v:'water',l:'💧 Попала вода',pMin:1500,pMax:3000},{v:'charge',l:'⚡ Не заряжается',pMin:1200,pMax:2000},{v:'broken',l:'🔴 Не включается',pMin:1500,pMax:5000},{v:'other',l:'🔧 Другое',pMin:1300,pMax:3000}],
+  laptop: [{v:'clean',l:'🌡️ Перегрев / тормоза',pMin:2000,pMax:3500},{v:'ssd',l:'💾 Медленно работает',pMin:1500,pMax:3000},{v:'power',l:'⚡ Не заряжается',pMin:2500,pMax:5000},{v:'win',l:'💻 Установить Windows',pMin:1500,pMax:2500},{v:'water',l:'💧 Попала вода',pMin:3000,pMax:8000},{v:'other',l:'🔧 Другое',pMin:2000,pMax:5000}],
+  tv:     [{v:'black',l:'📺 Чёрный экран',pMin:2500,pMax:5000},{v:'power',l:'⚡ Не включается',pMin:2500,pMax:4500},{v:'lines',l:'📊 Полосы на экране',pMin:3000,pMax:6000},{v:'sound',l:'🔇 Нет звука',pMin:1500,pMax:3000},{v:'other',l:'🔧 Другое',pMin:2000,pMax:5000}],
+  coffee: [{v:'brew',l:'☕ Не варит кофе',pMin:2000,pMax:4500},{v:'leak',l:'💧 Течёт вода',pMin:1500,pMax:3000},{v:'heat',l:'🌡️ Не греет воду',pMin:2500,pMax:5000},{v:'to',l:'🧹 Нужно ТО / чистка',pMin:2500,pMax:3500},{v:'other',l:'🔧 Другое',pMin:1500,pMax:4000}],
+  printer:[{v:'jam',l:'📄 Замятие бумаги',pMin:1000,pMax:2000},{v:'lines',l:'〰️ Полосы при печати',pMin:1500,pMax:3000},{v:'cart',l:'🖨 Не видит картридж',pMin:1000,pMax:2000},{v:'other',l:'🔧 Другое',pMin:1000,pMax:2500}],
+  dyson:  [{v:'suct',l:'🌀 Слабая тяга',pMin:1500,pMax:2500},{v:'bat',l:'🔋 Не держит заряд',pMin:3000,pMax:4500},{v:'noise',l:'🔊 Посторонний шум',pMin:2000,pMax:3500},{v:'other',l:'🔧 Другое',pMin:1500,pMax:3500}],
+};
+const ICONS = {phone:'📱',laptop:'💻',tv:'📺',coffee:'☕',printer:'🖨',dyson:'🌀'};
+
+let state = {device:null,problem:null,pMin:1300,pMax:3000,urgent:null,point:'Заводская 25'};
+
+function goStep(n){
+  document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('is-active'));
+  document.getElementById('qs'+n).classList.add('is-active');
+  for(let i=1;i<=4;i++) document.getElementById('qp'+i).classList.toggle('is-done',i<n);
+}
+function prevStep(current){goStep(current-1);}
+
+document.querySelectorAll('[data-step="1"]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    state.device=btn.dataset.val;
+    state.pMin=parseInt(btn.dataset.priceMin);
+    state.pMax=parseInt(btn.dataset.priceMax);
+    const opts=PROBLEMS[state.device]||[];
+    const g=document.getElementById('q2opts');
+    g.innerHTML=opts.map(o=>`<button class="quiz-opt" data-prob="${o.v}" data-pmin="${o.pMin}" data-pmax="${o.pMax}">${o.l}</button>`).join('');
+    g.querySelectorAll('[data-prob]').forEach(b=>{b.addEventListener('click',()=>{
+      state.problem=b.dataset.prob;state.pMin=parseInt(b.dataset.pmin);state.pMax=parseInt(b.dataset.pmax);goStep(3);
+    })});
+    goStep(2);
+  });
+});
+
+document.querySelectorAll('[data-step="3"]').forEach(btn=>{
+  btn.addEventListener('click',()=>{state.urgent=btn.dataset.val;goStep(4);});
+});
+document.querySelectorAll('[data-step="4"]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    state.point=btn.dataset.point;
+    document.getElementById('qrIcon').textContent=ICONS[state.device]||'🔧';
+    const price=state.pMin===state.pMax?`${state.pMin.toLocaleString('ru')} ₽`:`от ${state.pMin.toLocaleString('ru')} до ${state.pMax.toLocaleString('ru')} ₽`;
+    document.getElementById('qrPrice').textContent=price;
+    document.getElementById('qrPoint').textContent=state.point;
+    if(state.urgent==='today') document.getElementById('qrNote').innerHTML='⚡ Срочный ремонт — привезите сегодня<br>Ближайшая точка: <b>'+state.point+'</b>';
+    else document.getElementById('qrNote').innerHTML='Точная цена — после бесплатной диагностики<br>Ближайшая точка: <b>'+state.point+'</b>';
+    goStep(5);
+  });
+});
+
+document.getElementById('qPhone')?.addEventListener('input',function(){
+  let v=this.value.replace(/\D/g,'');
+  if(v.startsWith('8'))v='7'+v.slice(1);
+  if(!v.startsWith('7'))v='7'+v;
+  v=v.slice(0,11);
+  let o='+7';
+  if(v.length>1)o+=' ('+v.slice(1,4);
+  if(v.length>=4)o+=') '+v.slice(4,7);
+  if(v.length>=7)o+='-'+v.slice(7,9);
+  if(v.length>=9)o+='-'+v.slice(9,11);
+  this.value=o;
+});
+
+function submitQuiz(){
+  const ph=document.getElementById('qPhone').value;
+  const nm=document.getElementById('qName').value;
+  if(ph.length<6){document.getElementById('qPhone').style.borderColor='#ef4444';return;}
+  const msg=`Заявка с квиза:\nУстройство: ${state.device}\nПроблема: ${state.problem}\nСрочность: ${state.urgent}\nТочка: ${state.point}\nИмя: ${nm||'не указано'}\nТелефон: ${ph}`;
+  const tgUrl='https://t.me/+79281618789';
+  document.querySelector('.quiz-result__note').innerHTML='<span style="color:#1a8a3a;font-weight:700">✅ Спасибо! Мастер перезвонит в течение 7 минут.</span>';
+  document.querySelector('#qs5 .btn--primary').textContent='Заявка отправлена ✓';
+  document.querySelector('#qs5 .btn--primary').disabled=true;
+  window.open(tgUrl,'_blank');
+}
+function resetQuiz(){state={device:null,problem:null,pMin:1300,pMax:3000,urgent:null,point:'Заводская 25'};goStep(1);}
+</script>
+</body></html>

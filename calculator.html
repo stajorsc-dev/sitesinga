@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>
+(function(){
+  var s=localStorage.getItem('singa-theme');
+  var d=window.matchMedia('(prefers-color-scheme:dark)').matches;
+  document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калькулятор стоимости ремонта — Синга Сервис Ростов-на-Дону</title>
+<meta name="description" content="Рассчитайте стоимость ремонта телефона, ноутбука, телевизора или кофемашины онлайн. Синга Сервис — 8 точек в Ростове-на-Дону.">
+<link rel="canonical" href="https://singaservice.ru/calculator.html">
+<link rel="stylesheet" href="styles.css?v=17">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Калькулятор стоимости ремонта","url":"https://singaservice.ru/calculator.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://singaservice.ru/"},{"@type":"ListItem","position":2,"name":"Калькулятор ремонта","item":"https://singaservice.ru/calculator.html"}]}}
+</script>
+</head>
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
+<symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+</g></defs></svg>
+
+<!-- Breadcrumb -->
+<nav aria-label="Хлебные крошки" style="background:#f5f8ff;border-bottom:1px solid #dde8f8;padding:10px 0">
+  <div class="container">
+    <ol style="display:flex;gap:8px;list-style:none;font-size:13px;color:var(--ink-soft);flex-wrap:wrap">
+      <li><a href="index.html" style="color:var(--brand)">Главная</a></li>
+      <li style="opacity:.4">›</li>
+      <li style="font-weight:700;color:var(--ink)">Калькулятор стоимости ремонта</li>
+    </ol>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center reveal" style="--reveal-delay:0">
+      <span class="eyebrow">Бесплатно · 30 секунд</span>
+      <h1 class="section-title">Калькулятор стоимости ремонта</h1>
+      <p class="section-lead">Выберите устройство и неисправность — получите ориентировочную цену.<br>Точную стоимость назовём после бесплатной диагностики.</p>
+    </div>
+
+    <div class="calc-widget reveal">
+      <div class="calc-widget__step" id="cwStep1">
+        <div class="calc-widget__label">Шаг 1 из 2 — Что нужно отремонтировать?</div>
+        <div class="calc-widget__grid" id="cwDevices">
+          <button class="cw-btn" data-device="phone">📱<span>Телефон</span><small style="font-size:11px;color:var(--ink-soft);font-weight:600">iPhone, Samsung, Xiaomi...</small></button>
+          <button class="cw-btn" data-device="laptop">💻<span>Ноутбук / ПК</span><small style="font-size:11px;color:var(--ink-soft);font-weight:600">MacBook, Lenovo, ASUS...</small></button>
+          <button class="cw-btn" data-device="tv">📺<span>Телевизор</span><small style="font-size:11px;color:var(--ink-soft);font-weight:600">Samsung, LG, Sony...</small></button>
+          <button class="cw-btn" data-device="coffee">☕<span>Кофемашина</span><small style="font-size:11px;color:var(--ink-soft);font-weight:600">DeLonghi, Saeco, Philips...</small></button>
+          <button class="cw-btn" data-device="printer">🖨<span>Принтер / МФУ</span><small style="font-size:11px;color:var(--ink-soft);font-weight:600">Epson, Canon, HP...</small></button>
+          <button class="cw-btn" data-device="dyson">🌀<span>Dyson</span><small style="font-size:11px;color:var(--ink-soft);font-weight:600">Пылесосы, фены, стайлеры</small></button>
+          <button class="cw-btn" data-device="robot">🤖<span>Робот-пылесос</span><small style="font-size:11px;color:var(--ink-soft);font-weight:600">Xiaomi, Roborock, Dreame...</small></button>
+          <button class="cw-btn" data-device="tablet">📱<span>Планшет</span><small style="font-size:11px;color:var(--ink-soft);font-weight:600">iPad, Samsung Tab...</small></button>
+          <button class="cw-btn" data-device="other">🔧<span>Другая техника</span><small style="font-size:11px;color:var(--ink-soft);font-weight:600">Приставки, мониторы...</small></button>
+        </div>
+      </div>
+
+      <div class="calc-widget__step" id="cwStep2" style="display:none">
+        <div class="calc-widget__label" id="cwStep2Label">Шаг 2 из 2 — В чём проблема?</div>
+        <div class="calc-widget__grid" id="cwProblems"></div>
+        <button class="cw-back" onclick="cwGoBack(1)">← Выбрать другое устройство</button>
+      </div>
+
+      <div class="calc-widget__result" id="cwResult" style="display:none">
+        <div class="calc-widget__result-icon" id="cwResultIcon">📱</div>
+        <div class="calc-widget__result-body">
+          <div class="calc-widget__result-label">Ориентировочная стоимость работ</div>
+          <div class="calc-widget__result-price" id="cwPrice">от 1 500 ₽</div>
+          <div class="calc-widget__result-note" id="cwNote">Точная цена — после бесплатной диагностики</div>
+          <div class="calc-widget__result-time" id="cwTime">⏱ Срок: 1–3 часа</div>
+          <p style="font-size:13px;color:var(--ink-soft);margin-top:10px">Стоимость без запчастей, если они требуются. Цену запчастей уточним после осмотра.</p>
+        </div>
+        <div class="calc-widget__result-actions">
+          <a class="btn btn--primary btn--lg" href="tel:+79281618789">📞 Позвонить и записаться</a>
+          <a class="btn btn--tg btn--lg" href="https://t.me/+79281618789" target="_blank" rel="noopener"><svg><use href="#i-tg"/></svg> Написать в Telegram</a>
+          <a class="btn btn--ghost btn--lg" href="kontakty.html"><svg><use href="#i-pin"/></svg> Выбрать точку приёма</a>
+          <button class="cw-back" onclick="cwReset()" style="margin-top:6px">↺ Рассчитать другой ремонт</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust strip under calculator -->
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-top:36px">
+      <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:18px;padding:18px;text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🔍</div>
+        <b style="display:block;font-size:15px;margin-bottom:4px">Бесплатная диагностика</b>
+        <span style="font-size:13px;color:var(--ink-soft)">При любом ремонте — 0 ₽</span>
+      </div>
+      <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:18px;padding:18px;text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">📋</div>
+        <b style="display:block;font-size:15px;margin-bottom:4px">Цена до начала работ</b>
+        <span style="font-size:13px;color:var(--ink-soft)">Никаких сюрпризов</span>
+      </div>
+      <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:18px;padding:18px;text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🛡️</div>
+        <b style="display:block;font-size:15px;margin-bottom:4px">Гарантия на работы</b>
+        <span style="font-size:13px;color:var(--ink-soft)">Гарантийный талон</span>
+      </div>
+      <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:18px;padding:18px;text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">📍</div>
+        <b style="display:block;font-size:15px;margin-bottom:4px">8 точек приёма</b>
+        <span style="font-size:13px;color:var(--ink-soft)">По всему Ростову</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container">
+  <div style="text-align:center;padding:20px 0">
+    <a href="index.html" style="color:rgba(255,255,255,.6);font-size:14px">← На главную Синга Сервис</a>
+    <span style="color:rgba(255,255,255,.2);margin:0 12px">·</span>
+    <a href="tel:+79281618789" style="color:rgba(255,255,255,.6);font-size:14px">8 928 161-87-89</a>
+    <span style="color:rgba(255,255,255,.2);margin:0 12px">·</span>
+    <a href="https://t.me/+79281618789" style="color:rgba(255,255,255,.6);font-size:14px">Telegram</a>
+  </div>
+</div></footer>
+
+<script>
+const CW_DATA = {
+  phone: { icon:'📱', problems:[
+    {label:'Разбит экран',         price:'от 1 500 ₽',  time:'1–3 часа',   note:'Стоимость зависит от модели телефона'},
+    {label:'Замена аккумулятора',  price:'от 1 300 ₽',  time:'1–2 часа',   note:'Оригинальные и совместимые АКБ'},
+    {label:'Попала вода',          price:'от 1 500 ₽',  time:'1–2 дня',    note:'Чистка платы + просушка'},
+    {label:'Не заряжается',        price:'от 1 200 ₽',  time:'1–3 часа',   note:'Разъём или аккумулятор'},
+    {label:'Не включается',        price:'от 1 500 ₽',  time:'1–3 дня',    note:'Диагностика платы'},
+    {label:'Не работает камера',   price:'от 1 500 ₽',  time:'1–3 часа',   note:'Замена модуля камеры'},
+    {label:'Разбит корпус',        price:'от 1 200 ₽',  time:'1–2 часа',   note:'Задняя крышка / рамка'},
+    {label:'Нет звука',            price:'от 1 000 ₽',  time:'1–2 часа',   note:'Динамик или плата'},
+    {label:'Другая проблема',      price:'после диагностики', time:'уточним', note:'Бесплатная диагностика'}
+  ]},
+  laptop: { icon:'💻', problems:[
+    {label:'Чистка и термопаста',  price:'от 2 000 ₽',  time:'2–4 часа',   note:'Снижает температуру на 20–30°C'},
+    {label:'Замена SSD',           price:'от 1 000 ₽',  time:'1–2 часа',   note:'Работы без учёта стоимости диска'},
+    {label:'Ремонт питания',       price:'от 2 500 ₽',  time:'1–3 дня',    note:'Разъём питания или контроллер'},
+    {label:'Установка Windows',    price:'от 1 500 ₽',  time:'2–4 часа',   note:'Со всеми драйверами'},
+    {label:'Попала вода',          price:'от 3 000 ₽',  time:'2–5 дней',   note:'Чистка платы, просушка'},
+    {label:'Не включается',        price:'от 2 500 ₽',  time:'1–3 дня',    note:'Диагностика цепей питания'},
+    {label:'Замена матрицы',       price:'от 3 500 ₽',  time:'1–2 часа',   note:'+ стоимость матрицы'},
+    {label:'Замена клавиатуры',    price:'от 2 000 ₽',  time:'1–2 часа',   note:'+ стоимость клавиатуры'},
+    {label:'Другая проблема',      price:'после диагностики', time:'уточним', note:'Бесплатная диагностика'}
+  ]},
+  tv: { icon:'📺', problems:[
+    {label:'Нет изображения',      price:'от 2 500 ₽',  time:'1–3 дня',    note:'Подсветка или main board'},
+    {label:'Чёрный экран (звук есть)', price:'от 3 000 ₽', time:'1–3 дня', note:'Ремонт LED-подсветки'},
+    {label:'Не включается',        price:'от 2 500 ₽',  time:'1–2 дня',    note:'Блок питания'},
+    {label:'Полосы на экране',     price:'от 3 500 ₽',  time:'1–3 дня',    note:'Матрица или шлейф'},
+    {label:'Нет звука',            price:'от 1 500 ₽',  time:'1 день',     note:'Усилитель или колонки'},
+    {label:'Мерцает изображение',  price:'от 2 000 ₽',  time:'1–2 дня',    note:'Блок питания или плата'},
+    {label:'Другая проблема',      price:'после диагностики', time:'уточним', note:'Бесплатная диагностика'}
+  ]},
+  coffee: { icon:'☕', problems:[
+    {label:'Не варит кофе',        price:'от 2 000 ₽',  time:'1–2 дня',    note:'Помпа или гидросистема'},
+    {label:'Течёт вода',           price:'от 1 500 ₽',  time:'1–2 дня',    note:'Уплотнители или трубки'},
+    {label:'Не греет воду',        price:'от 2 500 ₽',  time:'1–3 дня',    note:'Бойлер или тэн'},
+    {label:'ТО и профилактика',    price:'от 2 500 ₽',  time:'1 день',     note:'Декальцинация + чистка'},
+    {label:'Не мелет кофе',        price:'от 2 000 ₽',  time:'1–2 дня',    note:'Кофемолка'},
+    {label:'Ошибки на дисплее',    price:'от 1 500 ₽',  time:'1–2 дня',    note:'Диагностика платы'},
+    {label:'Другая проблема',      price:'после диагностики', time:'уточним', note:'Бесплатная диагностика'}
+  ]},
+  printer: { icon:'🖨', problems:[
+    {label:'Замятие бумаги',       price:'от 1 500 ₽',  time:'1–2 часа',   note:'Механика подачи бумаги'},
+    {label:'Полосы при печати',    price:'от 2 000 ₽',  time:'1–2 дня',    note:'Промывка печатающей головки'},
+    {label:'Не видит картридж',    price:'от 1 000 ₽',  time:'1–2 часа',   note:'Прошивка или чип'},
+    {label:'Сброс ошибок/памперс', price:'от 1 000 ₽',  time:'1 час',      note:'Программный сброс'},
+    {label:'Профилактика',         price:'от 1 500 ₽',  time:'1–2 часа',   note:'Чистка + смазка'},
+    {label:'Другая проблема',      price:'после диагностики', time:'уточним', note:'Бесплатная диагностика'}
+  ]},
+  dyson: { icon:'🌀', problems:[
+    {label:'Слабая тяга',          price:'от 1 500 ₽',  time:'1 день',     note:'Чистка фильтров и каналов'},
+    {label:'Не держит заряд',      price:'от 3 000 ₽',  time:'1–2 дня',    note:'Замена аккумуляторного блока'},
+    {label:'Посторонний шум',      price:'от 2 000 ₽',  time:'1–2 дня',    note:'Мотор или крыльчатка'},
+    {label:'Не включается',        price:'от 2 000 ₽',  time:'1–3 дня',    note:'Плата управления или АКБ'},
+    {label:'Другая проблема',      price:'после диагностики', time:'уточним', note:'Бесплатная диагностика'}
+  ]},
+  robot: { icon:'🤖', problems:[
+    {label:'Не заряжается',        price:'от 2 500 ₽',  time:'1–2 дня',    note:'АКБ или зарядная станция'},
+    {label:'Не строит карту',      price:'от 2 000 ₽',  time:'1–2 дня',    note:'Лидар или датчики навигации'},
+    {label:'Не едет',              price:'от 1 500 ₽',  time:'1 день',     note:'Моторы или колёса'},
+    {label:'Ошибки датчиков',      price:'от 2 000 ₽',  time:'1–2 дня',    note:'Диагностика и замена датчиков'},
+    {label:'Другая проблема',      price:'после диагностики', time:'уточним', note:'Бесплатная диагностика'}
+  ]},
+  tablet: { icon:'📱', problems:[
+    {label:'Разбит экран',         price:'от 2 000 ₽',  time:'1–3 часа',   note:'Дисплейный модуль'},
+    {label:'Замена аккумулятора',  price:'от 1 500 ₽',  time:'1–2 часа',   note:'Оригинальный или совместимый'},
+    {label:'Не заряжается',        price:'от 1 200 ₽',  time:'1–3 часа',   note:'Разъём или АКБ'},
+    {label:'Другая проблема',      price:'после диагностики', time:'уточним', note:'Бесплатная диагностика'}
+  ]},
+  other: { icon:'🔧', problems:[
+    {label:'Игровая приставка',    price:'от 2 000 ₽',  time:'уточним',    note:'Перегрев, дисковод, плата'},
+    {label:'Монитор',              price:'от 2 000 ₽',  time:'уточним',    note:'Подсветка, матрица'},
+    {label:'Мелкая бытовая техника',price:'после диагностики',time:'уточним',note:'Уточним при осмотре'},
+    {label:'Другое',               price:'после диагностики', time:'уточним', note:'Бесплатная диагностика'}
+  ]}
+};
+
+let cwDevice = null;
+document.querySelectorAll('[data-device]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    cwDevice = btn.dataset.device;
+    document.getElementById('cwStep1').style.display = 'none';
+    const d = CW_DATA[cwDevice];
+    document.getElementById('cwStep2Label').textContent = `Шаг 2 из 2 — ${btn.querySelector('span').textContent}: в чём проблема?`;
+    const grid = document.getElementById('cwProblems');
+    grid.innerHTML = d.problems.map(p =>
+      `<button class="cw-btn" data-price="${p.price}" data-time="${p.time}" data-note="${p.note}">${p.label}</button>`
+    ).join('');
+    grid.querySelectorAll('[data-price]').forEach(pb => {
+      pb.addEventListener('click', () => {
+        document.getElementById('cwStep2').style.display = 'none';
+        document.getElementById('cwResultIcon').textContent = CW_DATA[cwDevice].icon;
+        document.getElementById('cwPrice').textContent = pb.dataset.price;
+        document.getElementById('cwNote').textContent = pb.dataset.note;
+        document.getElementById('cwTime').textContent = '⏱ Срок: ' + pb.dataset.time;
+        document.getElementById('cwResult').style.display = '';
+        document.getElementById('cwResult').scrollIntoView({behavior:'smooth',block:'nearest'});
+      });
+    });
+    document.getElementById('cwStep2').style.display = '';
+  });
+});
+function cwGoBack(s){ document.getElementById('cwStep2').style.display='none'; document.getElementById('cwStep1').style.display=''; cwDevice=null; }
+function cwReset(){ document.getElementById('cwResult').style.display='none'; document.getElementById('cwStep2').style.display='none'; document.getElementById('cwStep1').style.display=''; cwDevice=null; }
+</script>
+</body>
+</html>

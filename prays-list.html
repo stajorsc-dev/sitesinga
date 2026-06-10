@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<script>
+(function(){
+  var s=localStorage.getItem('singa-theme');
+  var d=window.matchMedia('(prefers-color-scheme:dark)').matches;
+  document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));
+})();
+</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Цены на ремонт техники в Ростове-на-Дону — прайс-лист Синга Сервис</title>
+<meta name="description" content="Полный прайс-лист на ремонт телефонов, ноутбуков, телевизоров, кофемашин в Ростове-на-Дону. Бесплатная диагностика. Цены фиксируются до начала работ. Синга Сервис.">
+<link rel="canonical" href="https://singaservice.ru/prays-list.html">
+<meta property="og:title" content="Цены на ремонт техники — Синга Сервис Ростов-на-Дону">
+<meta property="og:description" content="Полный прайс-лист. Телефоны от 1 300 ₽, ноутбуки от 2 000 ₽, ТВ от 2 500 ₽. Бесплатная диагностика при ремонте.">
+<meta property="og:image" content="https://singaservice.ru/assets/images/og-image.svg">
+<link rel="stylesheet" href="styles.css?v=20">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+.price-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.pf-btn{background:#f5f8ff;border:1.5px solid #dde8f8;border-radius:12px;padding:9px 16px;font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;transition:all .15s}
+.pf-btn.is-active,.pf-btn:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.price-category{display:none}
+.price-category.is-visible{display:block}
+.price-table{width:100%;border-collapse:collapse;margin-bottom:8px}
+.price-table th{background:#f5f8ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:800;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.07em;border-bottom:2px solid #dde8f8}
+.price-table td{padding:12px 16px;border-bottom:1px solid #f0f4fb;font-size:14px;vertical-align:middle}
+.price-table tr:last-child td{border-bottom:none}
+.price-table tr:hover td{background:#fafbff}
+.price-table .price{font-weight:900;color:var(--brand);font-family:'Onest',sans-serif;white-space:nowrap}
+.price-table .time{color:var(--ink-soft);font-size:13px;white-space:nowrap}
+.price-table .work{font-weight:600}
+.price-note{font-size:12.5px;color:var(--ink-soft);padding:10px 4px;line-height:1.6}
+</style>
+</head>
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+<div class="read-progress" id="readProgress"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
+</g></defs></svg>
+
+<nav class="breadcrumb-nav"><div class="container">
+  <ol class="breadcrumb"><li><a href="index.html">Главная</a></li><li aria-current="page">Цены на ремонт</li></ol>
+</div></nav>
+
+<section class="section" style="padding-top:48px"><div class="container">
+  <div class="section-head section-head--center reveal">
+    <span class="eyebrow">Прайс-лист</span>
+    <h1 class="section-title">Цены на ремонт техники</h1>
+    <p class="section-lead">Ориентировочные цены. Точная стоимость — после бесплатной диагностики. <b>Цена фиксируется до начала работ.</b></p>
+  </div>
+
+  <!-- Фильтр -->
+  <div class="price-filter reveal" id="priceFilter">
+    <button class="pf-btn is-active" data-cat="all">Все</button>
+    <button class="pf-btn" data-cat="phones">📱 Телефоны</button>
+    <button class="pf-btn" data-cat="laptops">💻 Ноутбуки</button>
+    <button class="pf-btn" data-cat="tv">📺 Телевизоры</button>
+    <button class="pf-btn" data-cat="coffee">☕ Кофемашины</button>
+    <button class="pf-btn" data-cat="printers">🖨 Принтеры</button>
+    <button class="pf-btn" data-cat="dyson">🌀 Dyson</button>
+    <button class="pf-btn" data-cat="other">🔧 Прочее</button>
+  </div>
+
+  <div class="page-with-sidebar reveal">
+    <div>
+
+      <!-- Телефоны -->
+      <div class="price-category is-visible model-prices" id="cat-phones" style="border-radius:20px;margin-bottom:20px">
+        <div class="model-prices__head">📱 Ремонт телефонов и смартфонов<a href="remont-telefonov.html" style="font-size:13px;font-weight:600;color:var(--brand)">Подробнее →</a></div>
+        <table class="price-table">
+          <tr><th>Работа</th><th>Стоимость</th><th>Срок</th></tr>
+          <tr><td class="work">Замена экрана (iPhone)</td><td class="price">от 2 500 ₽</td><td class="time">1–3 ч</td></tr>
+          <tr><td class="work">Замена стекла (только стекло)</td><td class="price">от 999 ₽</td><td class="time">2–4 ч</td></tr>
+          <tr><td class="work">Замена экрана (Samsung Galaxy A)</td><td class="price">от 1 800 ₽</td><td class="time">1–3 ч</td></tr>
+          <tr><td class="work">Замена экрана (Samsung Galaxy S)</td><td class="price">от 3 500 ₽</td><td class="time">2–4 ч</td></tr>
+          <tr><td class="work">Замена экрана (Xiaomi / Honor)</td><td class="price">от 1 500 ₽</td><td class="time">1–3 ч</td></tr>
+          <tr><td class="work">Замена аккумулятора</td><td class="price">от 1 300 ₽</td><td class="time">1–2 ч</td></tr>
+          <tr><td class="work">Ремонт разъёма зарядки</td><td class="price">от 1 200 ₽</td><td class="time">1–3 ч</td></tr>
+          <tr><td class="work">Ремонт после воды</td><td class="price">от 1 500 ₽</td><td class="time">1–2 дня</td></tr>
+          <tr><td class="work">Не включается / ремонт платы</td><td class="price">от 1 500 ₽</td><td class="time">1–3 дня</td></tr>
+          <tr><td class="work">Замена камеры</td><td class="price">от 1 500 ₽</td><td class="time">1–3 ч</td></tr>
+          <tr><td class="work">Замена корпуса / задней крышки</td><td class="price">от 1 200 ₽</td><td class="time">1–2 ч</td></tr>
+          <tr><td class="work">Диагностика (без ремонта)</td><td class="price">500 ₽</td><td class="time">30 мин</td></tr>
+        </table>
+        <p class="price-note">* Стоимость зависит от модели устройства. При ремонте — диагностика бесплатно.</p>
+      </div>
+
+      <!-- Ноутбуки -->
+      <div class="price-category is-visible model-prices" id="cat-laptops" style="border-radius:20px;margin-bottom:20px">
+        <div class="model-prices__head">💻 Ремонт ноутбуков и ПК<a href="remont-noutbukov.html" style="font-size:13px;font-weight:600;color:var(--brand)">Подробнее →</a></div>
+        <table class="price-table">
+          <tr><th>Работа</th><th>Стоимость</th><th>Срок</th></tr>
+          <tr><td class="work">Чистка от пыли + термопаста</td><td class="price">от 2 000 ₽</td><td class="time">2–4 ч</td></tr>
+          <tr><td class="work">Замена SSD (работы)</td><td class="price">от 1 000 ₽</td><td class="time">1–2 ч</td></tr>
+          <tr><td class="work">Установка Windows + драйверы</td><td class="price">от 1 500 ₽</td><td class="time">2–4 ч</td></tr>
+          <tr><td class="work">Ремонт питания / зарядки</td><td class="price">от 2 500 ₽</td><td class="time">1–3 дня</td></tr>
+          <tr><td class="work">Не включается / ремонт платы</td><td class="price">от 2 500 ₽</td><td class="time">1–3 дня</td></tr>
+          <tr><td class="work">Замена матрицы (работы)</td><td class="price">от 3 500 ₽</td><td class="time">1–2 ч</td></tr>
+          <tr><td class="work">Замена клавиатуры</td><td class="price">от 2 000 ₽</td><td class="time">1–2 ч</td></tr>
+          <tr><td class="work">Замена аккумулятора</td><td class="price">от 2 000 ₽</td><td class="time">1–2 ч</td></tr>
+          <tr><td class="work">Ремонт после воды</td><td class="price">от 3 000 ₽</td><td class="time">2–5 дней</td></tr>
+          <tr><td class="work">MacBook — чистка + термопаста</td><td class="price">от 3 500 ₽</td><td class="time">2–4 ч</td></tr>
+        </table>
+      </div>
+
+      <!-- Телевизоры -->
+      <div class="price-category is-visible model-prices" id="cat-tv" style="border-radius:20px;margin-bottom:20px">
+        <div class="model-prices__head">📺 Ремонт телевизоров<a href="remont-televizorov.html" style="font-size:13px;font-weight:600;color:var(--brand)">Подробнее →</a></div>
+        <table class="price-table">
+          <tr><th>Работа</th><th>Стоимость</th><th>Срок</th></tr>
+          <tr><td class="work">Ремонт подсветки (чёрный экран)</td><td class="price">от 3 000 ₽</td><td class="time">1–3 дня</td></tr>
+          <tr><td class="work">Ремонт блока питания</td><td class="price">от 2 500 ₽</td><td class="time">1–2 дня</td></tr>
+          <tr><td class="work">Ремонт main board</td><td class="price">от 3 500 ₽</td><td class="time">1–3 дня</td></tr>
+          <tr><td class="work">Полосы на экране</td><td class="price">от 3 500 ₽</td><td class="time">1–3 дня</td></tr>
+          <tr><td class="work">Нет звука / ремонт усилителя</td><td class="price">от 1 500 ₽</td><td class="time">1 день</td></tr>
+          <tr><td class="work">Не включается</td><td class="price">от 2 500 ₽</td><td class="time">1–2 дня</td></tr>
+        </table>
+      </div>
+
+      <!-- Кофемашины -->
+      <div class="price-category is-visible model-prices" id="cat-coffee" style="border-radius:20px;margin-bottom:20px">
+        <div class="model-prices__head">☕ Ремонт кофемашин<a href="remont-kofemashin.html" style="font-size:13px;font-weight:600;color:var(--brand)">Подробнее →</a></div>
+        <table class="price-table">
+          <tr><th>Работа</th><th>Стоимость</th><th>Срок</th></tr>
+          <tr><td class="work">Не варит кофе / помпа / гидросистема</td><td class="price">от 2 000 ₽</td><td class="time">1–2 дня</td></tr>
+          <tr><td class="work">Течёт вода / уплотнители</td><td class="price">от 1 500 ₽</td><td class="time">1–2 дня</td></tr>
+          <tr><td class="work">Не греет / бойлер</td><td class="price">от 2 500 ₽</td><td class="time">1–3 дня</td></tr>
+          <tr><td class="work">ТО + декальцинация</td><td class="price">от 2 500 ₽</td><td class="time">1 день</td></tr>
+          <tr><td class="work">Кофемолка</td><td class="price">от 2 000 ₽</td><td class="time">1–2 дня</td></tr>
+        </table>
+      </div>
+
+      <!-- Принтеры -->
+      <div class="price-category is-visible model-prices" id="cat-printers" style="border-radius:20px;margin-bottom:20px">
+        <div class="model-prices__head">🖨 Ремонт принтеров / МФУ<a href="remont-printerov.html" style="font-size:13px;font-weight:600;color:var(--brand)">Подробнее →</a></div>
+        <table class="price-table">
+          <tr><th>Работа</th><th>Стоимость</th><th>Срок</th></tr>
+          <tr><td class="work">Замятие бумаги / механика</td><td class="price">от 1 500 ₽</td><td class="time">1–2 ч</td></tr>
+          <tr><td class="work">Промывка печатающей головки</td><td class="price">от 2 000 ₽</td><td class="time">1–2 дня</td></tr>
+          <tr><td class="work">Прошивка / не видит картридж</td><td class="price">от 1 000 ₽</td><td class="time">1–2 ч</td></tr>
+          <tr><td class="work">Сброс памперса / ошибок</td><td class="price">от 1 000 ₽</td><td class="time">1 ч</td></tr>
+          <tr><td class="work">Профилактика + чистка</td><td class="price">от 1 500 ₽</td><td class="time">1–2 ч</td></tr>
+        </table>
+      </div>
+
+      <!-- Dyson -->
+      <div class="price-category is-visible model-prices" id="cat-dyson" style="border-radius:20px;margin-bottom:20px">
+        <div class="model-prices__head">🌀 Ремонт Dyson<a href="remont-dyson.html" style="font-size:13px;font-weight:600;color:var(--brand)">Подробнее →</a></div>
+        <table class="price-table">
+          <tr><th>Работа</th><th>Стоимость</th><th>Срок</th></tr>
+          <tr><td class="work">Слабая тяга / чистка каналов</td><td class="price">от 1 500 ₽</td><td class="time">1 день</td></tr>
+          <tr><td class="work">Замена аккумулятора V7–V15</td><td class="price">от 3 000 ₽</td><td class="time">1–2 дня</td></tr>
+          <tr><td class="work">Посторонний шум / мотор</td><td class="price">от 2 000 ₽</td><td class="time">1–2 дня</td></tr>
+          <tr><td class="work">Не включается / плата</td><td class="price">от 2 000 ₽</td><td class="time">1–3 дня</td></tr>
+        </table>
+      </div>
+
+      <!-- Прочее -->
+      <div class="price-category is-visible model-prices" id="cat-other" style="border-radius:20px;margin-bottom:20px">
+        <div class="model-prices__head">🔧 Другая техника<a href="remont-prochey-tehniki.html" style="font-size:13px;font-weight:600;color:var(--brand)">Подробнее →</a></div>
+        <table class="price-table">
+          <tr><th>Работа</th><th>Стоимость</th><th>Срок</th></tr>
+          <tr><td class="work">Планшет — замена экрана</td><td class="price">от 2 000 ₽</td><td class="time">1–3 ч</td></tr>
+          <tr><td class="work">Планшет — аккумулятор</td><td class="price">от 1 500 ₽</td><td class="time">1–2 ч</td></tr>
+          <tr><td class="work">Игровая приставка</td><td class="price">от 2 000 ₽</td><td class="time">уточним</td></tr>
+          <tr><td class="work">Монитор — подсветка/матрица</td><td class="price">от 2 000 ₽</td><td class="time">уточним</td></tr>
+          <tr><td class="work">Робот-пылесос</td><td class="price">от 1 500 ₽</td><td class="time">1–2 дня</td></tr>
+          <tr><td class="work">Мелкая бытовая техника</td><td class="price">после диагностики</td><td class="time">уточним</td></tr>
+        </table>
+      </div>
+
+      <div style="background:#f5f8ff;border-radius:16px;padding:18px;font-size:14px;color:var(--ink-soft);line-height:1.7">
+        ⚠️ Все цены — ориентировочные, без учёта стоимости запчастей (если требуются). Точная стоимость работ и запчастей называется <b>после бесплатной диагностики</b> и согласовывается с вами до начала ремонта.
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div>
+      <div class="sticky-cta-sidebar">
+        <h4>Узнать точную цену</h4>
+        <p>Привезите технику — диагностика бесплатно при ремонте. Цена до начала работ.</p>
+        <a class="btn btn--primary" href="tel:+79281618789" style="width:100%;justify-content:center;margin-bottom:8px"><svg><use href="#i-call"/></svg> Позвонить</a>
+        <a class="btn btn--tg" href="https://t.me/+79281618789" target="_blank" rel="noopener" style="width:100%;justify-content:center;margin-bottom:8px"><svg><use href="#i-tg"/></svg> Telegram</a>
+        <a class="btn btn--ghost" href="calculator.html" style="width:100%;justify-content:center;font-size:13px">🧮 Онлайн-калькулятор</a>
+        <hr style="border:none;border-top:1px solid #dde8f8;margin:14px 0">
+        <div style="font-size:12px;color:var(--ink-soft)">⭐ 4.9 Яндекс · 4.8 2ГИС<br>8 точек · ежедн. 09:00–21:00</div>
+      </div>
+    </div>
+  </div>
+
+</div></section>
+
+<div class="m-sticky-bar" id="mStickyBar">
+  <a class="btn btn--call" href="tel:+79281618789"><svg aria-hidden="true"><use href="#i-call"/></svg> Позвонить</a>
+  <a class="btn btn--tg" href="https://t.me/+79281618789" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a>
+  <a class="btn btn--primary" href="calculator.html">Калькулятор</a>
+</div>
+
+<footer class="footer"><div class="container"><div style="text-align:center;padding:20px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+  <a href="index.html" style="color:rgba(255,255,255,.6);font-size:14px">Главная</a>
+  <a href="calculator.html" style="color:rgba(255,255,255,.6);font-size:14px">Калькулятор</a>
+  <a href="srochny-remont.html" style="color:rgba(255,255,255,.6);font-size:14px">Срочный ремонт</a>
+  <a href="kontakty.html" style="color:rgba(255,255,255,.6);font-size:14px">Адреса</a>
+</div></div></footer>
+
+<script>
+// Фильтр категорий
+document.querySelectorAll('.pf-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.price-category').forEach(el=>{
+      if(cat==='all') el.classList.add('is-visible');
+      else el.classList.toggle('is-visible', el.id===`cat-${cat}`);
+    });
+  });
+});
+const bar=document.getElementById('readProgress');if(bar){window.addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=Math.min(100,h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true})}
+</script>
+</body></html>

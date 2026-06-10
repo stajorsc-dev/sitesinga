@@ -1,0 +1,20 @@
+{
+  "name": "Синга Сервис — ремонт техники в Ростове-на-Дону",
+  "short_name": "Синга Сервис",
+  "description": "Ремонт телефонов, ноутбуков, ТВ, кофемашин, Dyson. 8 точек приёма в Ростове-на-Дону.",
+  "lang": "ru-RU",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a5eff",
+  "orientation": "portrait-primary",
+  "shortcuts": [
+    {"name": "Калькулятор цены", "url": "/calculator.html", "description": "Рассчитать стоимость ремонта"},
+    {"name": "Акции", "url": "/aksii.html", "description": "Актуальные скидки"},
+    {"name": "Контакты", "url": "/kontakty.html", "description": "8 точек приёма"}
+  ],
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
