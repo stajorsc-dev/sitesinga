@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Чинить или купить новое? Калькулятор выгоды | Синга Сервис</title>
+<meta name="description" content="Калькулятор: выгодно ли ремонтировать технику или дешевле купить новую. Честный расчёт от Синга Сервис, Ростов-на-Дону.">
+<link rel="canonical" href="https://singaservice.ru/chinit-ili-kupit.html">
+<link rel="stylesheet" href="styles.css?v=20">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+.ck{max-width:600px;margin:0 auto}
+.ck-field{width:100%;padding:14px 16px;border:1.5px solid #dde8f8;border-radius:14px;font-size:16px;margin-bottom:14px;outline:none;font-family:inherit}
+.ck-field:focus{border-color:#1a5eff}
+.ck-result{border-radius:20px;padding:24px;margin-top:20px;display:none}
+.ck-result.repair{background:linear-gradient(135deg,#e6faf5,#d4f5ea);border:2px solid #00b894}
+.ck-result.buy{background:linear-gradient(135deg,#fff3cd,#ffe9a8);border:2px solid #f59e0b}
+.ck-verdict{font-size:24px;font-weight:900;font-family:'Onest',sans-serif;margin-bottom:10px}
+.ck-bar{height:36px;border-radius:10px;display:flex;overflow:hidden;margin:16px 0;font-size:13px;font-weight:700;color:#fff}
+</style>
+</head>
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+<style>.reveal{opacity:1!important;transform:none!important}</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
+</g></defs></svg>
+<nav class="breadcrumb-nav"><div class="container"><ol class="breadcrumb"><li><a href="index.html">Главная</a></li><li aria-current="page">Чинить или купить</li></ol></div></nav>
+<section class="section" style="padding-top:48px"><div class="container">
+  <div class="ck">
+    <div class="section-head" style="margin-bottom:24px">
+      <span class="eyebrow">🤔 Честный расчёт</span>
+      <h1 class="section-title">Чинить или купить новое?</h1>
+      <p style="color:var(--ink-soft);margin-top:8px">Введите данные — посчитаем что выгоднее. Мы честны: иногда дешевле купить новое.</p>
+    </div>
+    <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:28px">
+      <label style="font-size:13px;font-weight:700;display:block;margin-bottom:6px">Стоимость нового устройства (₽)</label>
+      <input class="ck-field" id="ckNew" type="number" inputmode="numeric" placeholder="Например: 60000">
+      <label style="font-size:13px;font-weight:700;display:block;margin-bottom:6px">Примерная стоимость ремонта (₽)</label>
+      <input class="ck-field" id="ckRepair" type="number" inputmode="numeric" placeholder="Например: 8000">
+      <label style="font-size:13px;font-weight:700;display:block;margin-bottom:6px">Возраст устройства</label>
+      <select class="ck-field" id="ckAge">
+        <option value="1">Меньше года</option>
+        <option value="2">1–2 года</option>
+        <option value="3" selected>2–3 года</option>
+        <option value="4">3–4 года</option>
+        <option value="5">Больше 4 лет</option>
+      </select>
+      <button class="btn btn--primary btn--lg" style="width:100%;justify-content:center" onclick="calcCK()">Рассчитать →</button>
+    </div>
+    <div class="ck-result" id="ckResult">
+      <div class="ck-verdict" id="ckVerdict"></div>
+      <div class="ck-bar" id="ckBar"></div>
+      <p id="ckExplain" style="font-size:14px;line-height:1.6;color:#334"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px" id="ckActions"></div>
+    </div>
+  </div>
+</div></section>
+<div class="m-sticky-bar" id="mStickyBar">
+  <a class="btn btn--call" href="tel:+79281618789"><svg aria-hidden="true"><use href="#i-call"/></svg> Позвонить</a>
+  <a class="btn btn--tg" href="https://t.me/+79281618789" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a>
+  <a class="btn btn--primary" href="zapis.html">Запись</a>
+</div>
+<footer class="footer"><div class="container"><div style="text-align:center;padding:20px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+  <a href="index.html" style="color:rgba(255,255,255,.6);font-size:14px">Главная</a>
+  <a href="calculator.html" style="color:rgba(255,255,255,.6);font-size:14px">Калькулятор</a>
+</div></div></footer>
+<script>
+function calcCK(){
+  const nw=+document.getElementById('ckNew').value;
+  const rp=+document.getElementById('ckRepair').value;
+  const age=+document.getElementById('ckAge').value;
+  if(!nw||!rp){alert('Заполните оба поля');return;}
+  const ratio=rp/nw;
+  // Чем старше, тем выше порог оправданности ремонта
+  const threshold=age<=2?0.5:age<=3?0.6:0.7;
+  const res=document.getElementById('ckResult');
+  const worth=ratio<threshold;
+  const pct=Math.round(ratio*100);
+  res.className='ck-result '+(worth?'repair':'buy');
+  res.style.display='block';
+  document.getElementById('ckBar').innerHTML=
+    `<div style="width:${Math.min(pct,100)}%;background:${worth?'#00b894':'#f59e0b'};display:flex;align-items:center;justify-content:center">Ремонт ${pct}%</div>`+
+    `<div style="flex:1;background:#e4edf8;color:#8a9bb5;display:flex;align-items:center;justify-content:center">Новое 100%</div>`;
+  if(worth){
+    document.getElementById('ckVerdict').innerHTML='✅ Выгодно чинить';
+    document.getElementById('ckExplain').innerHTML=`Ремонт стоит <b>${pct}%</b> от цены нового устройства. При возрасте устройства это оправдано — вы экономите <b>${(nw-rp).toLocaleString('ru')} ₽</b> по сравнению с покупкой нового.`;
+    document.getElementById('ckActions').innerHTML='<a class="btn btn--primary" href="zapis.html">Записаться на ремонт</a><a class="btn btn--tg" href="https://t.me/+79281618789" target="_blank" rel="noopener">Уточнить цену</a>';
+  }else{
+    document.getElementById('ckVerdict').innerHTML='🤔 Стоит подумать';
+    document.getElementById('ckExplain').innerHTML=`Ремонт стоит <b>${pct}%</b> от цены нового. Для устройства такого возраста это много. Но если вас устраивает текущее устройство и нет других проблем — ремонт продлит ему жизнь. Мы честно оценим состояние при диагностике.`;
+    document.getElementById('ckActions').innerHTML='<a class="btn btn--primary" href="tel:+79281618789">Бесплатная консультация</a><a class="btn btn--ghost" href="trade-in.html">Trade-in старого</a>';
+  }
+  res.scrollIntoView({behavior:'smooth',block:'center'});
+}
+</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
+</body></html>

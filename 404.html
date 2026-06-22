@@ -1,59 +1,79 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Страница не найдена — Синга Сервис</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="styles.css?v=17">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Onest:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-<style>
-.not-found{min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px}
-.not-found__num{font-size:clamp(80px,18vw,160px);font-weight:900;line-height:1;font-family:'Onest',sans-serif;background:linear-gradient(135deg,#1a5eff,#00b894);-webkit-background-clip:text;background-clip:text;color:transparent;display:block}
-.not-found__title{font-size:clamp(22px,4vw,36px);font-weight:900;font-family:'Onest',sans-serif;margin:12px 0 10px}
-.not-found__sub{font-size:17px;color:var(--ink-soft);margin-bottom:32px;max-width:420px;line-height:1.6}
-.not-found__links{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;max-width:600px;margin:32px auto 0;text-align:left}
-.nf-link{background:#fff;border:1.5px solid #dde8f8;border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:14px;transition:all .18s}
-.nf-link:hover{border-color:var(--brand);color:var(--brand);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,94,255,.12)}
-.nf-link span{font-size:22px}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css?v=20">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
+<style>.reveal{opacity:1!important;transform:none!important}</style>
 </head>
-<body class="premium-v5 design-v6 design-v7">
+<body class="premium-v5 design-v6" style="background:linear-gradient(160deg,#07152e,#102260);min-height:100vh">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
 <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
 </g></defs></svg>
 
-<header class="header"><div class="container"><nav class="nav">
-  <a class="logo" href="index.html"><span class="logo__mark"><svg viewBox="0 0 100 100"><path d="M54 20 30 56h16l-6 24 26-38H50z" fill="#fff"/></svg></span><span class="logo__name">Синга<b> Сервис</b></span></a>
-  <div class="nav__actions">
-    <a class="btn btn--call btn--sm" href="tel:+79281618789"><svg><use href="#i-call"/></svg> Позвонить</a>
-    <a class="btn btn--tg btn--sm" href="https://t.me/+79281618789" target="_blank" rel="noopener"><svg><use href="#i-tg"/></svg> Telegram</a>
-  </div>
-</nav></div></header>
+<div style="max-width:600px;margin:0 auto;padding:60px 20px;text-align:center;color:#fff">
+  <div style="font-size:120px;font-weight:900;font-family:'Onest',sans-serif;line-height:1;background:linear-gradient(135deg,#1a5eff,#5b9fff);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px">404</div>
+  <div style="font-size:56px;margin-bottom:16px">🔧</div>
+  <h1 style="font-size:28px;font-weight:900;font-family:'Onest',sans-serif;margin-bottom:12px">Страница потерялась</h1>
+  <p style="color:rgba(255,255,255,.6);font-size:16px;line-height:1.6;margin-bottom:28px">Похоже эта страница на ремонте или переехала. Давайте найдём что вам нужно.</p>
 
-<main class="not-found">
-  <div>
-    <span class="not-found__num">404</span>
-    <h1 class="not-found__title">Страница не найдена</h1>
-    <p class="not-found__sub">Возможно, страница была перемещена или удалена. Но мы точно можем починить вашу технику!</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a class="btn btn--primary btn--lg" href="index.html">На главную</a>
-      <a class="btn btn--call btn--lg" href="tel:+79281618789"><svg><use href="#i-call"/></svg> Позвонить</a>
-      <a class="btn btn--ghost btn--lg" href="calculator.html">Калькулятор цены</a>
-    </div>
-    <div class="not-found__links">
-      <a class="nf-link" href="remont-telefonov.html"><span>📱</span>Ремонт телефонов</a>
-      <a class="nf-link" href="remont-noutbukov.html"><span>💻</span>Ремонт ноутбуков</a>
-      <a class="nf-link" href="remont-televizorov.html"><span>📺</span>Ремонт ТВ</a>
-      <a class="nf-link" href="remont-kofemashin.html"><span>☕</span>Кофемашины</a>
-      <a class="nf-link" href="remont-dyson.html"><span>🌀</span>Dyson</a>
-      <a class="nf-link" href="remont-printerov.html"><span>🖨</span>Принтеры</a>
-      <a class="nf-link" href="aksii.html"><span>🔥</span>Акции</a>
-      <a class="nf-link" href="kontakty.html"><span>📍</span>Адреса</a>
-    </div>
+  <!-- Поиск -->
+  <div style="position:relative;max-width:420px;margin:0 auto 28px">
+    <input id="search404" placeholder="Что ищете? Например: iPhone, цены, адреса"
+      oninput="search404(this.value)"
+      style="width:100%;padding:16px 20px;border:none;border-radius:16px;font-size:16px;outline:none">
+    <div id="results404" style="position:absolute;top:100%;left:0;right:0;margin-top:8px;background:#fff;border-radius:16px;overflow:hidden;display:none;box-shadow:0 12px 32px rgba(0,0,0,.2);z-index:10;text-align:left"></div>
   </div>
-</main>
-<footer class="footer"><div class="container"><div class="footer__bottom" style="padding:16px 0;text-align:center"><span>© 2026 Синга Сервис — ремонт техники в Ростове-на-Дону</span></div></div></footer>
-</body>
-</html>
+
+  <!-- Популярные ссылки -->
+  <p style="color:rgba(255,255,255,.4);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Популярное</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:32px">
+    <a href="index.html" style="background:rgba(255,255,255,.1);color:#fff;padding:10px 18px;border-radius:99px;text-decoration:none;font-size:14px;font-weight:700">🏠 Главная</a>
+    <a href="prays-list.html" style="background:rgba(255,255,255,.1);color:#fff;padding:10px 18px;border-radius:99px;text-decoration:none;font-size:14px;font-weight:700">💰 Цены</a>
+    <a href="zapis.html" style="background:rgba(255,255,255,.1);color:#fff;padding:10px 18px;border-radius:99px;text-decoration:none;font-size:14px;font-weight:700">📅 Запись</a>
+    <a href="kontakty.html" style="background:rgba(255,255,255,.1);color:#fff;padding:10px 18px;border-radius:99px;text-decoration:none;font-size:14px;font-weight:700">📍 Адреса</a>
+    <a href="ai-diagnostika.html" style="background:rgba(255,255,255,.1);color:#fff;padding:10px 18px;border-radius:99px;text-decoration:none;font-size:14px;font-weight:700">🤖 AI-диагностика</a>
+  </div>
+
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+    <a class="btn btn--primary btn--lg" href="index.html">На главную</a>
+    <a class="btn btn--tg btn--lg" href="https://t.me/+79281618789" target="_blank" rel="noopener" style="background:#2aabee"><svg><use href="#i-tg"/></svg> Написать нам</a>
+  </div>
+</div>
+
+<script>
+const PAGES404=[
+  {t:'Ремонт iPhone',u:'remont-iphone.html',k:'айфон iphone эпл apple'},
+  {t:'Ремонт Samsung',u:'remont-samsung.html',k:'самсунг samsung galaxy галакси'},
+  {t:'Ремонт Xiaomi',u:'remont-xiaomi.html',k:'сяоми ксиоми xiaomi redmi редми'},
+  {t:'Ремонт ноутбуков',u:'remont-noutbukov.html',k:'ноутбук лаптоп notebook'},
+  {t:'Ремонт MacBook',u:'remont-macbook.html',k:'макбук macbook мак'},
+  {t:'Ремонт телевизоров',u:'remont-televizorov.html',k:'телевизор тв tv'},
+  {t:'Ремонт кофемашин',u:'remont-kofemashin.html',k:'кофемашина кофе coffee'},
+  {t:'Все цены',u:'prays-list.html',k:'цены прайс стоимость сколько'},
+  {t:'Поиск цен',u:'prays-search.html',k:'поиск цена найти'},
+  {t:'Адреса и контакты',u:'kontakty.html',k:'адрес адреса контакты точки где'},
+  {t:'Карта точек',u:'karta-tochek.html',k:'карта точки маршрут'},
+  {t:'Онлайн-запись',u:'zapis.html',k:'запись записаться онлайн'},
+  {t:'Калькулятор цены',u:'calculator.html',k:'калькулятор расчёт посчитать'},
+  {t:'AI-диагностика',u:'ai-diagnostika.html',k:'диагностика ai ии чат'},
+  {t:'Акции',u:'aksii.html',k:'акции скидки скидка'},
+  {t:'Гарантия',u:'garantiynyy-remont.html',k:'гарантия'},
+  {t:'Срочный ремонт',u:'srochny-remont.html',k:'срочно срочный быстро'},
+];
+function search404(q){
+  q=q.toLowerCase().trim();
+  const box=document.getElementById('results404');
+  if(!q){box.style.display='none';return;}
+  const found=PAGES404.filter(p=>(p.t+' '+p.k).toLowerCase().includes(q)).slice(0,6);
+  if(!found.length){box.style.display='none';return;}
+  box.innerHTML=found.map(p=>`<a href="${p.u}" style="display:block;padding:12px 18px;color:#07152e;text-decoration:none;font-weight:600;border-bottom:1px solid #f0f4fb">${p.t}</a>`).join('');
+  box.style.display='block';
+}
+</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
+</body></html>

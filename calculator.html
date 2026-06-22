@@ -9,14 +9,23 @@
 })();
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Калькулятор стоимости ремонта — Синга Сервис Ростов-на-Дону</title>
 <meta name="description" content="Рассчитайте стоимость ремонта телефона, ноутбука, телевизора или кофемашины онлайн. Синга Сервис — 8 точек в Ростове-на-Дону.">
 <link rel="canonical" href="https://singaservice.ru/calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="styles.css?v=17">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"Калькулятор стоимости ремонта","url":"https://singaservice.ru/calculator.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://singaservice.ru/"},{"@type":"ListItem","position":2,"name":"Калькулятор ремонта","item":"https://singaservice.ru/calculator.html"}]}}
 </script>
+<style>
+.reveal{opacity:1!important;transform:none!important}
+.reveal.is-animating{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+.reveal.is-animating.is-visible{opacity:1!important;transform:none!important}
+</style>
 </head>
 <body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
 
@@ -228,5 +237,24 @@ document.querySelectorAll('[data-device]').forEach(btn => {
 function cwGoBack(s){ document.getElementById('cwStep2').style.display='none'; document.getElementById('cwStep1').style.display=''; cwDevice=null; }
 function cwReset(){ document.getElementById('cwResult').style.display='none'; document.getElementById('cwStep2').style.display='none'; document.getElementById('cwStep1').style.display=''; cwDevice=null; }
 </script>
+<script>
+// Reveal animation
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  els.forEach(function(el){ el.classList.add('is-animating'); el.classList.remove('is-visible'); });
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }});
+  },{threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="assets/ai-chat-widget.js" defer></script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
 </body>
 </html>

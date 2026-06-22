@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Карта точек приёма — 8 адресов | Синга Сервис Ростов</title>
+<meta name="description" content="Все 8 точек приёма Синга Сервис на карте Ростова-на-Дону. Фильтр по району, режим работы, маршрут до ближайшей.">
+<link rel="canonical" href="https://singaservice.ru/karta-tochek.html">
+<link rel="stylesheet" href="styles.css?v=20">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+.km{max-width:920px;margin:0 auto}
+.km-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.km-filter{padding:8px 16px;border:1.5px solid #dde8f8;border-radius:20px;background:#fff;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:var(--ink)}
+.km-filter:hover,.km-filter.active{border-color:#1a5eff;background:#1a5eff;color:#fff}
+.km-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}
+.km-list{display:flex;flex-direction:column;gap:10px;max-height:560px;overflow-y:auto;padding-right:4px}
+.km-point{background:#fff;border:1.5px solid #dde8f8;border-radius:16px;padding:16px;cursor:pointer;transition:all .15s}
+.km-point:hover,.km-point.active{border-color:#1a5eff;box-shadow:0 8px 24px rgba(26,94,255,.1)}
+.km-point__name{font-size:15px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.km-point__addr{font-size:13px;color:var(--ink-soft);margin-bottom:6px}
+.km-point__meta{display:flex;gap:8px;flex-wrap:wrap}
+.km-tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px}
+.km-tag--ozon{background:#005bff15;color:#005bff}
+.km-tag--main{background:#00b89415;color:#00946e}
+.km-tag--time{background:#f5f8ff;color:#556070}
+.km-map{border-radius:18px;overflow:hidden;border:1.5px solid #dde8f8;min-height:560px;position:sticky;top:88px}
+.km-map iframe{width:100%;height:560px;border:0;display:block}
+@media(max-width:760px){.km-layout{grid-template-columns:1fr}.km-map{min-height:360px;position:static}.km-map iframe{height:360px}.km-list{max-height:none}}
+</style>
+</head>
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9">
+<style>.reveal{opacity:1!important;transform:none!important}</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
+</g></defs></svg>
+<nav class="breadcrumb-nav"><div class="container"><ol class="breadcrumb"><li><a href="index.html">Главная</a></li><li><a href="kontakty.html">Контакты</a></li><li aria-current="page">Карта точек</li></ol></div></nav>
+
+<section class="section" style="padding-top:48px"><div class="container">
+  <div class="km">
+    <div class="section-head reveal" style="margin-bottom:20px">
+      <span class="eyebrow">📍 8 точек приёма</span>
+      <h1 class="section-title">Карта точек приёма</h1>
+      <p style="color:var(--ink-soft);margin-top:8px">Выберите район — покажем ближайшие пункты. Все работают ежедневно.</p>
+    </div>
+
+    <div class="km-filters reveal">
+      <button class="km-filter active" onclick="filterPoints('all',this)">Все точки</button>
+      <button class="km-filter" onclick="filterPoints('main',this)">Главный цех</button>
+      <button class="km-filter" onclick="filterPoints('ozon',this)">Пункты Ozon</button>
+      <button class="km-filter" onclick="filterPoints('center',this)">Центр</button>
+      <button class="km-filter" onclick="filterPoints('west',this)">Запад</button>
+    </div>
+
+    <div class="km-layout reveal">
+      <div class="km-list" id="kmList"></div>
+      <div class="km-map">
+        <iframe id="kmFrame" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=39.701505%2C47.235714&z=11&text=%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BD%D1%8B%D0%B9%20%D1%86%D0%B5%D0%BD%D1%82%D1%80%20%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%94%D0%BE%D0%BD%D1%83" title="Карта точек Синга Сервис"></iframe>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<div class="m-sticky-bar" id="mStickyBar">
+  <a class="btn btn--call" href="tel:+79281618789"><svg aria-hidden="true"><use href="#i-call"/></svg> Позвонить</a>
+  <a class="btn btn--tg" href="https://t.me/+79281618789" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a>
+  <a class="btn btn--primary" href="zapis.html">Запись</a>
+</div>
+<footer class="footer"><div class="container"><div style="text-align:center;padding:20px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+  <a href="index.html" style="color:rgba(255,255,255,.6);font-size:14px">Главная</a>
+  <a href="kontakty.html" style="color:rgba(255,255,255,.6);font-size:14px">Контакты</a>
+</div></div></footer>
+
+<script>
+const POINTS=[
+  {name:'Заводская, 25',addr:'Главный цех · всё оборудование',cat:['main','center'],time:'Пн-Пт 9-20, Сб-Вс 10-20',tag:'main',maps:'https://yandex.ru/maps/?text=Ростов-на-Дону+Заводская+25'},
+  {name:'Ткачева, 22',addr:'Первомайский район',cat:['center'],time:'Ежедневно 10-20',tag:'',maps:'https://yandex.ru/maps/?text=Ростов-на-Дону+Ткачева+22'},
+  {name:'Стачки, 200с2',addr:'Октябрьский район',cat:['center'],time:'Пн-Сб 10-20',tag:'',maps:'https://yandex.ru/maps/?text=Ростов-на-Дону+Стачки+200'},
+  {name:'Еременко, 58/2',addr:'Пролетарский район',cat:['west'],time:'Пн-Пт 10-20',tag:'',maps:'https://yandex.ru/maps/?text=Ростов-на-Дону+Еременко+58'},
+  {name:'Жданова, 18',addr:'Советский район',cat:['west'],time:'Ежедневно 10-20',tag:'',maps:'https://yandex.ru/maps/?text=Ростов-на-Дону+Жданова+18'},
+  {name:'Дмитрия Петрова, 7',addr:'Пункт Ozon · Советский р-н',cat:['ozon','west'],time:'Ежедневно 9-21',tag:'ozon',maps:'https://yandex.ru/maps/?text=Ростов-на-Дону+Дмитрия+Петрова+7'},
+  {name:'Петренко, 18',addr:'Пункт Ozon · Пролетарский р-н',cat:['ozon','west'],time:'Ежедневно 9-21',tag:'ozon',maps:'https://yandex.ru/maps/?text=Ростов-на-Дону+Петренко+18'},
+  {name:'Шеболдаева, 2м',addr:'Пункт Ozon · Ленинский р-н',cat:['ozon','center'],time:'Ежедневно 9-21',tag:'ozon',maps:'https://yandex.ru/maps/?text=Ростов-на-Дону+Шеболдаева+2'},
+];
+function render(list){
+  document.getElementById('kmList').innerHTML=list.map((p,i)=>`
+  <div class="km-point" onclick="window.open('${p.maps}','_blank')">
+    <div class="km-point__name">📍 ${p.name}</div>
+    <div class="km-point__addr">${p.addr}</div>
+    <div class="km-point__meta">
+      ${p.tag==='main'?'<span class="km-tag km-tag--main">Главный цех</span>':''}
+      ${p.tag==='ozon'?'<span class="km-tag km-tag--ozon">Ozon</span>':''}
+      <span class="km-tag km-tag--time">⏰ ${p.time}</span>
+    </div>
+  </div>`).join('');
+}
+function filterPoints(cat,btn){
+  document.querySelectorAll('.km-filter').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  render(cat==='all'?POINTS:POINTS.filter(p=>p.cat.includes(cat)));
+}
+render(POINTS);
+</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
+</body></html>

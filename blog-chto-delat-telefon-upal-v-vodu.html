@@ -1,12 +1,78 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"><meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Телефон упал в воду — что делать первые 10 минут | Синга Сервис</title>
 <meta name="description" content="Телефон упал в воду? Пошаговая инструкция что делать и чего нельзя делать. Советы мастеров Синга Сервис в Ростове-на-Дону.">
 <link rel="canonical" href="https://singaservice.ru/blog-chto-delat-telefon-upal-v-vodu.html">
 <meta property="og:title" content="Телефон упал в воду — что делать первые 10 минут | Синга Сервис">
 <meta property="og:image" content="https://singaservice.ru/assets/images/og-image.svg">
+<style>
+/* Критические стили — работают без загрузки styles.css */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;color:#1a2540;background:#fff;margin:0;-webkit-font-smoothing:antialiased}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+.section{padding:56px 0}
+.section--soft{background:#f5f8ff}
+.reveal{opacity:1 !important;transform:none !important}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:all .18s;font-family:inherit}
+.btn--primary{background:#1a5eff;color:#fff}
+.btn--tg{background:#2aabee;color:#fff}
+.btn--call{background:#1aa05c;color:#fff}
+.btn--ghost{background:#fff;color:#1a2540;border-color:#dde8f8}
+.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+.breadcrumb-nav{background:#f5f8ff;border-bottom:1px solid #dde8f8;padding:10px 0}
+.breadcrumb{display:flex;align-items:center;gap:6px;list-style:none;font-size:13px;color:#8a9bb5}
+.breadcrumb li:not(:last-child)::after{content:'›';margin-left:6px;opacity:.4}
+.breadcrumb a{color:#1a5eff;text-decoration:none}
+.section-title{font-size:clamp(28px,4vw,48px);font-weight:900;font-family:'Onest','Plus Jakarta Sans',sans-serif;letter-spacing:-.04em;line-height:1.05;color:#07152e;margin:0 0 14px}
+.section-head--center{text-align:center}
+.section-lead{font-size:18px;color:#556070;line-height:1.65;margin:0 0 32px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#1a5eff;background:#eff3ff;padding:5px 14px;border-radius:99px;margin-bottom:12px}
+.page-with-sidebar{display:grid;grid-template-columns:1fr 280px;gap:40px;align-items:start}
+.sticky-cta-sidebar{position:sticky;top:88px;background:#fff;border:1.5px solid #dde8f8;border-radius:24px;padding:24px 20px}
+.sticky-cta-sidebar h4{font-size:17px;font-weight:900;margin-bottom:6px}
+.sticky-cta-sidebar p{font-size:13px;color:#556070;margin-bottom:16px}
+.sticky-cta-sidebar .btn{width:100%;justify-content:center;margin-bottom:8px}
+.sticky-cta-sidebar__price{text-align:center;font-size:22px;font-weight:900;color:#1a5eff;font-family:'Onest',sans-serif;margin:12px 0 4px}
+.sticky-cta-sidebar__note{text-align:center;font-size:12px;color:#8a9bb5}
+.sticky-cta-sidebar__divider{border:none;border-top:1px solid #dde8f8;margin:14px 0}
+.model-prices{background:#fff;border:1.5px solid #dde8f8;border-radius:20px;overflow:hidden}
+.model-prices__head{background:linear-gradient(135deg,#f0f5ff,#e8f0ff);padding:14px 20px;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:space-between}
+.model-prices__row{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-top:1px solid #f0f4fb;font-size:14px;gap:12px}
+.model-prices__name{font-weight:700;flex:1}
+.model-prices__price{font-weight:900;color:#1a5eff;font-family:'Onest',sans-serif;white-space:nowrap}
+.model-prices__time{font-size:12px;color:#8a9bb5;white-space:nowrap}
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid #f0f4fb}
+.faq-item:first-child{border-top:1px solid #f0f4fb}
+.faq-q{width:100%;background:none;border:none;padding:16px 0;font-size:16px;font-weight:700;color:#1a2540;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;font-family:inherit}
+.faq-q__ico{flex-shrink:0;width:24px;height:24px}
+.faq-q__ico svg{stroke:currentColor;fill:none;stroke-width:2}
+.faq-a{display:none;padding-bottom:16px;font-size:15px;color:#556070;line-height:1.7}
+.faq-item.is-open .faq-a{display:block}
+.promo-banner{background:linear-gradient(135deg,#07152e,#102260,#091840);border-radius:24px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.promo-banner__content{flex:1;min-width:280px}
+.promo-banner h2{font-size:clamp(22px,3vw,32px);font-weight:900;color:#fff;margin:0 0 10px}
+.promo-banner p{color:rgba(255,255,255,.65);margin:0 0 20px;font-size:16px;line-height:1.6}
+.promo-banner__badge{display:inline-block;background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:800;margin-bottom:14px}
+.promo-banner__actions{display:flex;gap:12px;flex-wrap:wrap}
+.promo-banner__cta{background:#1a5eff;color:#fff;padding:13px 24px;border-radius:14px;font-weight:800;font-size:15px;text-decoration:none;display:inline-block}
+.promo-banner__ghost{background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);padding:13px 24px;border-radius:14px;font-weight:800;font-size:15px;text-decoration:none;display:inline-block}
+.promo-banner__num{font-size:clamp(40px,6vw,72px);font-weight:900;font-family:'Onest',sans-serif;color:rgba(255,255,255,.12);line-height:1;text-align:right}
+.promo-banner__num b{color:#fff;display:block}
+.promo-banner__num span{font-size:14px;color:rgba(255,255,255,.45);font-weight:600}
+.back-to-top{position:fixed;bottom:88px;right:24px;z-index:800;width:46px;height:46px;border-radius:50%;background:#fff;border:1.5px solid #dde8f8;font-size:18px;color:#1a5eff;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
+.back-to-top.is-visible{opacity:1;pointer-events:auto}
+.m-sticky-bar{display:none}
+.read-progress{position:fixed;top:0;left:0;z-index:9999;height:3px;width:0%;background:linear-gradient(90deg,#1a5eff,#00b894)}
+.footer{background:#07152e;padding:40px 0 24px}
+@media(max-width:900px){.page-with-sidebar{grid-template-columns:1fr}.sticky-cta-sidebar{position:static}}
+@media(max-width:600px){.m-sticky-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:900;background:#fff;border-top:1px solid #dde8f8;padding:10px 12px;gap:8px}.m-sticky-bar .btn{flex:1;justify-content:center;font-size:13px;padding:10px 8px}}
+</style>
 <link rel="stylesheet" href="styles.css?v=20">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"Телефон упал в воду: что делать первые 10 минут","author":{"@type":"Organization","name":"Синга Сервис"},"publisher":{"@type":"Organization","name":"Синга Сервис"},"datePublished":"2026-06-09","dateModified":"2026-06-09"}
@@ -70,4 +136,6 @@
   <a href="index.html#blog" style="color:rgba(255,255,255,.6);font-size:14px">Блог</a>
   <a href="kontakty.html" style="color:rgba(255,255,255,.6);font-size:14px">Адреса</a>
 </div></div></footer>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
 </body></html>

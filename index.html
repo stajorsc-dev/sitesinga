@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Синга Сервис">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
 <title>Синга Сервис — ремонт техники в Ростове-на-Дону. Телефоны, ноутбуки, ТВ, кофемашины</title>
 <meta name="description" content="Сервисный центр в Ростове-на-Дону: ремонт телефонов, ноутбуков, телевизоров, кофемашин, принтеров, Dyson. 8 точек приёма, собственный цех на Заводской 25, бесплатная диагностика при ремонте. Тел. 8 928 161-87-89.">
 <meta name="theme-color" content="#0b1830">
@@ -35,7 +41,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"WebSite","@id":"https://singaservice.ru/#website","url":"https://singaservice.ru/","name":"Синга Сервис","inLanguage":"ru"},
- {"@type":"Organization","@id":"https://singaservice.ru/#org","name":"Синга Сервис","url":"https://singaservice.ru/","telephone":"+79281618789","logo":{"@type":"ImageObject","url":"https://singaservice.ru/og-image.jpg"}},
+ {"@type":"Organization","@id":"https://singaservice.ru/#org","name":"Синга Сервис","url":"https://singaservice.ru/","telephone":"+79281618789","sameAs":["https://yandex.ru/profile/3884649995","https://go.2gis.com/SzQBu","https://t.me/+79281618789"],"logo":{"@type":"ImageObject","url":"https://singaservice.ru/og-image.jpg"}},
  {"@type":"LocalBusiness","@id":"https://singaservice.ru/#business",
   "name":"Синга Сервис","description":"Сервисный центр в Ростове-на-Дону: ремонт телефонов, ноутбуков, телевизоров, кофемашин, принтеров, Dyson. 8 точек приёма, собственный цех на Заводской 25.",
   "url":"https://singaservice.ru/","telephone":"+79281618789",
@@ -134,12 +140,16 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img loading="lazy" src="https://mc.yandex.ru/watch/YANDEX_METRIKA_ID" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+<noscript><div><img decoding="async" loading="lazy" src="https://mc.yandex.ru/watch/YANDEX_METRIKA_ID" style="position:absolute;left:-9999px;" alt=""></div></noscript>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}
 window.SINGA = window.SINGA || {}; window.SINGA.ymCounter = null; /* Вставьте ID Яндекс.Метрики вместо null */</script>
 -->
 
 <style id="critical">
+.reveal{opacity:1 !important;transform:none !important}
+.reveal.is-animating{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+.reveal.is-animating.is-visible{opacity:1 !important;transform:none !important}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;line-height:1.6;color:#1a2540;background:#fff;-webkit-font-smoothing:antialiased}
@@ -164,8 +174,26 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
 .reveal.is-visible{opacity:1;transform:none}
 @media(max-width:768px){.hero-v6__layout{grid-template-columns:1fr}.hero.hero-v6{padding:40px 0 48px}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Синга Сервис",
+  "url": "https://singaservice.ru/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://singaservice.ru/prays-search.html?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<style>@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes popIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}</style>
 </head>
 <body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+<a href="#home" class="skip-link">Перейти к содержимому</a>
 
 <div class="read-progress" id="readProgress"></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -208,6 +236,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
 <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
 <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.6"/><circle cx="18" cy="6" r="2.6"/><path d="M8.4 16.2L15.6 8.4" stroke-dasharray="2.4 3"/></symbol>
 <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M12.5 6l6 6-6 6"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
 <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
 <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
 <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.6"/><rect x="17" y="13" width="4" height="6" rx="1.6"/><path d="M20 19a4 4 0 0 1-4 4h-3"/></symbol>
@@ -219,6 +248,18 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
 <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
 <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.1-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.7-.9-2.3-.2-.6-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1 0 1.3.9 2.5 1 2.7.1.2 1.7 2.6 4.2 3.6.6.2 1 .4 1.4.5.6.2 1.1.1 1.5.1.5-.1 1.5-.6 1.7-1.2.2-.5.2-1 .1-1.1z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.4C8.6 21.5 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></symbol>
 </g></defs></svg>
+
+<!-- ПРОМО-БАР -->
+<div class="top-promo-bar" id="topPromoBar" role="banner">
+  <div class="container" style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap">
+    <span class="top-promo-bar__text">🔥 Бесплатная диагностика при ремонте</span>
+    <span class="top-promo-bar__sep">·</span>
+    <span class="top-promo-bar__countdown" id="topCountdown">осталось <b id="topTimerH">00</b>ч <b id="topTimerM">00</b>мин</span>
+    <span class="top-promo-bar__sep">·</span>
+    <a href="tel:+79281618789" class="top-promo-bar__cta" data-phone-link>Записаться →</a>
+    <button class="top-promo-bar__close" onclick="document.getElementById('topPromoBar').style.display='none';localStorage.setItem('promoBarClosed','1')" aria-label="Закрыть">✕</button>
+  </div>
+</div>
 
 <header class="header">
   <div class="topbar"><div class="container">
@@ -238,6 +279,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
     </a>
     <ul class="menu">
       <li><a href="index.html#services">Услуги</a></li>
+      <li><a href="zapis.html">📅 Запись</a></li>
       <li><a href="kviz.html">🎯 Квиз</a></li>
       <li><a href="ai-diagnostika.html">🤖 AI-диагноз</a></li>
       <li><a href="index.html#calculator">Калькулятор</a></li>
@@ -286,158 +328,268 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
   </div>
 </aside>
 
-<!-- ============ HERO ============ -->
-<section class="hero hero-v6">
-  <div class="container">
-    <div class="hero-v6__layout">
-      <div class="hero-v6__copy">
-        <span class="hero-v6__kicker"><i></i> Синга Сервис · Ростов-на-Дону · 8 точек приёма</span>
-        <h1>Чиним всё.<br><span>Быстро. Честно. С гарантией.</span></h1>
-        <p class="hero-v6__lead">
-          Телефоны, ноутбуки, ТВ, кофемашины, Dyson — в одном сервисе. 8&nbsp;точек по&nbsp;городу, собственный цех, цена&nbsp;до&nbsp;начала работ.
-        </p>
+<!-- ============ HERO v3 — Педант-стиль с иллюстрацией ============ -->
+<section class="hero-v3" id="home"><div class="hero-v3__grid-pattern"></div>
+  <div class="container hero-v3__inner">
 
-        <div class="hero-v6__actions">
-          <button class="btn btn--primary btn--lg" type="button" data-modal data-goal="open_modal" data-goal-value="hero">Рассчитать ремонт</button>
-          <a class="btn btn--call btn--lg" href="tel:+79281618789" data-goal="click_phone" data-phone-link><svg aria-hidden="true"><use href="#i-call"/></svg> Позвонить</a>
-          <a class="btn btn--tg btn--lg" href="https://t.me/+79281618789" target="_blank" rel="noopener" data-goal="click_telegram" data-telegram-link><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a><a class="btn btn--max btn--lg" href="https://max.ru/89281618789" target="_blank" rel="noopener" data-goal="click_max"><svg aria-hidden="true"><use href="#i-chat"/></svg> MAX</a>
-        </div>
+    <!-- ЛЕВАЯ ЧАСТЬ: текст + CTA -->
+    <div class="hero-v3__left">
 
-        <div class="hero-v6__phone-card">
-          <span>Живой администратор</span>
-          <a href="tel:+79281618789" data-goal="click_phone" data-phone-link data-phone-text>8 928 161-87-89</a>
-          <small>ежедневно 09:00–20:00 · подскажем ближайшую точку или курьера</small>
-        </div>
-
-        <div class="hero-v6__proofs" aria-label="Преимущества">
-          <div><b>8</b><span>точек приёма</span></div>
-          <div><b>Свой цех</b><span>Заводская, 25</span></div>
-          <div><b>0 ₽</b><span>диагностика при ремонте</span></div>
-          <div><b>До работ</b><span>цена и сроки</span></div>
-        </div>
+      <!-- Кикер -->
+      <div class="hero-v3__kicker">
+        <span class="hero-v3__kicker-dot"></span>
+        Ростов-на-Дону &middot; 8 точек приёма &middot; с 2018 года
       </div>
 
-      <div class="hero-v6__visual" aria-label="Направления ремонта">
-        <div class="repair-console">
-          <div class="repair-console__top">
-            <div>
-              <span>Ремонтируем сейчас</span>
-              <b>выберите технику</b>
-            </div>
-            <em>online</em>
-          </div>
-          <div class="repair-console__grid">
-            <button type="button" data-modal data-modal-topic="Телефон"><i><svg><use href="#i-phone"/></svg></i><b>Телефоны</b><small>дисплей · АКБ · плата</small></button>
-            <button type="button" data-modal data-modal-topic="Ноутбук / ПК"><i><svg><use href="#i-laptop"/></svg></i><b>Ноутбуки</b><small>питание · залитие</small></button>
-            <button type="button" data-modal data-modal-topic="Телевизор"><i><svg><use href="#i-tv"/></svg></i><b>Телевизоры</b><small>подсветка · main</small></button>
-            <button type="button" data-modal data-modal-topic="Кофемашина"><i><svg><use href="#i-coffee"/></svg></i><b>Кофемашины</b><small>бойлер · помпа</small></button>
-            <button type="button" data-modal data-modal-topic="Принтер"><i><svg><use href="#i-printer"/></svg></i><b>Принтеры</b><small>печать · подача</small></button>
-            <button type="button" data-modal data-modal-topic="Dyson"><i><svg><use href="#i-dyson"/></svg></i><b>Dyson</b><small>АКБ · тяга · плата</small></button>
-          </div>
-          <div class="repair-console__bottom">
-            <span><svg><use href="#i-shield-check"/></svg> гарантия на работы</span>
-            <span><svg><use href="#i-tag"/></svg> без ремонта без согласования</span>
-          </div>
-        </div>
+      <!-- Главный заголовок — как у Педанта -->
+      <h1 class="hero-v3__title">
+        Ремонт<br>
+        <span class="hero-v3__title-line2">любой техники</span><br>
+        <span class="hero-v3__title-line3">в Ростове</span>
+      </h1>
 
-        <div class="hero-v6__mini hero-v6__mini--top">
-          <b>Отзывы клиентов</b><span>Яндекс.Карты · 2ГИС</span>
-        </div>
-        <div class="hero-v6__mini hero-v6__mini--bottom">
-          <b>Курьер</b><span>забор техники по городу</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- УТП список — звёздочки как у Педанта -->
+      <ul class="hero-v3__perks">
+        <li>
+          <span class="hero-v3__perk-star">★</span>
+          <span>Телефоны, ноутбуки, ТВ, кофемашины, Dyson и ещё 11+ видов</span>
+        </li>
+        <li>
+          <span class="hero-v3__perk-star">★</span>
+          <span>Бесплатная диагностика &mdash; от 490 ₽ ремонт</span>
+        </li>
+        <li>
+          <span class="hero-v3__perk-star">★</span>
+          <span>Цена называется до начала работ</span>
+        </li>
+        <li>
+          <span class="hero-v3__perk-star">★</span>
+          <span>Гарантийный талон при каждом ремонте</span>
+        </li>
+      </ul>
 
-<!-- ============ ПРЕМИАЛЬНЫЙ БЛОК БЫСТРЫХ ДЕЙСТВИЙ ============ -->
-<section class="premium-command" aria-label="Быстрые действия клиента">
-  <div class="container">
-    <div class="command-panel reveal">
-      <div class="command-panel__intro">
-        <span>Быстрый старт</span>
-        <b>Выберите действие</b>
-      </div>
-      <a href="#calc" class="command-action command-action--primary">
-        <i><svg><use href="#i-tag"/></svg></i>
-        <span><b>Узнать стоимость</b><small>мини-квиз за 1 минуту</small></span>
-      </a>
-      <button class="command-action" type="button" data-modal data-modal-topic="Нужна диагностика">
-        <i><svg><use href="#i-search"/></svg></i>
-        <span><b>Оставить заявку</b><small>подберём точку или курьера</small></span>
-      </button>
-      <a href="#addresses" class="command-action">
-        <i><svg><use href="#i-pin"/></svg></i>
-        <span><b>Выбрать адрес</b><small>8 точек в Ростове</small></span>
-      </a>
-      <a href="tel:+79281618789" class="command-action command-action--call" data-phone-link data-goal="click_phone">
-        <i><svg><use href="#i-call"/></svg></i>
-        <span><b>Позвонить</b><small>живой администратор</small></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ДОКАЗАТЕЛЬСТВА ДОВЕРИЯ ============ -->
-<section class="section section--trust-proof">
-  <div class="container">
-    <div class="trust-proof reveal">
-      <div class="trust-proof__head">
-        <span class="eyebrow">Проверено площадками</span>
-        <h2>Сначала факты: адреса, отзывы и понятные условия</h2>
-        <p>Показываем реальные площадки, точки приёма и маршрут клиента — без скрытых обещаний и фейковых отзывов.</p>
-      </div>
-      <div class="trust-proof__grid">
-        <a class="proof-card" href="https://yandex.ru/profile/3884649995?lang=ru&utm_source=copy_link&utm_medium=social&utm_campaign=share" target="_blank" rel="noopener" data-review-yandex data-goal="click_review_yandex">
-          <span class="proof-card__ico"><svg width="28" height="28"><use href="#i-pin"/></svg></span>
-          <b>Яндекс Карты</b>
-          <small>смотрите отзывы и фото точек</small>
+      <!-- CTA кнопки — как у Педанта -->
+      <div class="hero-v3__cta">
+        <a class="hero-v3__cta-tg btn--glow" href="https://t.me/+79281618789" target="_blank" rel="noopener" data-goal="click_telegram">
+          <svg aria-hidden="true"><use href="#i-tg"/></svg> Написать в Telegram
         </a>
-        <a class="proof-card" href="https://go.2gis.com/SzQBu" target="_blank" rel="noopener" data-review-2gis data-goal="click_review_2gis">
-          <span class="proof-card__ico"><svg width="28" height="28"><use href="#i-pin"/></svg></span>
-          <b>2ГИС</b>
-          <small>профили точек и отзывы клиентов</small>
+        <a class="hero-v3__cta-max" href="https://max.ru/89281618789" target="_blank" rel="noopener" data-goal="click_max">
+          <svg aria-hidden="true"><use href="#i-chat"/></svg> Написать в MAX
         </a>
-        <button class="proof-card proof-card--button" type="button" data-modal data-modal-topic="Нужна диагностика" data-goal="open_modal" data-goal-value="trust-proof">
-          <span class="proof-card__num">8</span>
-          <b>точек приёма</b>
-          <small>выберите удобный адрес или курьера</small>
+      </div>
+
+      <!-- Вторичные действия -->
+      <div class="hero-v3__secondary">
+        <a class="btn btn--call btn--lg hero-v3__call" href="tel:+79281618789" data-goal="click_phone" data-phone-link>
+          <svg aria-hidden="true"><use href="#i-call"/></svg> Позвонить
+        </a>
+        <button class="btn btn--primary btn--lg" type="button" data-modal data-goal="open_modal">
+          Рассчитать ремонт →
         </button>
       </div>
+
+      <!-- Телефон хинт -->
+      <div class="hero-v3__phone-hint">
+        <span class="hero-v3__online-dot"></span>
+        <span>Живой администратор</span>
+        <a href="tel:+79281618789" data-phone-link>8&nbsp;928&nbsp;161-87-89</a>
+        <span>&mdash; ежедневно 09:00&ndash;20:00, ответ за 7 мин</span>
+      </div>
+
+      <!-- Статы -->
+      <div class="hero-v3__stats">
+        <div class="hero-v3__stat">
+          <b><span class="count-num" data-target="8">8</span></b>
+          <span>точек</span>
+        </div>
+        <div class="hero-v3__stat-sep"></div>
+        <div class="hero-v3__stat">
+          <b>0 ₽</b>
+          <span>диагностика</span>
+        </div>
+        <div class="hero-v3__stat-sep"></div>
+        <div class="hero-v3__stat">
+          <b>4.9★</b>
+          <span>Яндекс</span>
+        </div>
+        <div class="hero-v3__stat-sep"></div>
+        <div class="hero-v3__stat">
+          <b>7+</b>
+          <span>лет работы</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ПРАВАЯ ЧАСТЬ: иллюстрация мастера как у Педанта -->
+    <div class="hero-v3__right" aria-hidden="true">
+      <!-- Плашка рейтинга поверх -->
+      <div class="hero-v3__badge-rating">
+        <div class="hero-v3__badge-stars">★★★★★</div>
+        <div class="hero-v3__badge-text">
+          <b>4.9 Яндекс</b><span>124+ отзыва</span>
+        </div>
+      </div>
+
+      <!-- Плашка "ремонт при вас" -->
+      <div class="hero-v3__badge-fast">
+        <span class="hero-v3__badge-fast-ico">⚡</span>
+        <span>Ремонт за 1–3 часа</span>
+      </div>
+
+      <!-- Большая SVG иллюстрация мастера -->
+      <svg class="hero-v3__master-svg" viewBox="0 0 460 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Фоновый круг-ореол -->
+        <circle cx="230" cy="280" r="220" fill="#1a5eff" opacity=".06"/>
+        <circle cx="230" cy="280" r="170" fill="#1a5eff" opacity=".05"/>
+
+        <!-- Рабочий стол -->
+        <rect x="30" y="420" width="400" height="20" rx="6" fill="#07152e" opacity=".3"/>
+        <!-- Коврик синий -->
+        <rect x="50" y="395" width="360" height="36" rx="10" fill="#1a3a7a" opacity=".35"/>
+        <!-- Линии на коврике -->
+        <line x1="70" y1="413" x2="390" y2="413" stroke="#1a5eff" stroke-width="1" opacity=".2"/>
+        <line x1="70" y1="419" x2="390" y2="419" stroke="#1a5eff" stroke-width="1" opacity=".1"/>
+
+        <!-- ТЕЛО МАСТЕРА — белая рубашка -->
+        <path d="M110 210 Q145 165 200 158 Q230 154 260 158 Q315 165 350 210 L340 420 L120 420 Z"
+              fill="white" opacity=".95"/>
+        <!-- Воротник -->
+        <path d="M195 158 L230 205 L265 158" stroke="#dde8f8" stroke-width="2" fill="none" opacity=".8"/>
+        <!-- Пуговицы -->
+        <circle cx="230" cy="235" r="3.5" fill="#dde8f8" opacity=".9"/>
+        <circle cx="230" cy="258" r="3.5" fill="#dde8f8" opacity=".9"/>
+        <circle cx="230" cy="281" r="3.5" fill="#dde8f8" opacity=".9"/>
+
+        <!-- Бейдж "Синга Сервис" на рубашке -->
+        <rect x="148" y="225" width="68" height="34" rx="8" fill="#1a5eff" opacity=".95"/>
+        <text x="182" y="239" font-size="8.5" fill="white" text-anchor="middle" font-weight="700" letter-spacing=".5">СИНГА</text>
+        <text x="182" y="252" font-size="8.5" fill="white" text-anchor="middle" font-weight="700" letter-spacing=".5">СЕРВИС</text>
+
+        <!-- Рукава рубашки -->
+        <path d="M110 210 Q80 240 70 300 Q65 340 80 370 L110 365 Q105 320 120 280 L130 240 Z"
+              fill="white" opacity=".9"/>
+        <path d="M350 210 Q380 240 390 300 Q395 340 380 370 L350 365 Q355 320 340 280 L330 240 Z"
+              fill="white" opacity=".9"/>
+
+        <!-- ГОЛОВА -->
+        <ellipse cx="230" cy="115" rx="55" ry="58" fill="#f5c896"/>
+        <!-- Волосы тёмные короткие -->
+        <path d="M175 100 Q178 55 230 52 Q282 55 285 100 Q275 65 230 63 Q185 65 175 100 Z"
+              fill="#2c1810"/>
+        <!-- Виски -->
+        <path d="M175 100 Q170 115 175 130 Q172 108 175 100 Z" fill="#2c1810" opacity=".6"/>
+        <path d="M285 100 Q290 115 285 130 Q288 108 285 100 Z" fill="#2c1810" opacity=".6"/>
+
+        <!-- Уши -->
+        <ellipse cx="175" cy="120" rx="10" ry="14" fill="#f0b882"/>
+        <ellipse cx="285" cy="120" rx="10" ry="14" fill="#f0b882"/>
+
+        <!-- ОЧКИ — профессиональные -->
+        <rect x="196" y="110" width="30" height="19" rx="7" fill="none" stroke="#444" stroke-width="2.2" opacity=".8"/>
+        <rect x="234" y="110" width="30" height="19" rx="7" fill="none" stroke="#444" stroke-width="2.2" opacity=".8"/>
+        <line x1="226" y1="119.5" x2="234" y2="119.5" stroke="#444" stroke-width="2.2" opacity=".8"/>
+        <!-- Дужки очков -->
+        <line x1="196" y1="119" x2="178" y2="119" stroke="#444" stroke-width="2" opacity=".6"/>
+        <line x1="264" y1="119" x2="282" y2="119" stroke="#444" stroke-width="2" opacity=".6"/>
+        <!-- Линзы лёгкий блик -->
+        <rect x="200" y="113" width="8" height="6" rx="3" fill="white" opacity=".25"/>
+        <rect x="238" y="113" width="8" height="6" rx="3" fill="white" opacity=".25"/>
+
+        <!-- Нос -->
+        <path d="M225 130 Q230 138 235 130" stroke="#d4945a" stroke-width="1.5" fill="none"/>
+        <!-- Улыбка -->
+        <path d="M215 147 Q230 157 245 147" stroke="#c0825a" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+        <!-- РУКИ — кисти -->
+        <!-- Левая рука держит телефон -->
+        <ellipse cx="120" cy="360" rx="30" ry="18" fill="#f0b882" transform="rotate(-15 120 360)"/>
+        <!-- Пальцы левой -->
+        <rect x="92" y="350" width="12" height="22" rx="6" fill="#f0b882" transform="rotate(-20 92 350)"/>
+        <rect x="105" y="344" width="11" height="24" rx="5.5" fill="#f5c896" transform="rotate(-8 105 344)"/>
+        <rect x="118" y="342" width="11" height="25" rx="5.5" fill="#f5c896"/>
+        <rect x="131" y="344" width="10" height="22" rx="5" fill="#f5c896" transform="rotate(8 131 344)"/>
+
+        <!-- Правая рука с отвёрткой -->
+        <ellipse cx="340" cy="345" rx="30" ry="18" fill="#f0b882" transform="rotate(20 340 345)"/>
+        <rect x="318" y="330" width="11" height="23" rx="5.5" fill="#f5c896" transform="rotate(15 318 330)"/>
+        <rect x="331" y="325" width="11" height="25" rx="5.5" fill="#f5c896" transform="rotate(5 331 325)"/>
+        <rect x="344" y="326" width="11" height="24" rx="5.5" fill="#f5c896" transform="rotate(-5 344 326)"/>
+        <rect x="357" y="330" width="10" height="20" rx="5" fill="#f5c896" transform="rotate(-15 357 330)"/>
+
+        <!-- ТЕЛЕФОН который держит левая рука -->
+        <rect x="145" y="300" width="90" height="160" rx="14" fill="#07152e" opacity=".92"/>
+        <rect x="152" y="308" width="76" height="144" rx="10" fill="#1a2040" opacity=".95"/>
+        <!-- Экран телефона светится -->
+        <rect x="155" y="312" width="70" height="134" rx="8" fill="#1a5eff" opacity=".12"/>
+        <!-- Интерфейс на экране -->
+        <rect x="160" y="322" width="60" height="8" rx="4" fill="#1a5eff" opacity=".5"/>
+        <rect x="160" y="335" width="42" height="5" rx="2.5" fill="#5b9fff" opacity=".35"/>
+        <rect x="160" y="344" width="54" height="5" rx="2.5" fill="#5b9fff" opacity=".25"/>
+        <rect x="160" y="353" width="36" height="5" rx="2.5" fill="#5b9fff" opacity=".2"/>
+        <!-- Иконки на экране -->
+        <rect x="160" y="368" width="16" height="16" rx="4" fill="#00b894" opacity=".6"/>
+        <rect x="182" y="368" width="16" height="16" rx="4" fill="#1a5eff" opacity=".6"/>
+        <rect x="204" y="368" width="16" height="16" rx="4" fill="#f59e0b" opacity=".6"/>
+        <!-- Цена на экране -->
+        <rect x="158" y="393" width="66" height="26" rx="6" fill="#00b894" opacity=".8"/>
+        <text x="191" y="411" font-size="11" fill="white" text-anchor="middle" font-weight="700">от 1 500 ₽</text>
+        <!-- Камера вверху -->
+        <ellipse cx="188" cy="316" rx="5" ry="5" fill="#0d1830" opacity=".8"/>
+        <ellipse cx="188" cy="316" rx="3" ry="3" fill="#1a5eff" opacity=".4"/>
+        <!-- Нижняя кнопка -->
+        <rect x="175" y="435" width="30" height="5" rx="2.5" fill="#334" opacity=".4"/>
+
+        <!-- ОТВЁРТКА в правой руке -->
+        <g transform="rotate(-30 310 300)">
+          <rect x="295" y="220" width="16" height="100" rx="8" fill="#e67e22" opacity=".9"/>
+          <rect x="293" y="318" width="20" height="12" rx="3" fill="#888" opacity=".8"/>
+          <rect x="299" y="328" width="8" height="60" rx="2" fill="#999" opacity=".8"/>
+          <!-- Крестовина отвёртки -->
+          <rect x="301" y="382" width="4" height="12" fill="#666" opacity=".9"/>
+          <rect x="297" y="386" width="12" height="4" fill="#666" opacity=".9"/>
+        </g>
+
+        <!-- Мелкие детали на столе -->
+        <!-- Маленькая плата PCB -->
+        <rect x="330" y="385" width="55" height="35" rx="4" fill="#1a6a3a" opacity=".7"/>
+        <rect x="335" y="390" width="10" height="8" rx="2" fill="#2a9a5a" opacity=".8"/>
+        <rect x="350" y="390" width="8" height="8" rx="2" fill="#2a9a5a" opacity=".6"/>
+        <rect x="363" y="390" width="12" height="8" rx="2" fill="#2a9a5a" opacity=".7"/>
+        <line x1="335" y1="404" x2="375" y2="404" stroke="#00ff88" stroke-width="1" opacity=".3"/>
+
+        <!-- Лупа -->
+        <circle cx="90" cy="390" r="22" fill="none" stroke="#8a9bb5" stroke-width="3" opacity=".5"/>
+        <circle cx="90" cy="390" r="18" fill="#e8f4ff" opacity=".3"/>
+        <line x1="106" y1="406" x2="118" y2="418" stroke="#8a9bb5" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+        <!-- Блик на лупе -->
+        <ellipse cx="83" cy="383" rx="6" ry="4" fill="white" opacity=".4" transform="rotate(-30 83 383)"/>
+
+        <!-- Свечение снизу под телефоном -->
+        <ellipse cx="190" cy="470" rx="50" ry="12" fill="#1a5eff" opacity=".12"/>
+        <!-- Свечение под мастером -->
+        <ellipse cx="230" cy="455" rx="120" ry="20" fill="#1a5eff" opacity=".07"/>
+      </svg>
+
+      <!-- Плавающие тэги техники -->
+      <div class="hero-v3__floating-tags">
+        <span class="hero-v3__tag hero-v3__tag--1">📱 Телефоны</span>
+        <span class="hero-v3__tag hero-v3__tag--2">💻 Ноутбуки</span>
+        <span class="hero-v3__tag hero-v3__tag--3">📺 Телевизоры</span>
+        <span class="hero-v3__tag hero-v3__tag--4">☕ Кофемашины</span>
+        <span class="hero-v3__tag hero-v3__tag--5">🌀 Dyson</span>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- ============ СЧЁТЧИКИ ============ -->
-<section class="section section--soft" style="padding-top:40px;padding-bottom:40px">
-  <div class="container">
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center">
-      <div style="padding:24px 16px;background:var(--bg);border-radius:20px;box-shadow:var(--shadow-sm)">
-        <div style="font-size:36px;font-weight:900;color:var(--brand);line-height:1"><span class="count-num" data-target="8">0</span></div>
-        <div style="font-size:13px;color:var(--ink-soft);font-weight:600;margin-top:4px">точек приёма</div>
-      </div>
-      <div style="padding:24px 16px;background:var(--bg);border-radius:20px;box-shadow:var(--shadow-sm)">
-        <div style="font-size:36px;font-weight:900;color:var(--brand);line-height:1"><span class="count-num" data-target="0" data-suffix=" ₽">0</span></div>
-        <div style="font-size:13px;color:var(--ink-soft);font-weight:600;margin-top:4px">диагностика при ремонте</div>
-      </div>
-      <div style="padding:24px 16px;background:var(--bg);border-radius:20px;box-shadow:var(--shadow-sm)">
-        <div style="font-size:36px;font-weight:900;color:var(--brand);line-height:1"><span class="count-num" data-target="49" data-decimal="1">0</span></div>
-        <div style="font-size:13px;color:var(--ink-soft);font-weight:600;margin-top:4px">рейтинг в Яндекс и 2ГИС</div>
-      </div>
-      <div style="padding:24px 16px;background:var(--bg);border-radius:20px;box-shadow:var(--shadow-sm)">
-        <div style="font-size:36px;font-weight:900;color:var(--brand);line-height:1"><span class="count-num" data-target="11" data-suffix="+">0</span></div>
-        <div style="font-size:13px;color:var(--ink-soft);font-weight:600;margin-top:4px">видов техники</div>
-      </div>
-    </div>
-    <!-- Живые счётчики -->
-    <div class="live-counter-strip reveal" style="margin-top:20px" id="liveStrip">
-      <div class="live-dot"></div>
+  <!-- Живая лента внизу -->
+  <div class="hero-v3__live-bar">
+    <div class="container" style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap">
+      <span class="live-dot"></span>
       <span>Сегодня принято <b id="liveCount">0</b> заявок</span>
-      <span style="color:var(--ink-soft);margin:0 4px">·</span>
-      <span>На сайте сейчас <b id="liveVisit">0</b> человек</span>
-      <span style="color:var(--ink-soft);margin:0 4px">·</span>
-      <span>Среднее время ответа: <b>7 минут</b></span>
+      <span style="color:rgba(255,255,255,.3)">·</span>
+      <span>На сайте <b id="liveVisit">0</b> человек</span>
+      <span style="color:rgba(255,255,255,.3)">·</span>
+      <span>Ответ за <b>7 минут</b></span>
     </div>
   </div>
 </section>
@@ -550,7 +702,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
 
 
 <!-- ============ БРЕНДЫ (перелинковка) ============ -->
-<section class="section section--soft" id="brands">
+<section class="section section--soft section--pattern" id="brands">
   <div class="container">
     <div class="section-head section-head--center reveal">
       <span class="eyebrow">Все бренды</span>
@@ -690,7 +842,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
 </section>
 
 <!-- ============ СРАВНЕНИЕ: ОБЫЧНЫЙ СЕРВИС vs СИНГА СЕРВИС ============ -->
-<section class="section section--soft">
+<section class="section section--soft section--pattern">
   <div class="container">
     <div class="section-head section-head--center reveal">
       <span class="eyebrow">Чем отличаемся</span>
@@ -745,7 +897,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
 </section>
 
 <!-- ============ ЧТО РЕМОНТИРУЕМ ============ -->
-<section class="section section--soft" id="services">
+<section class="section section--soft section--pattern" id="services">
   <div class="container">
     <div class="section-head section-head--center reveal">
       <span class="eyebrow">Что ремонтируем</span>
@@ -799,7 +951,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
     <div class="examples-grid reveal">
       <article class="example-card has-img">
         <div class="example-card__media" style="overflow:hidden;border-radius:16px 16px 0 0">
-          <img loading="lazy" src="assets/images/example-display.svg" alt="До и после замены дисплея телефона" style="width:100%;height:auto;display:block">
+          <img decoding="async" loading="lazy" src="assets/images/example-display.svg" alt="До и после замены дисплея телефона" style="width:100%;height:auto;display:block">
         </div>
         <div class="example-card__body">
           <span class="example-card__tag">Телефон</span>
@@ -809,7 +961,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
       </article>
       <article class="example-card has-img">
         <div class="example-card__media" style="overflow:hidden;border-radius:16px 16px 0 0">
-          <img loading="lazy" src="assets/images/example-backlight.svg" alt="До и после ремонта подсветки телевизора" style="width:100%;height:auto;display:block">
+          <img decoding="async" loading="lazy" src="assets/images/example-backlight.svg" alt="До и после ремонта подсветки телевизора" style="width:100%;height:auto;display:block">
         </div>
         <div class="example-card__body">
           <span class="example-card__tag">Телевизор</span>
@@ -819,7 +971,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
       </article>
       <article class="example-card has-img">
         <div class="example-card__media" style="overflow:hidden;border-radius:16px 16px 0 0">
-          <img loading="lazy" src="assets/images/example-coffee.svg" alt="До и после ремонта кофемашины" style="width:100%;height:auto;display:block">
+          <img decoding="async" loading="lazy" src="assets/images/example-coffee.svg" alt="До и после ремонта кофемашины" style="width:100%;height:auto;display:block">
         </div>
         <div class="example-card__body">
           <span class="example-card__tag">Кофемашина</span>
@@ -829,7 +981,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
       </article>
       <article class="example-card has-img">
         <div class="example-card__media" style="overflow:hidden;border-radius:16px 16px 0 0">
-          <img loading="lazy" src="assets/images/example-laptop.svg" alt="До и после чистки ноутбука" style="width:100%;height:auto;display:block">
+          <img decoding="async" loading="lazy" src="assets/images/example-laptop.svg" alt="До и после чистки ноутбука" style="width:100%;height:auto;display:block">
         </div>
         <div class="example-card__body">
           <span class="example-card__tag">Ноутбук</span>
@@ -839,7 +991,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
       </article>
       <article class="example-card has-img">
         <div class="example-card__media" style="overflow:hidden;border-radius:16px 16px 0 0">
-          <img loading="lazy" src="assets/images/example-printer.svg" alt="До и после ремонта принтера" style="width:100%;height:auto;display:block">
+          <img decoding="async" loading="lazy" src="assets/images/example-printer.svg" alt="До и после ремонта принтера" style="width:100%;height:auto;display:block">
         </div>
         <div class="example-card__body">
           <span class="example-card__tag">Принтер</span>
@@ -849,7 +1001,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
       </article>
       <article class="example-card has-img">
         <div class="example-card__media" style="overflow:hidden;border-radius:16px 16px 0 0">
-          <img loading="lazy" src="assets/images/example-dyson.svg" alt="До и после ремонта Dyson" style="width:100%;height:auto;display:block">
+          <img decoding="async" loading="lazy" src="assets/images/example-dyson.svg" alt="До и после ремонта Dyson" style="width:100%;height:auto;display:block">
         </div>
         <div class="example-card__body">
           <span class="example-card__tag">Dyson</span>
@@ -1156,7 +1308,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
     </div>
     <div class="master-grid reveal">
       <article class="master-card">
-        <div class="master-card__avatar"><img loading="lazy" src="assets/images/master-zhora.svg" alt="Жора — мастер по бытовой технике, ноутбукам и ПК"></div>
+        <div class="master-card__avatar"><img decoding="async" loading="lazy" src="assets/images/master-zhora.svg" alt="Жора — мастер по бытовой технике, ноутбукам и ПК"></div>
         <h3>Жора</h3>
         <div class="master-card__role">Бытовая техника · ноутбуки · ПК</div>
         <p>Диагностирует и ремонтирует бытовую технику, ноутбуки и компьютеры: от чистки и апгрейда до сложных неисправностей.</p>
@@ -1164,7 +1316,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
         <dl class="master-card__meta"><div><dt>Опыт</dt><dd>7 лет</dd></div><div><dt>Направление</dt><dd>Бытовая техника, ноутбуки и ПК</dd></div></dl>
       </article>
       <article class="master-card">
-        <div class="master-card__avatar"><img loading="lazy" src="assets/images/master-eldar.svg" alt="Эльдар — мастер по телефонам и планшетам"></div>
+        <div class="master-card__avatar"><img decoding="async" loading="lazy" src="assets/images/master-eldar.svg" alt="Эльдар — мастер по телефонам и планшетам"></div>
         <h3>Эльдар</h3>
         <div class="master-card__role">Телефоны · планшеты · модульный ремонт</div>
         <p>Меняет дисплеи, аккумуляторы, разъёмы, камеры и помогает быстро вернуть телефон или планшет в работу.</p>
@@ -1172,7 +1324,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
         <dl class="master-card__meta"><div><dt>Опыт</dt><dd>7 лет</dd></div><div><dt>Направление</dt><dd>Телефоны и планшеты</dd></div></dl>
       </article>
       <article class="master-card">
-        <div class="master-card__avatar"><img loading="lazy" src="assets/images/master-artem.svg" alt="Артём — сложные ремонты и пайка"></div>
+        <div class="master-card__avatar"><img decoding="async" loading="lazy" src="assets/images/master-artem.svg" alt="Артём — сложные ремонты и пайка"></div>
         <h3>Артём</h3>
         <div class="master-card__role">Сложные ремонты · пайка · платы</div>
         <p>Берётся за неисправности на уровне платы: питание, после воды, восстановление дорожек и микропайка.</p>
@@ -1180,7 +1332,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
         <dl class="master-card__meta"><div><dt>Опыт</dt><dd>2 года</dd></div><div><dt>Направление</dt><dd>Сложный ремонт и пайка</dd></div></dl>
       </article>
       <article class="master-card">
-        <div class="master-card__avatar"><img loading="lazy" src="assets/images/master-vasiliy.svg" alt="Василий — сложные ремонты и пайка"></div>
+        <div class="master-card__avatar"><img decoding="async" loading="lazy" src="assets/images/master-vasiliy.svg" alt="Василий — сложные ремонты и пайка"></div>
         <h3>Василий</h3>
         <div class="master-card__role">Сложные ремонты · пайка · диагностика</div>
         <p>Проверяет цепи питания, контроллеры, разъёмы и помогает восстановить технику после сложных повреждений.</p>
@@ -1210,6 +1362,54 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
       <article class="feat-card"><span class="feat-card__num">06</span><span class="feat-card__ico"><svg><use href="#i-shield-check"/></svg></span><h3>Проверка устройства перед выдачей</h3><p>Тестируем технику после ремонта и отдаём только исправной.</p></article>
       <article class="feat-card"><span class="feat-card__num">07</span><span class="feat-card__ico"><svg><use href="#i-medal"/></svg></span><h3>Гарантия на выполненные работы</h3><p>На проведённый ремонт и установленные запчасти даём гарантию.</p></article>
       <article class="feat-card"><span class="feat-card__num">08</span><span class="feat-card__ico"><svg><use href="#i-users"/></svg></span><h3>Опытные мастера</h3><p>Специалисты по разным типам техники: от микропайки до бытовой электроники.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ СБОРКА ТЕЛЕФОНА (анимация скролла) ============ -->
+<section class="section section--pattern" id="assembly" style="overflow:hidden">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow">Точность в деталях</span>
+      <h2 class="section-title">Собираем как конструктор</h2>
+      <p class="section-lead">Каждая деталь на своём месте. Прокрутите — посмотрите как устроен ремонт.</p>
+    </div>
+    <div class="assembly-stage reveal-scale" id="assemblyStage">
+      <svg viewBox="0 0 300 480" class="assembly-svg" xmlns="http://www.w3.org/2000/svg">
+        <!-- Корпус (появляется первым) -->
+        <rect class="apart" data-part="0" x="60" y="40" width="180" height="400" rx="32" fill="#07152e"/>
+        <!-- Плата -->
+        <rect class="apart" data-part="1" x="80" y="70" width="140" height="160" rx="8" fill="#1a6a3a"/>
+        <circle class="apart" data-part="1" cx="105" cy="100" r="8" fill="#2a9a5a"/>
+        <rect class="apart" data-part="1" x="125" y="92" width="40" height="16" rx="3" fill="#2a9a5a"/>
+        <rect class="apart" data-part="1" x="90" y="120" width="120" height="3" fill="#00ff88" opacity=".4"/>
+        <rect class="apart" data-part="1" x="90" y="130" width="90" height="3" fill="#00ff88" opacity=".3"/>
+        <!-- Аккумулятор -->
+        <rect class="apart" data-part="2" x="80" y="245" width="140" height="120" rx="8" fill="#1a5eff" opacity=".85"/>
+        <text class="apart" data-part="2" x="150" y="312" font-size="16" fill="#fff" text-anchor="middle" font-weight="700">АКБ</text>
+        <!-- Экран (последний, сверху) -->
+        <rect class="apart" data-part="3" x="72" y="52" width="156" height="376" rx="26" fill="#0a1830"/>
+        <rect class="apart" data-part="3" x="78" y="58" width="144" height="364" rx="22" fill="url(#screenGrad)"/>
+        <circle class="apart" data-part="3" cx="150" cy="72" r="4" fill="#1a2040"/>
+        <!-- Контент на экране -->
+        <rect class="apart" data-part="4" x="92" y="100" width="116" height="10" rx="5" fill="#1a5eff" opacity=".6"/>
+        <rect class="apart" data-part="4" x="92" y="120" width="80" height="7" rx="3.5" fill="#5b9fff" opacity=".4"/>
+        <rect class="apart" data-part="4" x="92" y="340" width="116" height="44" rx="12" fill="#00b894" opacity=".85"/>
+        <text class="apart" data-part="4" x="150" y="368" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">Готово ✓</text>
+        <defs>
+          <linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0d1d3a"/>
+            <stop offset="1" stop-color="#13294f"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="assembly-labels">
+        <div class="assembly-label" data-label="0">📱 Корпус</div>
+        <div class="assembly-label" data-label="1">🔧 Плата</div>
+        <div class="assembly-label" data-label="2">🔋 Аккумулятор</div>
+        <div class="assembly-label" data-label="3">🖥 Экран</div>
+        <div class="assembly-label" data-label="4">✨ Тест и выдача</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1487,7 +1687,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
         <h2>Бесплатная диагностика<br>при любом ремонте</h2>
         <p>Сдайте технику в любую из 8 точек — мастер определит неисправность и назовёт точную стоимость <strong style="color:#fff">до начала работ</strong>. Без предоплаты.</p>
         <div class="promo-banner__actions">
-          <button class="promo-banner__cta" type="button" data-modal data-goal="open_modal" data-goal-value="promo">Записаться на диагностику</button>
+          <button class="promo-banner__cta btn--glow" type="button" data-modal data-goal="open_modal" data-goal-value="promo">Записаться на диагностику</button>
           <a class="promo-banner__ghost" href="tel:+79281618789" data-goal="click_phone" data-phone-link>Позвонить сейчас</a>
         </div>
       </div>
@@ -1843,6 +2043,90 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
   </div>
 </section>
 
+<!-- ============ AI ИНСТРУМЕНТЫ ============ -->
+<section class="section section--soft" id="ai-tools">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow">🤖 На базе Claude AI · Только у нас</span>
+      <h2 class="section-title">Умные инструменты</h2>
+      <p class="section-lead">Первый сервисный центр в Ростове с AI-инструментами для клиентов</p>
+    </div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
+      <a href="ai-diagnostika.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
+        <div style="font-size:36px;margin-bottom:10px">🤖</div>
+        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">AI-диагностика</b>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">Опишите симптомы — ИИ определит поломку и цену. Мгновенно.</p>
+      </a>
+      <a href="ai-ocenka-foto.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
+        <div style="font-size:36px;margin-bottom:10px">📷</div>
+        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Оценка по фото</b>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">Загрузите фото повреждения — ИИ определит стоимость ремонта.</p>
+      </a>
+      <a href="calculator.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
+        <div style="font-size:36px;margin-bottom:10px">🧮</div>
+        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Калькулятор цен</b>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">Выберите устройство и проблему — получите ориентировочную цену.</p>
+      </a>
+      <a href="kviz.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
+        <div style="font-size:36px;margin-bottom:10px">🎯</div>
+        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Квиз за 1 минуту</b>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">4 вопроса → персональная цена и ближайшая точка.</p>
+      </a>
+      <a href="koleso-fortuny.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
+        <div style="font-size:36px;margin-bottom:10px">🎁</div>
+        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Колесо фортуны</b>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">Крутите и выиграйте скидку до 15% на ремонт.</p>
+      </a>
+      <a href="chinit-ili-kupit.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
+        <div style="font-size:36px;margin-bottom:10px">🤔</div>
+        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Чинить или купить?</b>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">Честный расчёт что выгоднее в вашем случае.</p>
+      </a>
+      <a href="do-i-posle.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
+        <div style="font-size:36px;margin-bottom:10px">📸</div>
+        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Работы до/после</b>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">Слайдер сравнения — наглядные результаты ремонта.</p>
+      </a>
+      <a href="test-ustroystva.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
+        <div style="font-size:36px;margin-bottom:10px">🔬</div>
+        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Тест устройства</b>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">Проверьте тачскрин, пиксели и динамик в браузере.</p>
+      </a>
+      <a href="karta-tochek.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
+        <div style="font-size:36px;margin-bottom:10px">🗺</div>
+        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Карта точек</b>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">8 точек с фильтром по району и маршрутом.</p>
+      </a>
+      <a href="igra.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
+        <div style="font-size:36px;margin-bottom:10px">🎮</div>
+        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Игра «Почини телефон»</b>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">Собери за 30 секунд — выиграй скидку до 15%.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ТРЕКЕР СТАТУСА РЕМОНТА ============ -->
+<section class="section" id="tracker">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow">Ваш ремонт</span>
+      <h2 class="section-title">Где моя техника?</h2>
+      <p class="section-lead">Введите номер заявки — узнайте статус ремонта прямо сейчас</p>
+    </div>
+    <div class="tracker-widget reveal">
+      <div class="tracker-widget__search">
+        <input type="text" id="trackerInput" placeholder="Введите номер заявки, например: СС-2024-001" class="tracker-input" maxlength="20">
+        <button class="btn btn--primary" onclick="checkTracker()">Проверить статус</button>
+      </div>
+      <div class="tracker-widget__result" id="trackerResult" style="display:none"></div>
+      <div class="tracker-widget__hint">
+        <p>Номер заявки указан в квитанции при приёмке техники. Если не нашли — <a href="tel:+79281618789">позвоните нам</a> или напишите в <a href="https://t.me/+79281618789" target="_blank" rel="noopener">Telegram</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ ФИНАЛЬНЫЙ CTA ============ -->
 <section class="section">
   <div class="container">
@@ -2002,9 +2286,18 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
 
 <!-- Липкая мобильная панель CTA -->
 <div class="m-sticky-bar" id="mStickyBar" role="navigation" aria-label="Быстрые действия">
-  <a class="btn btn--call" href="tel:+79281618789" data-goal="click_phone" aria-label="Позвонить" data-phone-link><svg aria-hidden="true"><use href="#i-call"/></svg> Позвонить</a>
-  <a class="btn btn--tg"   href="https://t.me/+79281618789" target="_blank" rel="noopener" data-goal="click_telegram" aria-label="Написать в Telegram" data-telegram-link><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a>
-  <button class="btn btn--primary" type="button" data-modal aria-label="Оставить заявку"><svg aria-hidden="true"><use href="#i-clipboard"/></svg> Заявка</button>
+  <a class="btn btn--call" href="tel:+79281618789" data-phone-link aria-label="Позвонить">
+    <svg aria-hidden="true"><use href="#i-call"/></svg>
+    <span>Позвонить</span>
+  </a>
+  <a class="btn btn--tg" href="https://t.me/+79281618789" target="_blank" rel="noopener" aria-label="Telegram">
+    <svg aria-hidden="true"><use href="#i-tg"/></svg>
+    <span>Telegram</span>
+  </a>
+  <button class="btn btn--primary" type="button" data-modal aria-label="Заявка">
+    <svg aria-hidden="true"><use href="#i-clipboard"/></svg>
+    <span>Заявка</span>
+  </button>
 </div>
 
 
@@ -2019,290 +2312,7 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
 
 
 
-<!-- ============ AI ИНСТРУМЕНТЫ ============ -->
-<section class="section section--soft" id="ai-tools">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <span class="eyebrow">🤖 На базе Claude AI · Только у нас</span>
-      <h2 class="section-title">Умные инструменты</h2>
-      <p class="section-lead">Первый сервисный центр в Ростове с AI-инструментами для клиентов</p>
-    </div>
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
-      <a href="ai-diagnostika.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
-        <div style="font-size:36px;margin-bottom:10px">🤖</div>
-        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">AI-диагностика</b>
-        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">Опишите симптомы — ИИ определит поломку и цену. Мгновенно.</p>
-      </a>
-      <a href="ai-ocenka-foto.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
-        <div style="font-size:36px;margin-bottom:10px">📷</div>
-        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Оценка по фото</b>
-        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">Загрузите фото повреждения — ИИ определит стоимость ремонта.</p>
-      </a>
-      <a href="calculator.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
-        <div style="font-size:36px;margin-bottom:10px">🧮</div>
-        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Калькулятор цен</b>
-        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">Выберите устройство и проблему — получите ориентировочную цену.</p>
-      </a>
-      <a href="kviz.html" style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:22px;text-decoration:none;color:inherit;transition:all .18s;display:block" onmouseover="this.style.borderColor='#1a5eff';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#dde8f8';this.style.transform='none'">
-        <div style="font-size:36px;margin-bottom:10px">🎯</div>
-        <b style="display:block;font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px">Квиз за 1 минуту</b>
-        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6">4 вопроса → персональная цена и ближайшая точка.</p>
-      </a>
-    </div>
-  </div>
-</section>
 
-<!-- ============ КВИЗ CTA ============ -->
-<section class="section section--soft" id="quiz-cta">
-  <div class="container">
-    <div class="promo-banner reveal">
-      <div class="promo-banner__content">
-        <div class="promo-banner__badge">🎯 1 минута</div>
-        <h2>Не знаете сколько стоит ваш ремонт?</h2>
-        <p>Ответьте на 4 вопроса — получите персональную цену и адрес ближайшей точки. Без звонков.</p>
-        <div class="promo-banner__actions">
-          <a class="promo-banner__cta" href="kviz.html">Пройти квиз →</a>
-          <a class="promo-banner__ghost" href="calculator.html">Калькулятор цены</a>
-        </div>
-      </div>
-      <div class="promo-banner__num"><b>4</b><span>вопроса</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ КАЛЬКУЛЯТОР СТОИМОСТИ ============ -->
-<section class="section section--soft" id="calculator">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <span class="eyebrow">Быстрый расчёт</span>
-      <h2 class="section-title">Калькулятор стоимости ремонта</h2>
-      <p class="section-lead">Выберите устройство и проблему — получите ориентировочную цену за 30 секунд</p>
-    </div>
-    <div class="calc-widget reveal">
-      <div class="calc-widget__step" id="cwStep1">
-        <div class="calc-widget__label">Шаг 1 из 3 — Что ремонтируем?</div>
-        <div class="calc-widget__grid" id="cwDevices">
-          <button class="cw-btn" data-device="phone" data-icon="📱">Телефон</button>
-          <button class="cw-btn" data-device="laptop" data-icon="💻">Ноутбук / ПК</button>
-          <button class="cw-btn" data-device="tv" data-icon="📺">Телевизор</button>
-          <button class="cw-btn" data-device="coffee" data-icon="☕">Кофемашина</button>
-          <button class="cw-btn" data-device="printer" data-icon="🖨">Принтер</button>
-          <button class="cw-btn" data-device="dyson" data-icon="🌀">Dyson</button>
-          <button class="cw-btn" data-device="robot" data-icon="🤖">Робот-пылесос</button>
-          <button class="cw-btn" data-device="other" data-icon="🔧">Другая техника</button>
-        </div>
-      </div>
-      <div class="calc-widget__step" id="cwStep2" style="display:none">
-        <div class="calc-widget__label">Шаг 2 из 3 — В чём проблема?</div>
-        <div class="calc-widget__grid" id="cwProblems"></div>
-        <button class="cw-back" onclick="cwGoBack(1)">← Назад</button>
-      </div>
-      <div class="calc-widget__result" id="cwResult" style="display:none">
-        <div class="calc-widget__result-icon" id="cwResultIcon">📱</div>
-        <div class="calc-widget__result-body">
-          <div class="calc-widget__result-label">Ориентировочная стоимость</div>
-          <div class="calc-widget__result-price" id="cwPrice">от 1 500 ₽</div>
-          <div class="calc-widget__result-note" id="cwNote">Точная цена — после бесплатной диагностики</div>
-          <div class="calc-widget__result-time" id="cwTime">⏱ Срок: 1–3 часа</div>
-        </div>
-        <div class="calc-widget__result-actions">
-          <a class="btn btn--primary btn--lg" href="tel:+79281618789" data-phone-link>Позвонить и записаться</a>
-          <a class="btn btn--tg btn--lg" href="https://t.me/+79281618789" target="_blank" rel="noopener"><svg><use href="#i-tg"/></svg> Написать в Telegram</a>
-          <button class="cw-back" onclick="cwReset()">↺ Рассчитать заново</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ СЛАЙДЕР ДО / ПОСЛЕ ============ -->
-<section class="section" id="before-after">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <span class="eyebrow">До и после</span>
-      <h2 class="section-title">Потяните, чтобы сравнить</h2>
-      <p class="section-lead">Интерактивный слайдер — тяните разделитель влево и вправо</p>
-    </div>
-    <div class="ba-tabs reveal" style="display:flex;gap:10px;justify-content:center;margin-bottom:24px;flex-wrap:wrap">
-      <button class="ba-tab is-active" data-ba="phone">📱 Телефон</button>
-      <button class="ba-tab" data-ba="laptop">💻 Ноутбук</button>
-      <button class="ba-tab" data-ba="tv">📺 Телевизор</button>
-    </div>
-    <div class="ba-slider reveal" id="baSlider">
-      <div class="ba-before" id="baBefore"></div>
-      <div class="ba-after" id="baAfter"></div>
-      <div class="ba-handle" id="baHandle">
-        <span class="ba-handle__line"></span>
-        <span class="ba-handle__btn">⟺</span>
-        <span class="ba-handle__line"></span>
-      </div>
-      <div class="ba-label ba-label--left">ДО</div>
-      <div class="ba-label ba-label--right">ПОСЛЕ</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ВИДЕОСЕКЦИЯ ============ -->
-<section class="section section--soft" id="video">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <span class="eyebrow">Смотрите сами</span>
-      <h2 class="section-title">Цех и ремонты — вживую</h2>
-      <p class="section-lead">Снимите телефон как работает наш цех — и вставьте ссылку на YouTube. Пока показываем структуру.</p>
-    </div>
-    <div class="video-grid reveal">
-      <div class="video-card video-card--main">
-        <div class="video-card__thumb" style="background:linear-gradient(135deg,#0f1e40,#1a3a7a)">
-          <div class="video-card__play"><svg viewBox="0 0 24 24" fill="white" width="40" height="40"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="video-card__overlay">
-            <div class="video-card__badge">▶ Видео</div>
-            <b>Как устроен наш цех</b>
-            <span>Заводская, 25 — производство изнутри</span>
-          </div>
-        </div>
-        <p style="font-size:13px;color:var(--ink-soft);margin-top:10px;text-align:center">Добавьте YouTube-ссылку в атрибут data-src</p>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:14px">
-        <div class="video-card">
-          <div class="video-card__thumb video-card__thumb--sm" style="background:linear-gradient(135deg,#1a3a7a,#2d5fc4)">
-            <div class="video-card__play video-card__play--sm"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div>
-            <div class="video-card__overlay video-card__overlay--sm"><b>Замена дисплея iPhone</b><span>За 40 минут в прямом эфире</span></div>
-          </div>
-        </div>
-        <div class="video-card">
-          <div class="video-card__thumb video-card__thumb--sm" style="background:linear-gradient(135deg,#1a5a3a,#2db88a)">
-            <div class="video-card__play video-card__play--sm"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div>
-            <div class="video-card__overlay video-card__overlay--sm"><b>Ремонт подсветки ТВ</b><span>Samsung 55" — чёрный экран</span></div>
-          </div>
-        </div>
-        <div class="video-card">
-          <div class="video-card__thumb video-card__thumb--sm" style="background:linear-gradient(135deg,#5a1a1a,#c42d2d)">
-            <div class="video-card__play video-card__play--sm"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div>
-            <div class="video-card__overlay video-card__overlay--sm"><b>Отзыв клиента</b><span>Ноутбук после воды — спасли данные</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="reveal" style="text-align:center;margin-top:20px;font-size:14px;color:var(--ink-soft)">
-      Видео пока в подготовке. Снимите 2–3 коротких ролика на телефон — поставим сюда и на YouTube.
-    </p>
-  </div>
-</section>
-
-<!-- ============ ТРЕКЕР СТАТУСА РЕМОНТА ============ -->
-<section class="section" id="tracker">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <span class="eyebrow">Ваш ремонт</span>
-      <h2 class="section-title">Где моя техника?</h2>
-      <p class="section-lead">Введите номер заявки — узнайте статус ремонта прямо сейчас</p>
-    </div>
-    <div class="tracker-widget reveal">
-      <div class="tracker-widget__search">
-        <input type="text" id="trackerInput" placeholder="Введите номер заявки, например: СС-2024-001" class="tracker-input" maxlength="20">
-        <button class="btn btn--primary" onclick="checkTracker()">Проверить статус</button>
-      </div>
-      <div class="tracker-widget__result" id="trackerResult" style="display:none"></div>
-      <div class="tracker-widget__hint">
-        <p>Номер заявки указан в квитанции при приёмке техники. Если не нашли — <a href="tel:+79281618789">позвоните нам</a> или напишите в <a href="https://t.me/+79281618789" target="_blank" rel="noopener">Telegram</a>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ АКЦИИ И СПЕЦПРЕДЛОЖЕНИЯ ============ -->
-<section class="section section--soft" id="offers">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <span class="eyebrow">Выгода</span>
-      <h2 class="section-title">Акции и спецпредложения</h2>
-      <p class="section-lead">Актуальные предложения — обновляем каждый месяц</p>
-    </div>
-    <div class="offers-grid reveal">
-
-      <div class="offer-card offer-card--hot">
-        <div class="offer-card__timer-wrap">
-          <span class="offer-card__badge">🔥 Горящая акция</span>
-          <div class="offer-card__timer" data-deadline="" id="offerTimer1"></div>
-        </div>
-        <h3>Бесплатная диагностика</h3>
-        <p>При любом ремонте диагностика — 0 ₽. Узнаете причину поломки и точную стоимость до начала работ.</p>
-        <div class="offer-card__cond">Постоянная акция · Все точки</div>
-        <button class="btn btn--primary" type="button" data-modal>Записаться</button>
-      </div>
-
-      <div class="offer-card">
-        <span class="offer-card__badge offer-card__badge--blue">💻 Июнь 2026</span>
-        <h3>−20% на чистку ноутбука</h3>
-        <p>Чистка от пыли + замена термопасты. Спасёт от перегрева и продлит жизнь ноутбука на годы.</p>
-        <div class="offer-card__price"><s style="color:var(--ink-soft);font-size:14px">от 2 500 ₽</s> <b style="color:var(--brand);font-size:20px">от 2 000 ₽</b></div>
-        <div class="offer-card__cond">До 30 июня · Заводская 25 и Жданова 18</div>
-        <button class="btn btn--primary" type="button" data-modal>Воспользоваться</button>
-      </div>
-
-      <div class="offer-card">
-        <span class="offer-card__badge offer-card__badge--green">📱 Постоянно</span>
-        <h3>Замена стекла iPhone от 999 ₽</h3>
-        <p>Только стекло без замены модуля — дешевле, быстрее. Подходит если дисплей работает, разбито только стекло.</p>
-        <div class="offer-card__price"><b style="color:var(--brand);font-size:20px">от 999 ₽</b></div>
-        <div class="offer-card__cond">Все точки · iPhone 6–15</div>
-        <button class="btn btn--primary" type="button" data-modal>Узнать подробнее</button>
-      </div>
-
-      <div class="offer-card">
-        <span class="offer-card__badge offer-card__badge--purple">☕ Кофемашины</span>
-        <h3>ТО кофемашины + чистка в подарок</h3>
-        <p>Профилактическое обслуживание + декальцинация бесплатно при любом ремонте кофемашины.</p>
-        <div class="offer-card__cond">Цех Заводская 25 · По записи</div>
-        <button class="btn btn--primary" type="button" data-modal>Записаться</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ ГАРАНТИЙНЫЙ СЕРТИФИКАТ ============ -->
-<section class="section" id="warranty-cert">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <span class="eyebrow">Официально</span>
-      <h2 class="section-title">Гарантийный сертификат</h2>
-      <p class="section-lead">Выдаём при каждом ремонте. Защищает ваши права как потребителя.</p>
-    </div>
-    <div class="cert-wrap reveal">
-      <div class="cert-card">
-        <div class="cert-card__header">
-          <div class="cert-card__logo">
-            <span class="logo__mark"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M54 20 30 56h16l-6 24 26-38H50z" fill="#fff"/></svg></span>
-            <b>Синга Сервис</b>
-          </div>
-          <div class="cert-card__title-block">
-            <div class="cert-card__eyebrow">Гарантийный талон</div>
-            <div class="cert-card__num">№ ___________</div>
-          </div>
-          <div class="cert-card__stamp">✓ ГАРАНТИЯ</div>
-        </div>
-        <div class="cert-card__body">
-          <div class="cert-card__row"><span>Устройство</span><span>________________________</span></div>
-          <div class="cert-card__row"><span>Работы</span><span>________________________</span></div>
-          <div class="cert-card__row"><span>Запчасти</span><span>________________________</span></div>
-          <div class="cert-card__row"><span>Срок гарантии</span><span class="cert-card__highlight">30 дней на работы</span></div>
-          <div class="cert-card__row"><span>Дата выдачи</span><span>_____ / _____ / ________</span></div>
-        </div>
-        <div class="cert-card__footer">
-          <p>В случае гарантийного обращения — устраним неисправность бесплатно. Тел.: 8 928 161-87-89</p>
-          <p style="color:var(--ink-soft);font-size:12px;margin-top:6px">Гарантия не распространяется на механические повреждения и попадание влаги после ремонта</p>
-        </div>
-      </div>
-      <div class="cert-info">
-        <div class="cert-info__item"><svg><use href="#i-shield-check"/></svg><div><b>Защита ваших прав</b><p>Гарантийный талон — юридический документ. При обращении предъявите его вместе с квитанцией.</p></div></div>
-        <div class="cert-info__item"><svg><use href="#i-wrench"/></svg><div><b>Гарантийный ремонт</b><p>Если после ремонта снова та же проблема — устраним бесплатно. Без вопросов.</p></div></div>
-        <div class="cert-info__item"><svg><use href="#i-doc"/></svg><div><b>Документы по запросу</b><p>Акт выполненных работ и договор — оформляем по запросу клиента.</p></div></div>
-        <a class="btn btn--ghost btn--lg" href="documents/act.html" style="margin-top:8px">Скачать образец акта</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Встроенный чат -->
 <div class="chat-bubble" id="chatBubble">
@@ -2776,6 +2786,176 @@ document.getElementById('modalForm')?.addEventListener('submit', async function(
   if(btnLoad) btnLoad.style.display = 'none';
 });
 
+// ======== ПРОМО-БАР ========
+(function(){
+  if(localStorage.getItem('promoBarClosed')) {
+    const bar = document.getElementById('topPromoBar');
+    if(bar) bar.style.display = 'none';
+  }
+  function tickTop() {
+    const now = new Date();
+    const end = new Date(); end.setHours(20,0,0,0);
+    if(end <= now) end.setDate(end.getDate()+1);
+    let diff = Math.max(0, end - now) / 1000 | 0;
+    const th = document.getElementById('topTimerH');
+    const tm = document.getElementById('topTimerM');
+    if(th) th.textContent = String(Math.floor(diff/3600)).padStart(2,'0');
+    if(tm) tm.textContent = String(Math.floor((diff%3600)/60)).padStart(2,'0');
+  }
+  tickTop(); setInterval(tickTop, 1000);
+})();
+
+// ======== СЧЁТЧИК ВСЕГО РЕМОНТОВ ========
+(function(){
+  const base = 14500;
+  const perDay = 12;
+  const daysSinceBase = Math.floor((Date.now() - new Date('2024-01-01').getTime()) / 86400000);
+  const total = base + daysSinceBase * perDay + Math.floor((Date.now() % 86400000) / (86400000 / perDay));
+  const el = document.getElementById('repairsCounter');
+  const el2 = document.getElementById('actTotal');
+  const fmt = n => n.toLocaleString('ru-RU');
+  if(el) el.textContent = fmt(total);
+  if(el2) el2.textContent = fmt(total);
+  // Today count
+  const todayStart = new Date(); todayStart.setHours(0,0,0,0);
+  const elapsed = (Date.now() - todayStart) / 3600000;
+  const todayCount = Math.floor(elapsed * 1.5 + 3);
+  const el3 = document.getElementById('actToday');
+  if(el3) el3.textContent = todayCount;
+  const el4 = document.getElementById('actReady');
+  if(el4) el4.textContent = Math.floor(todayCount * 0.4);
+  // Grow counter
+  setInterval(() => {
+    const newTotal = total + Math.floor(Math.random()*3);
+    if(el) el.textContent = fmt(newTotal);
+    if(el2) el2.textContent = fmt(newTotal);
+  }, 180000);
+})();
+
+// ======== ЖИВАЯ ЛЕНТА АКТИВНОСТИ ========
+(function(){
+  const feed = document.getElementById('activityFeed');
+  if(!feed) return;
+
+  const EVENTS = [
+    {ico:'📱', text:'<b>Алексей М.</b> сдал iPhone 15 Pro — разбитый экран', point:'Заводская 25'},
+    {ico:'✅', text:'<b>Samsung Galaxy A54</b> готов к выдаче', point:'Ткачева 22'},
+    {ico:'💻', text:'<b>Марина К.</b> забрала ноутбук Lenovo — чистка готова', point:'Жданова 18'},
+    {ico:'📱', text:'<b>Новая заявка</b> — Xiaomi Redmi Note 13, не заряжается', point:'Стачки 200с2'},
+    {ico:'☕', text:'<b>DeLonghi Magnifica</b> — диагностика завершена', point:'Заводская 25'},
+    {ico:'✅', text:'<b>iPhone 14</b> готов к выдаче — аккумулятор заменён', point:'Жданова 18'},
+    {ico:'🔧', text:'<b>Дмитрий В.</b> сдал MacBook Air M2', point:'Заводская 25'},
+    {ico:'📺', text:'<b>Samsung 55"</b> — ремонт подсветки завершён', point:'Еременко 58/2'},
+    {ico:'📱', text:'<b>Новая заявка</b> — Honor 90, разбит экран', point:'Петренко 18'},
+    {ico:'✅', text:'<b>Dyson V12</b> готов — аккумулятор заменён', point:'Жданова 18'},
+    {ico:'💻', text:'<b>Ольга Р.</b> сдала ASUS VivoBook — перегрев', point:'Ткачева 22'},
+    {ico:'📱', text:'<b>Redmi Note 12</b> — ремонт платы завершён', point:'Заводская 25'},
+  ];
+
+  const TIMES = ['только что','1 мин назад','2 мин назад','3 мин назад','5 мин назад','7 мин назад','10 мин назад'];
+
+  let idx = 0;
+
+  function addEvent(isNew) {
+    const ev = EVENTS[idx % EVENTS.length];
+    idx++;
+    const item = document.createElement('div');
+    item.className = 'activity-item' + (isNew ? ' activity-item--new' : '');
+    item.innerHTML = `<span class="activity-item__ico">${ev.ico}</span>
+      <span class="activity-item__text">${ev.text} <span style="color:var(--ink-soft);font-size:12px">· ${ev.point}</span></span>
+      <span class="activity-item__time">${isNew ? 'только что' : TIMES[Math.floor(Math.random()*TIMES.length)]}</span>`;
+    feed.insertBefore(item, feed.firstChild);
+    // Remove old after 6 items
+    while(feed.children.length > 6) feed.removeChild(feed.lastChild);
+    // Remove new class after 3s
+    if(isNew) setTimeout(() => item.classList.remove('activity-item--new'), 3000);
+  }
+
+  // Init with older events
+  for(let i=5; i>=0; i--) addEvent(false);
+  // Add new events periodically
+  setInterval(() => addEvent(true), 12000 + Math.random()*8000);
+})();
+
+
+// ======== HERO v2 — выбор устройства ========
+var heroSelectedTopic = '';
+
+function selectDevice(btn, ico, name) {
+  document.querySelectorAll('.hero-v2__device').forEach(function(b) {
+    b.classList.remove('is-active');
+  });
+  btn.classList.add('is-active');
+  heroSelectedTopic = btn.dataset.topic || name;
+
+  var row = document.getElementById('problemRow');
+  var label = document.getElementById('problemLabel');
+  if (row) {
+    row.style.display = '';
+    if (label) label.textContent = ico + ' ' + name + ' — опишите проблему:';
+    var input = document.getElementById('heroDeviceInput');
+    if (input) {
+      input.placeholder = getPlaceholder(name);
+      input.focus();
+    }
+  }
+}
+
+function getPlaceholder(device) {
+  var map = {
+    'Телефон': 'Разбит экран, не заряжается, упал в воду...',
+    'Ноутбук': 'Греется, медленно работает, не включается...',
+    'Телевизор': 'Чёрный экран, нет звука, полосы...',
+    'Кофемашина': 'Не варит кофе, течёт вода, ошибка...',
+    'Dyson': 'Слабая тяга, не держит заряд, шумит...',
+    'Принтер': 'Замятие бумаги, не печатает, полосы...',
+    'MacBook': 'Греется, не включается, залили...',
+    'Планшет': 'Разбит экран, не заряжается...',
+    'Другое': 'Опишите устройство и проблему...',
+  };
+  return map[device] || 'Опишите проблему...';
+}
+
+function openModalFromHero() {
+  var input = document.getElementById('heroDeviceInput');
+  var problem = input ? input.value.trim() : '';
+  // Открываем модальное окно
+  var modalBtn = document.querySelector('[data-modal]');
+  if (modalBtn) modalBtn.click();
+  // Заполняем поля модалки
+  setTimeout(function() {
+    var topicSelect = document.getElementById('mTopic');
+    if (topicSelect && heroSelectedTopic) {
+      for (var i = 0; i < topicSelect.options.length; i++) {
+        if (topicSelect.options[i].text.toLowerCase().includes(
+          heroSelectedTopic.split('/')[0].trim().toLowerCase()
+        )) {
+          topicSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  }, 100);
+}
+
+// Обновляем живые счётчики в hero
+function updateHeroCounters() {
+  var liveEl = document.getElementById('heroDayCount');
+  var visitEl = document.getElementById('heroVisitors');
+  if (liveEl) {
+    var base = 12 + new Date().getHours();
+    liveEl.textContent = base + Math.floor(Math.random() * 3);
+  }
+  if (visitEl) {
+    visitEl.textContent = 3 + Math.floor(Math.random() * 8);
+  }
+}
+updateHeroCounters();
+setInterval(function() {
+  var visitEl = document.getElementById('heroVisitors');
+  if (visitEl) visitEl.textContent = 3 + Math.floor(Math.random() * 8);
+}, 8000);
+
 // ======== ТЁМНАЯ ТЕМА ========
 (function(){
   const btn = document.getElementById('themeToggle');
@@ -2982,6 +3162,230 @@ setTimeout(() => {
   }
 }, 45000); // через 45 секунд
 
+
+// ======== МОБИЛЬНЫЙ UX ========
+(function(){
+  // (double-tap zoom prevention убран — мешал скроллу)
+
+  // Плавный скролл к секциям с учётом sticky header
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const id = this.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(!el) return;
+      e.preventDefault();
+      const header = document.querySelector('.header');
+      const offset = header ? header.offsetHeight + 16 : 80;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({top, behavior: 'smooth'});
+    });
+  });
+
+  // Закрываем мобильное меню при клике вне его
+  document.addEventListener('touchstart', function(e){
+    const menu = document.querySelector('.mobile-menu');
+    const burger = document.querySelector('.burger');
+    if(menu && menu.classList.contains('is-open') &&
+       !menu.contains(e.target) && !burger.contains(e.target)){
+      menu.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+      if(burger) burger.setAttribute('aria-expanded','false');
+    }
+  }, {passive: true});
+
+  // Скрываем sticky bar при скролле вверх, показываем при вниз
+  let lastScroll = 0;
+  const stickyBar = document.getElementById('mStickyBar');
+  if(stickyBar && window.innerWidth <= 768) {
+    window.addEventListener('scroll', () => {
+      const cur = window.pageYOffset;
+      if(cur < 100) { stickyBar.style.transform = 'translateY(0)'; return; }
+      stickyBar.style.transform = cur > lastScroll ? 'translateY(100%)' : 'translateY(0)';
+      stickyBar.style.transition = 'transform .25s';
+      lastScroll = cur;
+    }, {passive: true});
+  }
+})();
+
+
+// ======== EXIT-INTENT ПОПАП ========
+(function(){
+  if(sessionStorage.getItem('exitShown')) return;
+  let shown = false;
+  function showExit(){
+    if(shown || sessionStorage.getItem('exitShown')) return;
+    shown = true;
+    sessionStorage.setItem('exitShown','1');
+    const p = document.getElementById('exitPopup');
+    if(p){ p.classList.add('is-open'); p.setAttribute('aria-hidden','false'); }
+  }
+  // Desktop — увод курсора вверх
+  if(window.innerWidth > 768){
+    document.addEventListener('mouseout', function(e){
+      if(e.clientY <= 0 && !e.relatedTarget) showExit();
+    });
+  } else {
+    // Mobile — через 40 секунд на странице
+    setTimeout(showExit, 40000);
+  }
+})();
+function closeExitPopup(){
+  const p = document.getElementById('exitPopup');
+  if(p){ p.classList.remove('is-open'); p.setAttribute('aria-hidden','true'); }
+}
+
 </script>
+
+<!-- Exit-intent попап -->
+<div class="exit-popup" id="exitPopup" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="exit-popup__box">
+    <button class="exit-popup__close" onclick="closeExitPopup()" aria-label="Закрыть">✕</button>
+    <div class="exit-popup__ico">🎁</div>
+    <h3 class="exit-popup__title">Подождите! Скидка 10%</h3>
+    <p class="exit-popup__text">Оставьте заявку прямо сейчас — и получите скидку 10% на первый ремонт. Диагностика всегда бесплатна.</p>
+    <div class="exit-popup__actions">
+      <a class="btn btn--primary btn--lg" href="tel:+79281618789" onclick="closeExitPopup()" style="width:100%;justify-content:center">
+        <svg aria-hidden="true"><use href="#i-call"/></svg> Позвонить и получить скидку
+      </a>
+      <a class="btn btn--tg btn--lg" href="https://t.me/+79281618789" target="_blank" rel="noopener" onclick="closeExitPopup()" style="width:100%;justify-content:center;margin-top:8px">
+        <svg aria-hidden="true"><use href="#i-tg"/></svg> Написать в Telegram
+      </a>
+    </div>
+    <p class="exit-popup__note">Скидка действует при первом обращении</p>
+  </div>
+</div>
+
+<script src="assets/ai-chat-widget.js" defer>
+// ======== ВСПЛЫВАЮЩИЕ СОЦ-УВЕДОМЛЕНИЯ ========
+(function(){
+  const NAMES=['Иван','Анна','Дмитрий','Елена','Сергей','Мария','Алексей','Ольга','Михаил','Татьяна','Андрей','Наталья','Павел','Ирина'];
+  const ACTIONS=[
+    'записался на ремонт iPhone','сдал ноутбук на чистку','записался на замену экрана',
+    'принёс кофемашину DeLonghi','сдал Samsung на ремонт','записался на ремонт ТВ',
+    'оставил заявку на ремонт Xiaomi','сдал MacBook на диагностику','записался на замену аккумулятора'
+  ];
+  const DISTRICTS=['Советский р-н','Центр','Западный','Сельмаш','Темерник','Александровка','СЖМ'];
+
+  function showProof(){
+    const name=NAMES[Math.floor(Math.random()*NAMES.length)];
+    const action=ACTIONS[Math.floor(Math.random()*ACTIONS.length)];
+    const district=DISTRICTS[Math.floor(Math.random()*DISTRICTS.length)];
+    const mins=Math.floor(Math.random()*30)+2;
+    const el=document.createElement('div');
+    el.className='social-proof';
+    el.innerHTML=`<div class="social-proof__ico">✅</div><div class="social-proof__body"><b>${name}</b> ${action}<span>${district} · ${mins} мин назад</span></div><button class="social-proof__x" aria-label="Закрыть">✕</button>`;
+    document.body.appendChild(el);
+    requestAnimationFrame(()=>el.classList.add('show'));
+    el.querySelector('.social-proof__x').onclick=()=>el.remove();
+    setTimeout(()=>{el.classList.remove('show');setTimeout(()=>el.remove(),400);},5500);
+  }
+  // Первое через 12 сек, потом каждые 25-45 сек
+  setTimeout(function loop(){
+    showProof();
+    setTimeout(loop, 25000+Math.random()*20000);
+  }, 12000);
+})();
+
+
+// ======== DESIGN v31 — интерактивные эффекты ========
+(function(){
+  // --- 3D TILT на карточках ---
+  function initTilt(){
+    document.querySelectorAll('.tilt-card, .svc-card, .device-card').forEach(card=>{
+      if(card.dataset.tiltInit) return;
+      card.dataset.tiltInit='1';
+      card.style.transformStyle='preserve-3d';
+      card.addEventListener('mousemove',e=>{
+        const r=card.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-0.5;
+        const y=(e.clientY-r.top)/r.height-0.5;
+        card.style.transform=`perspective(800px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateZ(0)`;
+      });
+      card.addEventListener('mouseleave',()=>{
+        card.style.transform='';
+      });
+    });
+  }
+  initTilt();
+
+  // --- КАСТОМНЫЙ КУРСОР (десктоп) ---
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    const dot=document.createElement('div');dot.className='cursor-dot';
+    const ring=document.createElement('div');ring.className='cursor-ring';
+    document.body.appendChild(dot);document.body.appendChild(ring);
+    let rx=0,ry=0,dx=0,dy=0;
+    document.addEventListener('mousemove',e=>{
+      dx=e.clientX;dy=e.clientY;
+      dot.style.left=dx+'px';dot.style.top=dy+'px';
+    });
+    function ringFollow(){
+      rx+=(dx-rx)*0.18;ry+=(dy-ry)*0.18;
+      ring.style.left=rx+'px';ring.style.top=ry+'px';
+      requestAnimationFrame(ringFollow);
+    }
+    ringFollow();
+    document.addEventListener('mouseover',e=>{
+      if(e.target.closest('a,button,.tilt-card,.svc-card,[role=button]')){
+        dot.classList.add('hover-active');ring.classList.add('hover-active');
+      }
+    });
+    document.addEventListener('mouseout',e=>{
+      if(e.target.closest('a,button,.tilt-card,.svc-card,[role=button]')){
+        dot.classList.remove('hover-active');ring.classList.remove('hover-active');
+      }
+    });
+  }
+
+  // --- ПАСХАЛКА: 5 кликов на логотип ---
+  let logoClicks=0,logoTimer=null;
+  const logo=document.querySelector('.logo,.nav__logo,[class*=logo]');
+  if(logo){
+    logo.addEventListener('click',e=>{
+      logoClicks++;
+      clearTimeout(logoTimer);
+      logoTimer=setTimeout(()=>logoClicks=0,1500);
+      if(logoClicks>=5){
+        logoClicks=0;
+        showEasterEgg();
+      }
+    });
+  }
+  function showEasterEgg(){
+    const egg=document.createElement('div');
+    egg.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(7,21,46,.85);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;animation:fadeIn .3s';
+    egg.innerHTML='<div style="background:#fff;border-radius:24px;padding:40px;text-align:center;max-width:360px;animation:popIn .4s"><div style="font-size:64px;margin-bottom:12px">🎉</div><h3 style="font-size:24px;font-weight:900;font-family:Onest,sans-serif;margin-bottom:8px">Вы нашли секрет!</h3><p style="color:#556070;margin-bottom:16px">Промокод <b style="font-family:monospace;color:#1a5eff;font-size:18px">SECRET15</b><br>даёт скидку 15% на ремонт</p><button onclick="this.closest(\'div\').parentElement.remove()" style="background:#1a5eff;color:#fff;border:none;border-radius:12px;padding:12px 24px;font-weight:700;cursor:pointer">Забрать скидку</button></div>';
+    egg.onclick=e=>{if(e.target===egg)egg.remove()};
+    document.body.appendChild(egg);
+  }
+})();
+
+
+// ======== СБОРКА ТЕЛЕФОНА ПРИ СКРОЛЛЕ ========
+(function(){
+  const stage=document.getElementById('assemblyStage');
+  if(!stage)return;
+  const parts=stage.querySelectorAll('.apart');
+  const labels=stage.querySelectorAll('.assembly-label');
+  let assembled=false;
+  function assemble(){
+    if(assembled)return;assembled=true;
+    const groups=[...new Set([...parts].map(p=>p.dataset.part))];
+    groups.forEach((g,i)=>{
+      setTimeout(()=>{
+        stage.querySelectorAll(`.apart[data-part="${g}"]`).forEach(p=>p.classList.add('shown'));
+        labels.forEach(l=>l.classList.remove('active'));
+        const lbl=stage.querySelector(`.assembly-label[data-label="${g}"]`);
+        if(lbl)lbl.classList.add('active');
+      }, i*650);
+    });
+    setTimeout(()=>labels.forEach(l=>l.classList.add('active')),groups.length*650+400);
+  }
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)assemble();}),{threshold:0.3});
+  obs.observe(stage);
+})();
+
+</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
 </body>
 </html>

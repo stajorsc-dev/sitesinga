@@ -8,13 +8,20 @@
   document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));
 })();
 </script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"><meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>О компании Синга Сервис — ремонт техники в Ростове-на-Дону</title>
 <meta name="description" content="Синга Сервис — сервисный центр в Ростове-на-Дону с 2018 года. 8 точек приёма, собственный цех на Заводской 25, команда мастеров с опытом 5–10 лет.">
 <link rel="canonical" href="https://singaservice.ru/o-nas.html">
 <link rel="stylesheet" href="styles.css?v=19">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://singaservice.ru/"},{"@type":"ListItem","position":2,"name":"О компании","item":"https://singaservice.ru/o-nas.html"}]}</script>
+<style>
+.reveal{opacity:1!important;transform:none!important}
+.reveal.is-animating{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+.reveal.is-animating.is-visible{opacity:1!important;transform:none!important}
+</style>
 </head>
 <body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -77,19 +84,19 @@
   <div class="section-head section-head--center reveal"><span class="eyebrow">Команда</span><h2 class="section-title">Наши мастера</h2><p class="section-lead">Средний опыт — 6 лет в ремонте электроники</p></div>
   <div class="grid grid--3 reveal" style="margin-bottom:64px">
     <article class="master-card reveal">
-      <div class="master-card__avatar"><img loading="lazy" src="assets/images/master-zhora.svg" alt="Жора — мастер по бытовой технике"></div>
+      <div class="master-card__avatar"><img decoding="async" loading="lazy" src="assets/images/master-zhora.svg" alt="Жора — мастер по бытовой технике"></div>
       <h3 style="padding:18px 20px 4px">Жора</h3>
       <p class="master-card__role" style="padding:0 20px;color:var(--ink-soft);font-size:13px">Ноутбуки и ПК · 8 лет опыта</p>
       <p style="padding:10px 20px 20px;font-size:14px;color:var(--ink-soft)">Специализируется на сложном ремонте плат, восстановлении после воды и замене матриц.</p>
     </article>
     <article class="master-card reveal">
-      <div class="master-card__avatar"><img loading="lazy" src="assets/images/master-eldar.svg" alt="Эльдар — мастер по телефонам"></div>
+      <div class="master-card__avatar"><img decoding="async" loading="lazy" src="assets/images/master-eldar.svg" alt="Эльдар — мастер по телефонам"></div>
       <h3 style="padding:18px 20px 4px">Эльдар</h3>
       <p class="master-card__role" style="padding:0 20px;color:var(--ink-soft);font-size:13px">Телефоны и планшеты · 5 лет опыта</p>
       <p style="padding:10px 20px 20px;font-size:14px;color:var(--ink-soft)">Чинит iPhone, Samsung, Xiaomi и другие смартфоны. Мастер микропайки.</p>
     </article>
     <article class="master-card reveal">
-      <div class="master-card__avatar"><img loading="lazy" src="assets/images/master-artem.svg" alt="Артём — мастер по пайке плат"></div>
+      <div class="master-card__avatar"><img decoding="async" loading="lazy" src="assets/images/master-artem.svg" alt="Артём — мастер по пайке плат"></div>
       <h3 style="padding:18px 20px 4px">Артём</h3>
       <p class="master-card__role" style="padding:0 20px;color:var(--ink-soft);font-size:13px">Платы и телевизоры · 7 лет опыта</p>
       <p style="padding:10px 20px 20px;font-size:14px;color:var(--ink-soft)">Ремонт плат телевизоров, кофемашин, подсветки LED. Пайка BGA-компонентов.</p>
@@ -120,5 +127,23 @@
     <a href="korporativnym.html" style="color:rgba(255,255,255,.6);font-size:14px">Для бизнеса</a>
   </div>
 </div></footer>
+<script>
+// Reveal animation
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  els.forEach(function(el){ el.classList.add('is-animating'); el.classList.remove('is-visible'); });
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }});
+  },{threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
 </body>
 </html>

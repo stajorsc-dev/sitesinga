@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Наши мастера — команда Синга Сервис Ростов-на-Дону</title>
+<meta name="description" content="Команда мастеров Синга Сервис в Ростове-на-Дону. Опытные специалисты по ремонту телефонов, ноутбуков, бытовой техники.">
+<link rel="canonical" href="https://singaservice.ru/nashi-mastera.html">
+<link rel="stylesheet" href="styles.css?v=20">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+<style>.reveal{opacity:1!important;transform:none!important}</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
+</g></defs></svg>
+<nav class="breadcrumb-nav"><div class="container"><ol class="breadcrumb"><li><a href="index.html">Главная</a></li><li aria-current="page">Наши мастера</li></ol></div></nav>
+<section class="section" style="padding-top:48px"><div class="container">
+  <div class="section-head section-head--center reveal">
+    <span class="eyebrow">Команда с 2018 года</span>
+    <h1 class="section-title">Наши мастера</h1>
+    <p class="section-lead">Люди, которые вернут вашу технику к жизни. Каждый — специалист в своём направлении.</p>
+  </div>
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px" id="mastersGrid"></div>
+  <div class="promo-banner reveal" style="margin-top:40px">
+    <div class="promo-banner__content">
+      <div class="promo-banner__badge">👨‍🔧 Доверьте профессионалам</div>
+      <h2>Каждый мастер — на своём месте</h2>
+      <p>Телефоны, ноутбуки, бытовая техника — у нас отдельные специалисты по каждому направлению.</p>
+      <div class="promo-banner__actions">
+        <a class="promo-banner__cta" href="zapis.html">Записаться на ремонт</a>
+        <a class="promo-banner__ghost" href="vakansii.html">Хотите к нам в команду?</a>
+      </div>
+    </div>
+    <div class="promo-banner__num"><b>7+</b><span>лет вместе</span></div>
+  </div>
+</div></section>
+<div class="m-sticky-bar" id="mStickyBar">
+  <a class="btn btn--call" href="tel:+79281618789"><svg aria-hidden="true"><use href="#i-call"/></svg> Позвонить</a>
+  <a class="btn btn--tg" href="https://t.me/+79281618789" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a>
+  <a class="btn btn--primary" href="zapis.html">Запись</a>
+</div>
+<footer class="footer"><div class="container"><div style="text-align:center;padding:20px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+  <a href="index.html" style="color:rgba(255,255,255,.6);font-size:14px">Главная</a>
+  <a href="o-nas.html" style="color:rgba(255,255,255,.6);font-size:14px">О компании</a>
+</div></div></footer>
+<script>
+const M=[
+  {n:'Александр',r:'Старший мастер · телефоны',exp:'8 лет опыта',spec:'iPhone, Samsung, микропайка',cnt:'4200+',col:'#1a5eff',ini:'А'},
+  {n:'Дмитрий',r:'Мастер · ноутбуки',exp:'6 лет опыта',spec:'MacBook, чистка, платы',cnt:'2800+',col:'#00b894',ini:'Д'},
+  {n:'Сергей',r:'Мастер · бытовая техника',exp:'5 лет опыта',spec:'Кофемашины, Dyson, ТВ',cnt:'1900+',col:'#f59e0b',ini:'С'},
+  {n:'Михаил',r:'Мастер · микропайка',exp:'7 лет опыта',spec:'Восстановление плат, после воды',cnt:'2100+',col:'#6c3fff',ini:'М'},
+];
+document.getElementById('mastersGrid').innerHTML=M.map(m=>`
+<div style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:24px;text-align:center">
+  <div style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,${m.col},${m.col}cc);color:#fff;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900;font-family:'Onest',sans-serif;margin:0 auto 14px">${m.ini}</div>
+  <h3 style="font-size:18px;font-weight:900;font-family:'Onest',sans-serif;margin-bottom:4px">${m.n}</h3>
+  <p style="font-size:13px;color:#1a5eff;font-weight:700;margin-bottom:10px">${m.r}</p>
+  <div style="font-size:13px;color:var(--ink-soft);line-height:1.7">
+    <div>⭐ ${m.exp}</div>
+    <div>🔧 ${m.spec}</div>
+    <div style="margin-top:8px;font-weight:800;color:#07152e">${m.cnt} ремонтов</div>
+  </div>
+</div>`).join('');
+</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
+</body></html>

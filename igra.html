@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Игра «Почини телефон» — собери на скорость | Синга Сервис</title>
+<meta name="description" content="Мини-игра: собери телефон за 30 секунд и получи скидку на ремонт. Синга Сервис, Ростов-на-Дону.">
+<link rel="canonical" href="https://singaservice.ru/igra.html">
+<link rel="stylesheet" href="styles.css?v=20">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+.gm{max-width:520px;margin:0 auto;text-align:center}
+.gm-stage{background:linear-gradient(160deg,#07152e,#102260);border-radius:24px;padding:28px;position:relative;overflow:hidden;min-height:440px}
+.gm-hud{display:flex;justify-content:space-between;color:#fff;margin-bottom:16px;font-weight:700}
+.gm-timer{font-size:24px;font-family:'Onest',sans-serif}
+.gm-score{font-size:24px;font-family:'Onest',sans-serif;color:#00b894}
+.gm-phone{width:160px;height:300px;border:3px dashed rgba(255,255,255,.3);border-radius:24px;margin:0 auto;position:relative;background:rgba(255,255,255,.04)}
+.gm-slot{position:absolute;border:2px dashed rgba(91,159,255,.4);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.2);transition:all .2s}
+.gm-slot.filled{border-style:solid;border-color:#00b894;background:rgba(0,184,148,.15);color:#00b894}
+.gm-parts{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+.gm-part{width:56px;height:56px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;cursor:grab;transition:transform .15s;user-select:none;touch-action:none}
+.gm-part:active{cursor:grabbing;transform:scale(1.1)}
+.gm-part.used{opacity:.2;pointer-events:none}
+.gm-overlay{position:absolute;inset:0;background:rgba(7,21,46,.95);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;color:#fff}
+</style>
+</head>
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9">
+<style>.reveal{opacity:1!important;transform:none!important}</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
+</g></defs></svg>
+<nav class="breadcrumb-nav"><div class="container"><ol class="breadcrumb"><li><a href="index.html">Главная</a></li><li aria-current="page">Игра</li></ol></div></nav>
+
+<section class="section" style="padding-top:48px"><div class="container">
+  <div class="gm">
+    <div class="section-head" style="margin-bottom:20px">
+      <span class="eyebrow">🎮 Мини-игра</span>
+      <h1 class="section-title">Почини телефон!</h1>
+      <p style="color:var(--ink-soft);margin-top:8px">Собери телефон из деталей. Успеешь за 30 секунд — получишь промокод на скидку.</p>
+    </div>
+
+    <div class="gm-stage" id="gmStage">
+      <div class="gm-hud">
+        <span>⏱ <span class="gm-timer" id="gmTimer">30</span>с</span>
+        <span>Деталей: <span class="gm-score" id="gmScore">0</span>/5</span>
+      </div>
+      <div class="gm-phone" id="gmPhone">
+        <div class="gm-slot" data-slot="battery" style="top:20px;left:20px;right:20px;height:70px">🔋</div>
+        <div class="gm-slot" data-slot="board" style="top:100px;left:20px;right:20px;height:60px">🔧</div>
+        <div class="gm-slot" data-slot="camera" style="top:170px;left:20px;width:50px;height:50px">📷</div>
+        <div class="gm-slot" data-slot="screen" style="top:170px;right:20px;width:50px;height:50px">🖥</div>
+        <div class="gm-slot" data-slot="button" style="bottom:20px;left:55px;right:55px;height:40px">⚪</div>
+      </div>
+      <div class="gm-parts" id="gmParts"></div>
+
+      <div class="gm-overlay" id="gmStart">
+        <div style="font-size:56px;margin-bottom:12px">🔧</div>
+        <h2 style="font-size:22px;font-weight:900;font-family:'Onest',sans-serif;margin-bottom:8px">Готовы?</h2>
+        <p style="color:rgba(255,255,255,.6);margin-bottom:20px;font-size:14px">Перетаскивайте детали в подходящие слоты</p>
+        <button class="btn btn--primary btn--lg" onclick="startGame()">▶ Начать</button>
+      </div>
+      <div class="gm-overlay" id="gmEnd" style="display:none"></div>
+    </div>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="container"><div style="text-align:center;padding:20px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+  <a href="index.html" style="color:rgba(255,255,255,.6);font-size:14px">Главная</a>
+  <a href="zapis.html" style="color:rgba(255,255,255,.6);font-size:14px">Запись</a>
+</div></div></footer>
+
+<script>
+const PARTS=[{id:'battery',e:'🔋'},{id:'board',e:'🔧'},{id:'camera',e:'📷'},{id:'screen',e:'🖥'},{id:'button',e:'⚪'}];
+let timeLeft=30,score=0,timer=null,playing=false;
+
+function startGame(){
+  document.getElementById('gmStart').style.display='none';
+  document.getElementById('gmEnd').style.display='none';
+  score=0;timeLeft=30;playing=true;
+  document.getElementById('gmScore').textContent='0';
+  document.getElementById('gmTimer').textContent='30';
+  document.querySelectorAll('.gm-slot').forEach(s=>s.classList.remove('filled'));
+  // Перемешиваем детали
+  const shuffled=[...PARTS].sort(()=>Math.random()-0.5);
+  document.getElementById('gmParts').innerHTML=shuffled.map(p=>`<div class="gm-part" draggable="true" data-part="${p.id}">${p.e}</div>`).join('');
+  initDrag();
+  timer=setInterval(()=>{
+    timeLeft--;
+    document.getElementById('gmTimer').textContent=timeLeft;
+    if(timeLeft<=0)endGame(false);
+  },1000);
+}
+
+function initDrag(){
+  document.querySelectorAll('.gm-part').forEach(part=>{
+    part.addEventListener('dragstart',e=>e.dataTransfer.setData('id',part.dataset.part));
+    // Touch
+    let clone=null;
+    part.addEventListener('pointerdown',e=>{
+      if(part.classList.contains('used'))return;
+      e.preventDefault();
+      const pid=part.dataset.part;
+      function move(ev){
+        const el=document.elementFromPoint(ev.clientX,ev.clientY);
+        const slot=el?el.closest('.gm-slot'):null;
+        document.querySelectorAll('.gm-slot').forEach(s=>s.style.outline='');
+        if(slot&&slot.dataset.slot===pid)slot.style.outline='3px solid #00b894';
+      }
+      function up(ev){
+        document.removeEventListener('pointermove',move);
+        document.removeEventListener('pointerup',up);
+        document.querySelectorAll('.gm-slot').forEach(s=>s.style.outline='');
+        const el=document.elementFromPoint(ev.clientX,ev.clientY);
+        const slot=el?el.closest('.gm-slot'):null;
+        if(slot&&slot.dataset.slot===pid)placePart(pid,part,slot);
+      }
+      document.addEventListener('pointermove',move);
+      document.addEventListener('pointerup',up);
+    });
+  });
+  document.querySelectorAll('.gm-slot').forEach(slot=>{
+    slot.addEventListener('dragover',e=>e.preventDefault());
+    slot.addEventListener('drop',e=>{
+      e.preventDefault();
+      const id=e.dataTransfer.getData('id');
+      if(id===slot.dataset.slot){
+        const part=document.querySelector(`.gm-part[data-part="${id}"]`);
+        placePart(id,part,slot);
+      }
+    });
+  });
+}
+
+function placePart(id,part,slot){
+  if(slot.classList.contains('filled'))return;
+  slot.classList.add('filled');
+  part.classList.add('used');
+  score++;
+  document.getElementById('gmScore').textContent=score;
+  if(score>=5)endGame(true);
+}
+
+function endGame(win){
+  playing=false;clearInterval(timer);
+  const end=document.getElementById('gmEnd');
+  end.style.display='flex';
+  if(win){
+    const codes=['FIX10','FIX12','FIX15'];
+    const code=codes[Math.floor(Math.random()*codes.length)];
+    const disc=code.replace('FIX','');
+    end.innerHTML=`<div style="font-size:56px;margin-bottom:12px">🎉</div><h2 style="font-size:24px;font-weight:900;font-family:'Onest',sans-serif;margin-bottom:6px">Собрано за ${30-timeLeft}с!</h2><p style="color:rgba(255,255,255,.7);margin-bottom:16px">Промокод на скидку ${disc}%:</p><div style="background:#fff;color:#1a5eff;font-family:monospace;font-size:22px;font-weight:800;padding:12px 24px;border-radius:12px;margin-bottom:16px;letter-spacing:2px">${code}</div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><a class="btn btn--primary" href="zapis.html">Использовать скидку</a><button class="btn btn--ghost" onclick="startGame()" style="color:#fff;border-color:rgba(255,255,255,.3)">Ещё раз</button></div>`;
+  }else{
+    end.innerHTML=`<div style="font-size:56px;margin-bottom:12px">⏱</div><h2 style="font-size:24px;font-weight:900;font-family:'Onest',sans-serif;margin-bottom:6px">Время вышло!</h2><p style="color:rgba(255,255,255,.7);margin-bottom:16px">Собрано ${score} из 5. Попробуйте ещё!</p><button class="btn btn--primary" onclick="startGame()">▶ Заново</button>`;
+  }
+}
+</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
+</body></html>
