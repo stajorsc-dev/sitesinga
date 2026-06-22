@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Тест устройства онлайн — проверьте телефон | Синга Сервис</title>
+<meta name="description" content="Бесплатные онлайн-тесты устройства: проверка тачскрина, битых пикселей, мультитача прямо в браузере. Синга Сервис, Ростов-на-Дону.">
+<link rel="canonical" href="https://singaservice.ru/test-ustroystva.html">
+<link rel="stylesheet" href="styles.css?v=20">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+.tu{max-width:680px;margin:0 auto}
+.tu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:24px}
+.tu-card{background:#fff;border:1.5px solid #dde8f8;border-radius:18px;padding:22px;text-align:center;cursor:pointer;transition:all .18s}
+.tu-card:hover{border-color:#1a5eff;transform:translateY(-3px);box-shadow:0 12px 28px rgba(26,94,255,.12)}
+.tu-card__i{font-size:38px;margin-bottom:10px}
+.tu-card h3{font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px}
+.tu-card p{font-size:13px;color:var(--ink-soft);line-height:1.5}
+.tu-modal{position:fixed;inset:0;z-index:10000;background:rgba(7,21,46,.92);display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.tu-modal.open{display:flex}
+.tu-modal__close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.15);border:none;color:#fff;width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer;z-index:2}
+.tu-modal__title{color:#fff;font-size:18px;font-weight:700;margin-bottom:16px;text-align:center}
+.tu-canvas{max-width:100%;border-radius:16px;touch-action:none}
+.tu-pixel-fill{position:absolute;inset:0;cursor:pointer}
+.tu-controls{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;justify-content:center;z-index:2}
+.tu-touch-area{width:min(90vw,360px);height:min(60vh,480px);background:#0a1830;border-radius:20px;position:relative;overflow:hidden;touch-action:none}
+.tu-touch-dot{position:absolute;width:40px;height:40px;border-radius:50%;background:rgba(26,94,255,.5);border:2px solid #5b9fff;transform:translate(-50%,-50%);pointer-events:none}
+.tu-grid-test{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(7,1fr);width:100%;height:100%;gap:2px}
+.tu-cell{background:#1a3a6a;border-radius:4px;transition:background .1s}
+.tu-cell.touched{background:#00b894}
+</style>
+</head>
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9">
+<style>.reveal{opacity:1!important;transform:none!important}</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
+</g></defs></svg>
+<nav class="breadcrumb-nav"><div class="container"><ol class="breadcrumb"><li><a href="index.html">Главная</a></li><li aria-current="page">Тест устройства</li></ol></div></nav>
+
+<section class="section" style="padding-top:48px"><div class="container">
+  <div class="tu">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow">🔬 Бесплатно · прямо в браузере</span>
+      <h1 class="section-title">Тест вашего устройства</h1>
+      <p class="section-lead">Проверьте экран, тачскрин и динамик за минуту. Поможет понять что не так перед визитом в сервис.</p>
+    </div>
+    <div class="tu-grid reveal">
+      <div class="tu-card" onclick="startTest('touch')">
+        <div class="tu-card__i">👆</div>
+        <h3>Тест тачскрина</h3>
+        <p>Проведите пальцем по экрану — найдём мёртвые зоны</p>
+      </div>
+      <div class="tu-card" onclick="startTest('pixels')">
+        <div class="tu-card__i">🟥</div>
+        <h3>Битые пиксели</h3>
+        <p>Заливка цветом покажет дефекты дисплея</p>
+      </div>
+      <div class="tu-card" onclick="startTest('multitouch')">
+        <div class="tu-card__i">✋</div>
+        <h3>Мультитач</h3>
+        <p>Проверка нескольких касаний одновременно</p>
+      </div>
+      <div class="tu-card" onclick="startTest('sound')">
+        <div class="tu-card__i">🔊</div>
+        <h3>Динамик</h3>
+        <p>Воспроизведём звук для проверки динамика</p>
+      </div>
+    </div>
+    <div style="background:#fff3cd;border:1.5px solid #f0d060;border-radius:16px;padding:18px;margin-top:24px;text-align:center;font-size:14px;color:#6b5800">
+      💡 Нашли проблему? Привезите устройство — диагностика бесплатна при ремонте.
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:20px">
+      <a class="btn btn--primary btn--lg" href="zapis.html">Записаться на ремонт</a>
+      <a class="btn btn--tg btn--lg" href="https://t.me/+79281618789" target="_blank" rel="noopener" style="margin-left:8px"><svg><use href="#i-tg"/></svg> Telegram</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- Модалка теста -->
+<div class="tu-modal" id="tuModal">
+  <button class="tu-modal__close" onclick="closeTest()">✕</button>
+  <div class="tu-modal__title" id="tuTitle"></div>
+  <div id="tuContent"></div>
+  <div class="tu-controls" id="tuControls"></div>
+</div>
+
+<div class="m-sticky-bar" id="mStickyBar">
+  <a class="btn btn--call" href="tel:+79281618789"><svg aria-hidden="true"><use href="#i-call"/></svg> Позвонить</a>
+  <a class="btn btn--tg" href="https://t.me/+79281618789" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a>
+  <a class="btn btn--primary" href="zapis.html">Запись</a>
+</div>
+<footer class="footer"><div class="container"><div style="text-align:center;padding:20px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+  <a href="index.html" style="color:rgba(255,255,255,.6);font-size:14px">Главная</a>
+  <a href="ai-diagnostika.html" style="color:rgba(255,255,255,.6);font-size:14px">AI-диагностика</a>
+</div></div></footer>
+
+<script>
+const modal=document.getElementById('tuModal');
+const title=document.getElementById('tuTitle');
+const content=document.getElementById('tuContent');
+const controls=document.getElementById('tuControls');
+
+function closeTest(){modal.classList.remove('open');content.innerHTML='';controls.innerHTML='';}
+
+function startTest(type){
+  modal.classList.add('open');
+  if(type==='touch'){
+    title.textContent='Проведите пальцем по всем зонам экрана';
+    content.innerHTML='<div class="tu-touch-area" id="touchArea"><div class="tu-grid-test" id="touchGrid"></div></div>';
+    const grid=document.getElementById('touchGrid');
+    for(let i=0;i<35;i++){const c=document.createElement('div');c.className='tu-cell';grid.appendChild(c);}
+    const cells=grid.querySelectorAll('.tu-cell');
+    const area=document.getElementById('touchArea');
+    function mark(x,y){
+      const r=area.getBoundingClientRect();
+      const col=Math.floor((x-r.left)/r.width*5);
+      const row=Math.floor((y-r.top)/r.height*7);
+      const idx=row*5+col;
+      if(idx>=0&&idx<35)cells[idx].classList.add('touched');
+      const done=grid.querySelectorAll('.touched').length;
+      if(done===35)title.textContent='✅ Все зоны работают! Тачскрин исправен';
+    }
+    area.addEventListener('pointermove',e=>mark(e.clientX,e.clientY));
+    area.addEventListener('pointerdown',e=>mark(e.clientX,e.clientY));
+    controls.innerHTML='<button class="btn btn--ghost" onclick="closeTest()" style="color:#fff;border-color:rgba(255,255,255,.3)">Закрыть</button>';
+  }
+  else if(type==='pixels'){
+    title.textContent='Нажимайте для смены цвета. Ищите точки другого цвета';
+    const colors=['#ff0000','#00ff00','#0000ff','#ffffff','#000000'];
+    let ci=0;
+    content.innerHTML='<div id="pixelFill" style="width:min(90vw,400px);height:min(65vh,520px);border-radius:16px;cursor:pointer;background:'+colors[0]+'"></div>';
+    const fill=document.getElementById('pixelFill');
+    fill.onclick=()=>{ci=(ci+1)%colors.length;fill.style.background=colors[ci];title.textContent='Цвет '+(ci+1)+'/5 · ищите дефекты';};
+    controls.innerHTML='<button class="btn btn--ghost" onclick="closeTest()" style="color:#fff;border-color:rgba(255,255,255,.3)">Готово</button>';
+  }
+  else if(type==='multitouch'){
+    title.textContent='Коснитесь экрана несколькими пальцами';
+    content.innerHTML='<div class="tu-touch-area" id="mtArea"></div>';
+    const area=document.getElementById('mtArea');
+    const dots={};
+    area.addEventListener('pointerdown',e=>{const d=document.createElement('div');d.className='tu-touch-dot';d.style.left=(e.clientX-area.getBoundingClientRect().left)+'px';d.style.top=(e.clientY-area.getBoundingClientRect().top)+'px';d.id='d'+e.pointerId;area.appendChild(d);dots[e.pointerId]=d;title.textContent='Касаний: '+Object.keys(dots).length;});
+    area.addEventListener('pointermove',e=>{if(dots[e.pointerId]){dots[e.pointerId].style.left=(e.clientX-area.getBoundingClientRect().left)+'px';dots[e.pointerId].style.top=(e.clientY-area.getBoundingClientRect().top)+'px';}});
+    area.addEventListener('pointerup',e=>{if(dots[e.pointerId]){dots[e.pointerId].remove();delete dots[e.pointerId];}});
+    controls.innerHTML='<button class="btn btn--ghost" onclick="closeTest()" style="color:#fff;border-color:rgba(255,255,255,.3)">Закрыть</button>';
+  }
+  else if(type==='sound'){
+    title.textContent='Нажмите кнопку — должен прозвучать сигнал';
+    content.innerHTML='<div style="text-align:center;padding:40px"><div style="font-size:80px">🔊</div></div>';
+    controls.innerHTML='<button class="btn btn--primary" onclick="playTone()">▶ Воспроизвести звук</button><button class="btn btn--ghost" onclick="closeTest()" style="color:#fff;border-color:rgba(255,255,255,.3)">Закрыть</button>';
+  }
+}
+function playTone(){
+  try{
+    const ctx=new (window.AudioContext||window.webkitAudioContext)();
+    const osc=ctx.createOscillator();const gain=ctx.createGain();
+    osc.connect(gain);gain.connect(ctx.destination);
+    osc.frequency.value=440;gain.gain.value=0.2;
+    osc.start();
+    setTimeout(()=>{osc.frequency.value=660;},250);
+    setTimeout(()=>{osc.stop();title.textContent='✅ Слышали звук? Динамик работает';},700);
+  }catch(e){title.textContent='Не удалось воспроизвести — проверьте громкость';}
+}
+</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
+</body></html>

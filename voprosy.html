@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Частые вопросы о ремонте — Синга Сервис</title>
+<meta name="description" content="Ответы на частые вопросы о ремонте техники: сроки, гарантия, цены, запчасти. Живой поиск по базе вопросов. Синга Сервис.">
+<link rel="canonical" href="https://singaservice.ru/voprosy.html">
+<link rel="stylesheet" href="styles.css?v=20">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
+<style>.reveal{opacity:1!important;transform:none!important}</style>
+
+</head>
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
+</g></defs></svg>
+<nav class="breadcrumb-nav"><div class="container"><ol class="breadcrumb"><li><a href="index.html">Главная</a></li><li aria-current="page">Вопросы и ответы</li></ol></div></nav>
+
+<section class="section" style="padding-top:48px"><div class="container" style="max-width:680px">
+  <div class="section-head reveal" style="margin-bottom:24px">
+    <span class="eyebrow">❓ База знаний</span>
+    <h1 class="section-title">Частые вопросы</h1>
+    <p style="color:var(--ink-soft);margin-top:8px">Найдите ответ за секунду — введите ключевое слово.</p>
+  </div>
+  <input id="faqSearch" placeholder="Поиск: гарантия, сроки, цена..." oninput="searchFaq(this.value)" style="width:100%;padding:16px 20px;border:2px solid #dde8f8;border-radius:16px;font-size:16px;outline:none;margin-bottom:16px">
+  <div id="faqResults"></div>
+</div></section>
+<div class="m-sticky-bar" id="mStickyBar">
+  <a class="btn btn--call" href="tel:+79281618789"><svg aria-hidden="true"><use href="#i-call"/></svg> Позвонить</a>
+  <a class="btn btn--tg" href="https://t.me/+79281618789" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a>
+  <a class="btn btn--primary" href="zapis.html">Запись</a>
+</div>
+<footer class="footer"><div class="container"><div style="text-align:center;padding:20px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+  <a href="index.html" style="color:rgba(255,255,255,.6);font-size:14px">Главная</a>
+  <a href="zapis.html" style="color:rgba(255,255,255,.6);font-size:14px">Запись</a>
+  <a href="kontakty.html" style="color:rgba(255,255,255,.6);font-size:14px">Контакты</a>
+</div></div></footer>
+<script>
+const FAQ=[
+  {q:'Сколько стоит диагностика?',a:'Диагностика бесплатна при последующем ремонте. Без ремонта — от 500 ₽.',cat:'Цены'},
+  {q:'Какая гарантия на ремонт?',a:'Гарантия на работы и запчасти — от 30 дней, на некоторые работы до 6 месяцев. Выдаём гарантийный талон.',cat:'Гарантия'},
+  {q:'Сколько времени занимает ремонт?',a:'Простые работы (экран, аккумулятор) — 1-3 часа. Сложные — 1-5 дней. Срочный ремонт возможен.',cat:'Сроки'},
+  {q:'Используете оригинальные запчасти?',a:'Работаем с оригинальными и качественными совместимыми. Выбор обсуждаем при согласовании цены.',cat:'Запчасти'},
+  {q:'Сохранятся ли мои данные?',a:'При большинстве ремонтов данные не затрагиваются. Рекомендуем сделать бэкап на всякий случай.',cat:'Данные'},
+  {q:'Можно ли вызвать мастера на дом?',a:'Да, выезд возможен для крупной техники (ТВ, стиралки). Телефоны и ноутбуки — в сервис.',cat:'Выезд'},
+  {q:'Как узнать стоимость заранее?',a:'Используйте калькулятор на сайте, AI-диагностику или напишите модель в Telegram — назовём примерную цену.',cat:'Цены'},
+  {q:'Что если ремонт не помог?',a:'Если проблема в рамках выполненных работ вернётся в гарантийный срок — исправим бесплатно.',cat:'Гарантия'},
+  {q:'Работаете с юрлицами?',a:'Да, заключаем договоры, выдаём закрывающие документы. Есть корпоративные тарифы.',cat:'Бизнес'},
+  {q:'Где вас найти?',a:'8 точек по Ростову-на-Дону: Заводская 25 (цех), Ткачева, Стачки, Еременко, Жданова + 3 пункта Ozon.',cat:'Адреса'},
+  {q:'Можно ли оплатить картой?',a:'Да, принимаем наличные и карты. Для юрлиц — безнал по счёту.',cat:'Оплата'},
+  {q:'Ремонтируете технику после воды?',a:'Да, это частый случай. Чем быстрее принесёте и чем меньше включаете — тем выше шанс спасти.',cat:'Ремонт'},
+];
+function render(list){
+  document.getElementById('faqResults').innerHTML=list.length?list.map((f,i)=>`
+  <details style="background:#fff;border:1.5px solid #dde8f8;border-radius:14px;padding:0;margin-bottom:8px">
+    <summary style="padding:16px 18px;font-weight:700;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">${f.q}<span style="color:#1a5eff">+</span></summary>
+    <div style="padding:0 18px 16px;font-size:14px;color:var(--ink-soft);line-height:1.6">${f.a}<div style="margin-top:8px"><span style="font-size:11px;background:#f0f5ff;color:#1a5eff;padding:2px 10px;border-radius:99px;font-weight:700">${f.cat}</span></div></div>
+  </details>`).join(''):'<p style="text-align:center;color:#8a9bb5;padding:30px">Ничего не найдено. Спросите в <a href="https://t.me/+79281618789" style="color:#1a5eff">Telegram</a>.</p>';
+}
+function searchFaq(q){
+  q=q.toLowerCase().trim();
+  if(!q){render(FAQ);return;}
+  render(FAQ.filter(f=>(f.q+' '+f.a+' '+f.cat).toLowerCase().includes(q)));
+}
+render(FAQ);
+</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
+</body></html>

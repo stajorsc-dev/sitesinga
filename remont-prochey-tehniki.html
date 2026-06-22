@@ -9,7 +9,8 @@
 })();
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ремонт бытовой и электронной техники в Ростове-на-Дону — Синга Сервис</title>
 <meta name="description" content="Ремонт прочей техники в Ростове-на-Дону: планшеты, мониторы, игровые приставки, блоки питания, зарядные устройства, мелкая бытовая техника, ремонт после воды и падения. Тел. 8 928 161-87-89.">
 <meta name="theme-color" content="#0b1830">
@@ -43,9 +44,14 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img loading="lazy" src="https://mc.yandex.ru/watch/YANDEX_METRIKA_ID" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+<noscript><div><img decoding="async" loading="lazy" src="https://mc.yandex.ru/watch/YANDEX_METRIKA_ID" style="position:absolute;left:-9999px;" alt=""></div></noscript>
 <script>window.SINGA = window.SINGA || {}; window.SINGA.ymCounter = null; /* Вставьте ID Яндекс.Метрики вместо null */</script>
 -->
+<style>
+.reveal{opacity:1!important;transform:none!important}
+.reveal.is-animating{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+.reveal.is-animating.is-visible{opacity:1!important;transform:none!important}
+</style>
 </head>
 <body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
 
@@ -621,5 +627,23 @@ const btt=document.getElementById('backToTop');
 window.addEventListener('scroll',()=>{btt.classList.toggle('is-visible',window.scrollY>400)});
 btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 </script>
+<script>
+// Reveal animation
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  els.forEach(function(el){ el.classList.add('is-animating'); el.classList.remove('is-visible'); });
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }});
+  },{threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
 </body>
 </html>

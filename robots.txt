@@ -3,3 +3,4 @@ Allow: /
 Disallow: /assets/
 
 Sitemap: https://singaservice.ru/sitemap.xml
+

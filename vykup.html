@@ -7,13 +7,20 @@
   document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));
 })();
 </script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"><meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Выкуп техники в Ростове-на-Дону — Синга Сервис</title>
 <meta name="description" content="Выкуп сломанных и б/у телефонов, ноутбуков, планшетов в Ростове-на-Дону. Оценка за 5 минут, оплата сразу. Синга Сервис — 8 точек приёма.">
 <link rel="canonical" href="https://singaservice.ru/vykup.html">
 <link rel="stylesheet" href="styles.css?v=19">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://singaservice.ru/"},{"@type":"ListItem","position":2,"name":"Выкуп техники","item":"https://singaservice.ru/vykup.html"}]}</script>
+<style>
+.reveal{opacity:1!important;transform:none!important}
+.reveal.is-animating{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+.reveal.is-animating.is-visible{opacity:1!important;transform:none!important}
+</style>
 </head>
 <body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -138,4 +145,22 @@ document.querySelectorAll('[data-vcond]').forEach(btn => {
   });
 });
 </script>
+<script>
+// Reveal animation
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  els.forEach(function(el){ el.classList.add('is-animating'); el.classList.remove('is-visible'); });
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }});
+  },{threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site-search.js" defer></script>
 </body></html>
