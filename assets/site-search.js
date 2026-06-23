@@ -48,7 +48,7 @@
     <div class="ss-head">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       <input class="ss-input" id="ssInput" placeholder="Поиск по сайту: iPhone, кофемашина, гарантия..." autocomplete="off">
-      <span class="ss-esc">ESC</span>
+      <button type="button" class="ss-esc" id="ssClose" aria-label="Закрыть поиск" style="cursor:pointer;border:none;background:#f0f3fa;">ESC</button>
     </div>
     <div class="ss-results" id="ssResults"></div>
     <div class="ss-hint"><span><b>↑↓</b> выбор</span><span><b>Enter</b> открыть</span><span><b>Esc</b> закрыть</span></div>
@@ -147,9 +147,12 @@
   });
 
   modal.addEventListener('click',e=>{if(e.target===modal)closeSearch();});
+  var ssCloseBtn=document.getElementById('ssClose');
+  if(ssCloseBtn){ ssCloseBtn.addEventListener('click',closeSearch); }
 
   // Глобальные горячие клавиши
   document.addEventListener('keydown',e=>{
     if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();openSearch();}
+    else if(e.key==='Escape' && modal.classList.contains('open')){closeSearch();}
   });
 })();
