@@ -5732,3 +5732,22 @@ body::before, body::after,
 [class*="-pattern"]::before {
   pointer-events: none !important;
 }
+
+/* ===== УНИФИКАЦИЯ ШАПКИ (все страницы) ===== */
+.nav{gap:12px !important;}
+.menu{gap:0 !important;margin-left:4px !important;}
+.menu a{padding:9px 8px !important;font-size:13.5px !important;}
+.nav__actions{gap:8px !important;}
+.nav__actions .btn--sm{padding:10px 15px !important;font-size:13.5px !important;}
+@media (max-width:1100px){
+  .menu{display:none !important;}
+  .burger{display:grid !important;}
+  .logo__sub{display:none;}
+}
+@media (max-width:1100px) and (min-width:861px){
+  .nav__actions .btn--call,.nav__actions .btn--tg,.nav__actions .btn--max{display:inline-flex !important;}
+}
+@media (max-width:680px){
+  .nav__actions .btn--tg,.nav__actions .btn--max{display:none !important;}
+  .nav__actions .btn--call{padding:10px 16px !important;}
+}
