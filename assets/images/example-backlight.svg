@@ -23,7 +23,7 @@
   <!-- Glowing screen -->
   <rect x="233" y="33" width="134" height="84" rx="4" fill="#1E3A5F"/>
   <!-- Screen content -->
-  <rect x="236" y="36" width="128" height="50" rx="3" fill="#1A5EFF" opacity=".3"/>
+  <rect x="236" y="36" width="128" height="50" rx="3" fill="#5b4af0" opacity=".3"/>
   <rect x="246" y="48" width="60" height="5" rx="2" fill="white" opacity=".8"/>
   <rect x="246" y="58" width="80" height="3" rx="2" fill="white" opacity=".4"/>
   <rect x="236" y="93" width="128" height="20" rx="3" fill="#0F172A" opacity=".5"/>

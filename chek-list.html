@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Чек-лист перед сдачей в ремонт — Синга Сервис</title>
 <meta name="description" content="Что сделать перед сдачей телефона или ноутбука в ремонт: бэкап, аккаунты, блокировка. Интерактивный чек-лист от Синга Сервис.">
 <link rel="canonical" href="https://singaservice.pro/chek-list.html">
@@ -10,7 +10,7 @@
 <style>.reveal{opacity:1!important;transform:none!important}</style>
 
 </head>
-<body class="premium-v5 design-v6 design-v7 design-v8 design-v9">
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9"><div id="scrollProgress"></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
 <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
@@ -24,7 +24,7 @@
     <p style="color:var(--ink-soft);margin-top:8px">Отметьте пункты — так ремонт пройдёт быстрее и безопаснее для ваших данных.</p>
   </div>
   <div style="background:#fff;border:1.5px solid #dde8f8;border-radius:20px;padding:24px">
-    <div style="height:8px;background:#f0f5ff;border-radius:99px;margin-bottom:20px;overflow:hidden"><div id="clProg" style="height:100%;width:0;background:linear-gradient(90deg,#1a5eff,#00b894);border-radius:99px;transition:width .3s"></div></div>
+    <div style="height:8px;background:#f0f5ff;border-radius:99px;margin-bottom:20px;overflow:hidden"><div id="clProg" style="height:100%;width:0;background:linear-gradient(90deg,#5b4af0,#00b894);border-radius:99px;transition:width .3s"></div></div>
     <div id="clList"></div>
     <div id="clDone" style="display:none;text-align:center;margin-top:20px;padding:20px;background:#e6faf5;border-radius:16px">
       <div style="font-size:40px">🎉</div>
@@ -56,7 +56,7 @@ function render(){
   const saved=JSON.parse(localStorage.getItem('checklist')||'[]');
   document.getElementById('clList').innerHTML=ITEMS.map((it,i)=>`
   <label style="display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #f0f4fb;cursor:pointer;align-items:flex-start">
-    <input type="checkbox" ${saved.includes(i)?'checked':''} onchange="toggle(${i})" style="width:22px;height:22px;margin-top:2px;accent-color:#1a5eff;flex-shrink:0">
+    <input type="checkbox" ${saved.includes(i)?'checked':''} onchange="toggle(${i})" style="width:22px;height:22px;margin-top:2px;accent-color:#5b4af0;flex-shrink:0">
     <div><b style="font-size:15px;${saved.includes(i)?'text-decoration:line-through;opacity:.5':''}">${it.t}</b><p style="font-size:13px;color:var(--ink-soft);margin-top:2px">${it.d}</p></div>
   </label>`).join('');
   const pct=saved.length/ITEMS.length*100;
@@ -73,4 +73,28 @@ render();
 </script>
 <script src="assets/search-index.js" defer></script>
 <script src="assets/site-search.js" defer></script>
+<script>
+(function(){
+  var path = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.menu a').forEach(function(a){
+    var href = (a.getAttribute('href')||'').split('#')[0] || 'index.html';
+    if(href === path && href !== 'index.html'){ a.classList.add('is-current'); a.setAttribute('aria-current','page'); }
+  });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrollable = h.scrollHeight - h.clientHeight;
+    var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body></html>

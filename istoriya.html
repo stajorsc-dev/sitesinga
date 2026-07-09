@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>История компании — Синга Сервис с 2018 года</title>
 <meta name="description" content="Путь Синга Сервис с 2018 года: от одной точки до 8 пунктов приёма в Ростове-на-Дону. История развития сервиса.">
 <link rel="canonical" href="https://singaservice.pro/istoriya.html">
@@ -12,11 +12,11 @@
 .ht-item{display:flex;gap:20px;padding-bottom:28px;position:relative}
 .ht-item::before{content:'';position:absolute;left:31px;top:50px;bottom:-10px;width:2px;background:#dde8f8}
 .ht-item:last-child::before{display:none}
-.ht-year{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#1a5eff,#5b9fff);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-family:Onest,sans-serif;font-size:15px;flex-shrink:0;z-index:1}
+.ht-year{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#5b4af0,#5b9fff);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-family:Onest,sans-serif;font-size:15px;flex-shrink:0;z-index:1}
 .ht-body{padding-top:6px}
 </style>
 </head>
-<body class="premium-v5 design-v6 design-v7 design-v8 design-v9">
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9"><div id="scrollProgress"></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
 <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
@@ -35,7 +35,7 @@
     <div class="ht-item"><div class="ht-year">2020</div><div class="ht-body"><b style="font-size:16px">Вторая и третья точки</b><p style="font-size:14px;color:var(--ink-soft);margin-top:4px">Открыли пункты приёма в разных районах города. Запустили бытовую технику.</p></div></div>
     <div class="ht-item"><div class="ht-year">2022</div><div class="ht-body"><b style="font-size:16px">Собственный цех</b><p style="font-size:14px;color:var(--ink-soft);margin-top:4px">Оборудовали цех на Заводской 25 — микропайка, восстановление плат.</p></div></div>
     <div class="ht-item"><div class="ht-year">2023</div><div class="ht-body"><b style="font-size:16px">Партнёрство с Ozon</b><p style="font-size:14px;color:var(--ink-soft);margin-top:4px">Открыли приём через 3 пункта Ozon — удобно сдавать по дороге.</p></div></div>
-    <div class="ht-item"><div class="ht-year">2026</div><div class="ht-body"><b style="font-size:16px">8 точек и 4.9★</b><p style="font-size:14px;color:var(--ink-soft);margin-top:4px">Сегодня — 8 пунктов, рейтинг 4.9 на Яндексе, 14 000+ выполненных ремонтов.</p></div></div>
+    <div class="ht-item"><div class="ht-year">2026</div><div class="ht-body"><b style="font-size:16px">8 точек по городу</b><p style="font-size:14px;color:var(--ink-soft);margin-top:4px">Сегодня — 8 пунктов приёма в Ростове-на-Дону и собственный цех на Заводской 25.</p></div></div>
   </div>
   <div style="text-align:center;margin-top:24px"><a class="btn btn--primary btn--lg" href="zapis.html">Стать нашим клиентом</a></div>
 </div></section>
@@ -52,4 +52,28 @@
 
 <script src="assets/search-index.js" defer></script>
 <script src="assets/site-search.js" defer></script>
+<script>
+(function(){
+  var path = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.menu a').forEach(function(a){
+    var href = (a.getAttribute('href')||'').split('#')[0] || 'index.html';
+    if(href === path && href !== 'index.html'){ a.classList.add('is-current'); a.setAttribute('aria-current','page'); }
+  });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrollable = h.scrollHeight - h.clientHeight;
+    var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body></html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Карта точек приёма — 8 адресов | Синга Сервис Ростов</title>
 <meta name="description" content="Все 8 точек приёма Синга Сервис на карте Ростова-на-Дону. Фильтр по району, режим работы, маршрут до ближайшей.">
 <link rel="canonical" href="https://singaservice.pro/karta-tochek.html">
@@ -11,11 +11,11 @@
 .km{max-width:920px;margin:0 auto}
 .km-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
 .km-filter{padding:8px 16px;border:1.5px solid #dde8f8;border-radius:20px;background:#fff;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:var(--ink)}
-.km-filter:hover,.km-filter.active{border-color:#1a5eff;background:#1a5eff;color:#fff}
+.km-filter:hover,.km-filter.active{border-color:#5b4af0;background:#5b4af0;color:#fff}
 .km-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}
 .km-list{display:flex;flex-direction:column;gap:10px;max-height:560px;overflow-y:auto;padding-right:4px}
 .km-point{background:#fff;border:1.5px solid #dde8f8;border-radius:16px;padding:16px;cursor:pointer;transition:all .15s}
-.km-point:hover,.km-point.active{border-color:#1a5eff;box-shadow:0 8px 24px rgba(26,94,255,.1)}
+.km-point:hover,.km-point.active{border-color:#5b4af0;box-shadow:0 8px 24px rgba(91,74,240,.1)}
 .km-point__name{font-size:15px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:4px;display:flex;align-items:center;gap:6px}
 .km-point__addr{font-size:13px;color:var(--ink-soft);margin-bottom:6px}
 .km-point__meta{display:flex;gap:8px;flex-wrap:wrap}
@@ -28,7 +28,7 @@
 @media(max-width:760px){.km-layout{grid-template-columns:1fr}.km-map{min-height:360px;position:static}.km-map iframe{height:360px}.km-list{max-height:none}}
 </style>
 </head>
-<body class="premium-v5 design-v6 design-v7 design-v8 design-v9">
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9"><div id="scrollProgress"></div>
 <style>.reveal{opacity:1!important;transform:none!important}</style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
@@ -103,4 +103,28 @@ render(POINTS);
 </script>
 <script src="assets/search-index.js" defer></script>
 <script src="assets/site-search.js" defer></script>
+<script>
+(function(){
+  var path = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.menu a').forEach(function(a){
+    var href = (a.getAttribute('href')||'').split('#')[0] || 'index.html';
+    if(href === path && href !== 'index.html'){ a.classList.add('is-current'); a.setAttribute('aria-current','page'); }
+  });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrollable = h.scrollHeight - h.clientHeight;
+    var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body></html>

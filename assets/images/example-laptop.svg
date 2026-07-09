@@ -27,18 +27,18 @@
   <path d="M203 111 L218 120 L203 129" stroke="#10B981" stroke-width="3" stroke-linecap="round" fill="none"/>
 
   <!-- Laptop after (clean) -->
-  <rect x="225" y="35" width="150" height="100" rx="8" fill="#E5E7EB" stroke="#1A5EFF" stroke-width="2"/>
+  <rect x="225" y="35" width="150" height="100" rx="8" fill="#E5E7EB" stroke="#5b4af0" stroke-width="2"/>
   <rect x="233" y="43" width="134" height="84" rx="5" fill="#111827"/>
   <rect x="236" y="46" width="128" height="78" rx="3" fill="#0F172A"/>
   <!-- Good screen — low temp -->
-  <rect x="240" y="50" width="60" height="5" rx="2" fill="#1A5EFF" opacity=".5"/>
+  <rect x="240" y="50" width="60" height="5" rx="2" fill="#5b4af0" opacity=".5"/>
   <text x="300" y="78" font-family="Arial" font-size="11" fill="#10B981" text-anchor="middle">✓ CPU 42°C</text>
   <text x="300" y="92" font-family="Arial" font-size="9" fill="#6B7280" text-anchor="middle">Температура в норме</text>
   <!-- Fan clean indicator -->
   <circle cx="360" cy="60" r="14" fill="#10B981" opacity=".9"/>
   <path d="M355 60 L358 63 L365 56" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   <!-- Keyboard -->
-  <rect x="225" y="135" width="150" height="60" rx="0 0 8 8" fill="#D1D5DB" stroke="#1A5EFF" stroke-width="2"/>
+  <rect x="225" y="135" width="150" height="60" rx="0 0 8 8" fill="#D1D5DB" stroke="#5b4af0" stroke-width="2"/>
   <rect x="235" y="148" width="130" height="34" rx="4" fill="#E5E7EB"/>
   <!-- Key rows -->
   <rect x="239" y="152" width="8" height="6" rx="1.5" fill="white" opacity=".8"/>

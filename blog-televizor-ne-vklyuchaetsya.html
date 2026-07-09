@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
-<meta charset="UTF-8"><meta name="format-detection" content="telephone=no">
+<meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"><meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Телевизор не включается — что проверить сначала|ТВ не включается | Синга Сервис</title>
 <meta name="description" content="Телевизор не включается — что проверить сначала|ТВ не включается. Блог Синга Сервис — советы по технике.">
@@ -9,13 +9,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Onest:wght@700;800;900&display=swap" rel="stylesheet">
 </head>
-<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11"><div id="scrollProgress"></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
 <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
 </g></defs></svg>
 <nav class="breadcrumb-nav" aria-label="Хлебные крошки"><div class="container">
-  <ol class="breadcrumb"><li><a href="index.html">Главная</a></li><li><a href="index.html#blog">Блог</a></li><li aria-current="page">ТВ не включается</li></ol>
+  <ol class="breadcrumb"><li><a href="index.html">Главная</a></li><li><a href="blog.html">Блог</a></li><li aria-current="page">ТВ не включается</li></ol>
 </div></nav>
 <article style="max-width:780px;margin:0 auto;padding:40px 20px 60px">
 <span class="eyebrow" style="display:inline-flex;margin-bottom:16px">Телевизоры · 4 мин чтения</span>
@@ -44,13 +44,61 @@
     <a class="btn btn--tg" href="https://t.me/+79281618789" target="_blank" rel="noopener">Telegram</a>
   </div>
 </div>
+
+  <div style="margin-top:40px">
+    <h3 style="font-size:19px;font-weight:900;font-family:'Onest',sans-serif;margin-bottom:16px">Читайте также</h3>
+    <div class="blog-grid" style="grid-template-columns:repeat(3,1fr)">
+      <a class="blog-card" href="blog-telefon-razryazhaetsya.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#f5f8ff,#eef2ff)">🔋</div>
+        <div class="blog-card__body">
+          <div class="blog-card__title">Почему телефон быстро разряжается и что делать</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-akkumulyator-uhod.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#f5f8ff,#eef2ff)">🔌</div>
+        <div class="blog-card__body">
+          <div class="blog-card__title">Как продлить жизнь аккумулятора телефона</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-chto-delat-telefon-upal-v-vodu.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#f5f8ff,#eef2ff)">💧</div>
+        <div class="blog-card__body">
+          <div class="blog-card__title">Телефон упал в воду — что делать первые 10 минут</div>
+        </div>
+      </a>
+    </div>
+  </div>
 </article>
 <footer class="footer"><div class="container"><div style="text-align:center;padding:20px 0">
   <a href="index.html" style="color:rgba(255,255,255,.6);font-size:14px">Главная</a> ·
-  <a href="index.html#blog" style="color:rgba(255,255,255,.6);font-size:14px;margin:0 8px">Блог</a> ·
+  <a href="blog.html" style="color:rgba(255,255,255,.6);font-size:14px;margin:0 8px">Блог</a> ·
   <a href="kontakty.html" style="color:rgba(255,255,255,.6);font-size:14px">Адреса</a>
 </div></div></footer>
 <style>.reveal{opacity:1!important;transform:none!important}.reveal.is-animating{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}.reveal.is-animating.is-visible{opacity:1!important;transform:none!important}</style>
 <script src="assets/search-index.js" defer></script>
 <script src="assets/site-search.js" defer></script>
+<script>
+(function(){
+  var path = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.menu a').forEach(function(a){
+    var href = (a.getAttribute('href')||'').split('#')[0] || 'index.html';
+    if(href === path && href !== 'index.html'){ a.classList.add('is-current'); a.setAttribute('aria-current','page'); }
+  });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrollable = h.scrollHeight - h.clientHeight;
+    var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body></html>

@@ -24,7 +24,7 @@
   <path d="M207 111 L222 120 L207 129" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" fill="none"/>
 
   <!-- Printer after (working) -->
-  <rect x="230" y="60" width="140" height="90" rx="10" fill="#374151" stroke="#1A5EFF" stroke-width="2"/>
+  <rect x="230" y="60" width="140" height="90" rx="10" fill="#374151" stroke="#5b4af0" stroke-width="2"/>
   <rect x="242" y="72" width="116" height="44" rx="6" fill="#1F2937"/>
   <!-- Status light green -->
   <circle cx="355" cy="140" r="7" fill="#10B981"/>

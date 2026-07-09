@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Наши работы: до и после ремонта — Синга Сервис</title>
 <meta name="description" content="Фотографии наших работ — до и после ремонта техники. Разбитые экраны, залитые платы, перегретые ноутбуки. Синга Сервис, Ростов-на-Дону.">
 <link rel="canonical" href="https://singaservice.pro/do-i-posle.html">
@@ -18,15 +18,15 @@
 .ba-label--b{left:12px;background:rgba(220,60,60,.85)}
 .ba-label--a{right:12px;background:rgba(0,184,148,.85)}
 .ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;z-index:3;pointer-events:none}
-.ba-handle::after{content:'⟺';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#1a5eff;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.ba-handle::after{content:'⟺';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#5b4af0;box-shadow:0 2px 12px rgba(0,0,0,.2)}
 .ba-body{padding:18px}
 .ba-body h3{font-size:16px;font-weight:800;font-family:'Onest',sans-serif;margin-bottom:6px}
 .ba-body p{font-size:13px;color:var(--ink-soft);line-height:1.5}
 .ba-meta{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-.ba-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;background:#f0f5ff;color:#1a5eff}
+.ba-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;background:#f0f5ff;color:#5b4af0}
 </style>
 </head>
-<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11"><div id="scrollProgress"></div>
 <style>.reveal{opacity:1!important;transform:none!important}</style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
@@ -118,4 +118,37 @@ document.querySelectorAll('.ba-slider').forEach(slider=>{
 <script src="assets/ai-chat-widget.js" defer></script>
 <script src="assets/search-index.js" defer></script>
 <script src="assets/site-search.js" defer></script>
+<button class="back-to-top" id="backToTopAuto" aria-label="Наверх">↑</button>
+<script>
+(function(){
+  var b=document.getElementById('backToTopAuto');
+  if(!b) return;
+  window.addEventListener('scroll', function(){ b.classList.toggle('is-visible', window.scrollY > 400); });
+  b.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
+<script>
+(function(){
+  var path = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.menu a').forEach(function(a){
+    var href = (a.getAttribute('href')||'').split('#')[0] || 'index.html';
+    if(href === path && href !== 'index.html'){ a.classList.add('is-current'); a.setAttribute('aria-current','page'); }
+  });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrollable = h.scrollHeight - h.clientHeight;
+    var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body></html>

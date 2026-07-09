@@ -9,6 +9,10 @@
 })();
 </script>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Калькулятор стоимости ремонта — Синга Сервис Ростов-на-Дону</title>
@@ -27,7 +31,7 @@
 .reveal.is-animating.is-visible{opacity:1!important;transform:none!important}
 </style>
 </head>
-<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11"><div id="scrollProgress"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -256,5 +260,29 @@ function cwReset(){ document.getElementById('cwResult').style.display='none'; do
 <script src="assets/ai-chat-widget.js" defer></script>
 <script src="assets/search-index.js" defer></script>
 <script src="assets/site-search.js" defer></script>
+<script>
+(function(){
+  var path = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.menu a').forEach(function(a){
+    var href = (a.getAttribute('href')||'').split('#')[0] || 'index.html';
+    if(href === path && href !== 'index.html'){ a.classList.add('is-current'); a.setAttribute('aria-current','page'); }
+  });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrollable = h.scrollHeight - h.clientHeight;
+    var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body>
 </html>

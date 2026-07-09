@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Игра «Почини телефон» — собери на скорость | Синга Сервис</title>
 <meta name="description" content="Мини-игра: собери телефон за 30 секунд и получи скидку на ремонт. Синга Сервис, Ростов-на-Дону.">
 <link rel="canonical" href="https://singaservice.pro/igra.html">
@@ -23,7 +23,7 @@
 .gm-overlay{position:absolute;inset:0;background:rgba(7,21,46,.95);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;color:#fff}
 </style>
 </head>
-<body class="premium-v5 design-v6 design-v7 design-v8 design-v9">
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9"><div id="scrollProgress"></div>
 <style>.reveal{opacity:1!important;transform:none!important}</style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l5.6 1.9L11 20l3.1-4.1L19.5 20z"/><path d="M8.6 13.1L18 6.2"/></symbol>
@@ -147,7 +147,7 @@ function endGame(win){
     const codes=['FIX10','FIX12','FIX15'];
     const code=codes[Math.floor(Math.random()*codes.length)];
     const disc=code.replace('FIX','');
-    end.innerHTML=`<div style="font-size:56px;margin-bottom:12px">🎉</div><h2 style="font-size:24px;font-weight:900;font-family:'Onest',sans-serif;margin-bottom:6px">Собрано за ${30-timeLeft}с!</h2><p style="color:rgba(255,255,255,.7);margin-bottom:16px">Промокод на скидку ${disc}%:</p><div style="background:#fff;color:#1a5eff;font-family:monospace;font-size:22px;font-weight:800;padding:12px 24px;border-radius:12px;margin-bottom:16px;letter-spacing:2px">${code}</div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><a class="btn btn--primary" href="zapis.html">Использовать скидку</a><button class="btn btn--ghost" onclick="startGame()" style="color:#fff;border-color:rgba(255,255,255,.3)">Ещё раз</button></div>`;
+    end.innerHTML=`<div style="font-size:56px;margin-bottom:12px">🎉</div><h2 style="font-size:24px;font-weight:900;font-family:'Onest',sans-serif;margin-bottom:6px">Собрано за ${30-timeLeft}с!</h2><p style="color:rgba(255,255,255,.7);margin-bottom:16px">Промокод на скидку ${disc}%:</p><div style="background:#fff;color:#5b4af0;font-family:monospace;font-size:22px;font-weight:800;padding:12px 24px;border-radius:12px;margin-bottom:16px;letter-spacing:2px">${code}</div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><a class="btn btn--primary" href="zapis.html">Использовать скидку</a><button class="btn btn--ghost" onclick="startGame()" style="color:#fff;border-color:rgba(255,255,255,.3)">Ещё раз</button></div>`;
   }else{
     end.innerHTML=`<div style="font-size:56px;margin-bottom:12px">⏱</div><h2 style="font-size:24px;font-weight:900;font-family:'Onest',sans-serif;margin-bottom:6px">Время вышло!</h2><p style="color:rgba(255,255,255,.7);margin-bottom:16px">Собрано ${score} из 5. Попробуйте ещё!</p><button class="btn btn--primary" onclick="startGame()">▶ Заново</button>`;
   }
@@ -155,4 +155,28 @@ function endGame(win){
 </script>
 <script src="assets/search-index.js" defer></script>
 <script src="assets/site-search.js" defer></script>
+<script>
+(function(){
+  var path = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.menu a').forEach(function(a){
+    var href = (a.getAttribute('href')||'').split('#')[0] || 'index.html';
+    if(href === path && href !== 'index.html'){ a.classList.add('is-current'); a.setAttribute('aria-current','page'); }
+  });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrollable = h.scrollHeight - h.clientHeight;
+    var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body></html>

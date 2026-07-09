@@ -53,7 +53,7 @@ ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:t
 .reveal.is-animating.is-visible{opacity:1!important;transform:none!important}
 </style>
 </head>
-<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11"><div id="scrollProgress"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -109,8 +109,8 @@ ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:t
     <div class="topbar__left">
       <span class="topbar__item"><svg><use href="#i-pin"/></svg> Ростов-на-Дону · 8 точек приёма</span>
       <span class="topbar__item"><svg><use href="#i-clock"/></svg> Ежедневно 09:00&ndash;20:00</span>
+      <span class="topbar__item topbar__status" id="liveStatus"><span class="status-dot"></span><span id="liveStatusText">…</span></span>
     </div>
-    <div class="topbar__right"><a href="tel:+79281618789" data-goal="click_phone" data-phone-link>8 928 161-87-89</a></div>
   </div></div>
   <div class="container"><nav class="nav" aria-label="Главное меню">
     <a class="logo" href="index.html" aria-label="Синга Сервис — на главную">
@@ -122,9 +122,10 @@ ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:t
     </a>
         <ul class="menu">
       <li><a href="index.html#services">Услуги</a></li>
-      <li><a href="index.html#calculator">Калькулятор</a></li>
-      <li><a href="index.html#offers">Акции</a></li>
+      <li><a href="calculator.html">Калькулятор</a></li>
+      <li><a href="aksii.html">Акции</a></li>
       <li><a href="index.html#addresses">Адреса</a></li>
+      <li><a href="blog.html">Блог</a></li>
       <li><a href="kontakty.html">Контакты</a></li>
     </ul>
         <div class="nav__actions">
@@ -152,6 +153,7 @@ ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:t
     <a href="index.html#services">Все услуги</a>
     <a href="index.html#addresses">Адреса (8 точек)</a>
     <a href="index.html#faq">FAQ</a>
+    <a href="blog.html">📖 Блог</a>
     <a href="kontakty.html">Контакты</a>
   </nav>
   <div class="mobile-menu__actions">
@@ -657,5 +659,52 @@ btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 </script>
 <script src="assets/search-index.js" defer></script>
 <script src="assets/site-search.js" defer></script>
+<script>
+(function(){
+  var path = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.menu a').forEach(function(a){
+    var href = (a.getAttribute('href')||'').split('#')[0] || 'index.html';
+    if(href === path && href !== 'index.html'){ a.classList.add('is-current'); a.setAttribute('aria-current','page'); }
+  });
+})();
+</script>
+<script>
+(function(){
+  function pad(n){ return n<10?'0'+n:''+n; }
+  function update(){
+    var box = document.getElementById('liveStatus');
+    var txt = document.getElementById('liveStatusText');
+    if(!box || !txt) return;
+    var now = new Date();
+    var mins = now.getHours()*60 + now.getMinutes();
+    var open = 9*60, close = 20*60;
+    var isOpen = mins >= open && mins < close;
+    if(isOpen){
+      txt.textContent = 'Открыто · закроемся в 20:00';
+    } else {
+      txt.textContent = 'Закрыто · откроем в 09:00';
+    }
+    box.classList.toggle('is-open', isOpen);
+    box.classList.toggle('is-closed', !isOpen);
+  }
+  update();
+  setInterval(update, 60000);
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrollable = h.scrollHeight - h.clientHeight;
+    var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body>
 </html>

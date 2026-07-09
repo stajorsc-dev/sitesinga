@@ -14,23 +14,23 @@
   .ss-results{overflow-y:auto;padding:8px;flex:1}
   .ss-item{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:12px;text-decoration:none;color:inherit;transition:background .12s;cursor:pointer}
   .ss-item:hover,.ss-item.sel{background:#f5f8ff}
-  .ss-item__ico{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#1a5eff,#5b9fff);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+  .ss-item__ico{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#5b4af0,#5b9fff);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
   .ss-item__body{flex:1;min-width:0}
   .ss-item__title{font-size:15px;font-weight:700;color:#0c1428;margin-bottom:2px}
   .ss-item__desc{font-size:12px;color:#8a9bb5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .ss-item__cat{font-size:10px;font-weight:700;color:#1a5eff;background:#eff3ff;padding:2px 8px;border-radius:99px;flex-shrink:0;align-self:center}
+  .ss-item__cat{font-size:10px;font-weight:700;color:#5b4af0;background:#eff3ff;padding:2px 8px;border-radius:99px;flex-shrink:0;align-self:center}
   .ss-empty{text-align:center;padding:40px 20px;color:#8a9bb5;font-size:14px}
   .ss-hint{padding:10px 16px;border-top:1px solid #eef2f8;font-size:12px;color:#8a9bb5;display:flex;gap:14px;flex-wrap:wrap}
   .ss-hint b{color:#556070}
   mark{background:#fff3a8;color:inherit;border-radius:2px;padding:0 1px}
   /* Кнопка в шапке */
   #siteSearchBtn{display:inline-flex;align-items:center;gap:8px;background:#f5f8ff;border:1.5px solid #dde8f8;border-radius:12px;padding:8px 14px;font-size:14px;color:#8a9bb5;cursor:pointer;font-family:inherit;transition:all .15s}
-  #siteSearchBtn:hover{border-color:#1a5eff;color:#1a5eff}
+  #siteSearchBtn:hover{border-color:#5b4af0;color:#5b4af0}
   #siteSearchBtn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
   #siteSearchBtn kbd{font-size:11px;background:#fff;border:1px solid #dde8f8;border-radius:5px;padding:1px 5px;font-family:inherit}
   /* Плавающая кнопка на мобильных */
-  #siteSearchFab{position:fixed;bottom:140px;right:20px;z-index:980;width:50px;height:50px;border-radius:50%;background:#fff;border:1.5px solid #dde8f8;box-shadow:0 6px 20px rgba(26,94,255,.15);display:none;align-items:center;justify-content:center;cursor:pointer}
-  #siteSearchFab svg{width:22px;height:22px;stroke:#1a5eff;fill:none;stroke-width:2}
+  #siteSearchFab{position:fixed;bottom:150px;right:20px;z-index:980;width:50px;height:50px;border-radius:50%;background:#fff;border:1.5px solid #dde8f8;box-shadow:0 6px 20px rgba(91,74,240,.15);display:none;align-items:center;justify-content:center;cursor:pointer}
+  #siteSearchFab svg{width:22px;height:22px;stroke:#5b4af0;fill:none;stroke-width:2}
   [data-theme="dark"] .ss-box{background:#111d2e}
   [data-theme="dark"] .ss-item__title{color:#e8eef8}
   [data-theme="dark"] .ss-input{color:#e8eef8}

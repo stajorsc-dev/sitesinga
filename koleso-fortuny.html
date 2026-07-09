@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Колесо фортуны — крути и получи скидку | Синга Сервис</title>
 <meta name="description" content="Крутите колесо фортуны Синга Сервис — выиграйте скидку до 15% или бесплатную диагностику на ремонт техники.">
 <link rel="canonical" href="https://singaservice.pro/koleso-fortuny.html">
@@ -13,11 +13,11 @@
 .wheel-svg{width:100%;height:100%;transition:transform 4.5s cubic-bezier(.17,.67,.12,.99)}
 .wheel-pointer{position:absolute;top:-6px;left:50%;transform:translateX(-50%);font-size:32px;z-index:5;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
 .wheel-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:#fff;border-radius:50%;z-index:4;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 2px 12px rgba(0,0,0,.2)}
-.wheel-result{background:linear-gradient(135deg,#f0f8ff,#e8f4ff);border:2px solid #1a5eff;border-radius:20px;padding:24px;margin-top:24px;display:none}
-.wheel-promo{font-size:14px;font-weight:700;letter-spacing:.1em;background:#fff;border:2px dashed #1a5eff;border-radius:12px;padding:12px;margin:12px 0;font-family:monospace;color:#1a5eff;cursor:pointer}
+.wheel-result{background:linear-gradient(135deg,#f0f8ff,#e8f4ff);border:2px solid #5b4af0;border-radius:20px;padding:24px;margin-top:24px;display:none}
+.wheel-promo{font-size:14px;font-weight:700;letter-spacing:.1em;background:#fff;border:2px dashed #5b4af0;border-radius:12px;padding:12px;margin:12px 0;font-family:monospace;color:#5b4af0;cursor:pointer}
 </style>
 </head>
-<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11"><div id="scrollProgress"></div>
 <style>.reveal{opacity:1!important;transform:none!important}</style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
@@ -67,13 +67,13 @@
 
 <script>
 const PRIZES=[
-  {t:'Скидка 5%',c:'#1a5eff',code:'SINGA5',icon:'💙'},
+  {t:'Скидка 5%',c:'#5b4af0',code:'SINGA5',icon:'💙'},
   {t:'Скидка 10%',c:'#00b894',code:'SINGA10',icon:'💚'},
   {t:'Диагностика 0₽',c:'#f59e0b',code:'FREEDIAG',icon:'🔍'},
   {t:'Скидка 7%',c:'#6c3fff',code:'SINGA7',icon:'💜'},
   {t:'Скидка 15%',c:'#ef4444',code:'SINGA15',icon:'🔥'},
   {t:'Пленка в подарок',c:'#0ea5e9',code:'FILMGIFT',icon:'🎁'},
-  {t:'Скидка 5%',c:'#1a5eff',code:'SINGA5',icon:'💙'},
+  {t:'Скидка 5%',c:'#5b4af0',code:'SINGA5',icon:'💙'},
   {t:'Скидка 10%',c:'#00b894',code:'SINGA10',icon:'💚'},
 ];
 const N=PRIZES.length, seg=360/N;
@@ -124,4 +124,28 @@ function copyPromo(){
 </script>
 <script src="assets/search-index.js" defer></script>
 <script src="assets/site-search.js" defer></script>
+<script>
+(function(){
+  var path = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.menu a').forEach(function(a){
+    var href = (a.getAttribute('href')||'').split('#')[0] || 'index.html';
+    if(href === path && href !== 'index.html'){ a.classList.add('is-current'); a.setAttribute('aria-current','page'); }
+  });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrollable = h.scrollHeight - h.clientHeight;
+    var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body></html>

@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<script>
+(function(){
+  var s=localStorage.getItem('singa-theme');
+  var d=window.matchMedia('(prefers-color-scheme:dark)').matches;
+  document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Политика конфиденциальности — Синга Сервис, Ростов-на-Дону</title>
-<meta name="description" content="Политика конфиденциальности сервисного центра «Синга Сервис» в Ростове-на-Дону: обработка персональных данных пользователей сайта.">
+<title>Блог — советы по ремонту и уходу за техникой | Синга Сервис</title>
+<meta name="description" content="Полезные статьи от мастеров Синга Сервис: как продлить жизнь аккумулятора, что делать если техника сломалась, как выбрать сервис. Ростов-на-Дону.">
 <meta name="theme-color" content="#0b1830">
-<link rel="canonical" href="https://singaservice.pro/privacy.html">
+<link rel="canonical" href="https://singaservice.pro/blog.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="Синга Сервис">
-<meta property="og:title" content="Политика конфиденциальности — Синга Сервис, Ростов-на-Дону">
-<meta property="og:description" content="Политика конфиденциальности сервисного центра «Синга Сервис» в Ростове-на-Дону: обработка персональных данных пользователей сайта.">
-<meta property="og:url" content="https://singaservice.pro/privacy.html">
+<meta property="og:title" content="Блог — советы по ремонту и уходу за техникой | Синга Сервис">
+<meta property="og:description" content="Полезные статьи от мастеров Синга Сервис: как продлить жизнь аккумулятора, что делать если техника сломалась, как выбрать сервис.">
+<meta property="og:url" content="https://singaservice.pro/blog.html">
 <meta property="og:image" content="https://singaservice.pro/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -24,7 +31,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="styles.css?v=9">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://singaservice.pro/"},{"@type":"ListItem","position":2,"name":"Политика конфиденциальности","item":"https://singaservice.pro/privacy.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://singaservice.pro/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://singaservice.pro/blog.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Блог Синга Сервис","url":"https://singaservice.pro/blog.html","description":"Советы по уходу за техникой и её ремонту от мастеров Синга Сервис","publisher":{"@type":"Organization","name":"Синга Сервис"}}</script>
 <!-- YANDEX METRIKA COUNTER PLACEHOLDER -->
 <!--
 <script type="text/javascript">
@@ -43,11 +51,7 @@ ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:t
 .reveal.is-animating.is-visible{opacity:1!important;transform:none!important}
 </style>
 </head>
-<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11"><div class="print-header">
-  <span class="print-header__logo">⚡ Синга Сервис</span>
-  <span class="print-header__meta">Политика конфиденциальности<br>ИП Сингаевский А., ИНН 610112921612</span>
-</div>
-<div id="scrollProgress"></div>
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11"><div id="scrollProgress"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -158,36 +162,132 @@ ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:t
 </aside>
 <section class="page-hero">
   <div class="container">
-    <div class="crumbs"><a href="index.html">Главная</a><span>/</span><span style="color:var(--ink)">Политика конфиденциальности</span></div>
+    <div class="crumbs"><a href="index.html">Главная</a><span>/</span><span style="color:var(--ink)">Блог</span></div>
     <div style="margin-top:26px;max-width:760px">
-      <span class="eyebrow">Политика конфиденциальности</span>
-      <h1>Политика конфиденциальности</h1>
-      <p class="page-hero__lead">Документ описывает, как сервисный центр «Синга Сервис» обрабатывает и защищает персональные данные пользователей сайта. Перед заполнением форм рекомендуем ознакомиться с этим документом.</p>
+      <span class="eyebrow">Блог</span>
+      <h1>Советы по ремонту и уходу за техникой</h1>
+      <p class="page-hero__lead">Пишем то, что реально помогает: как продлить жизнь аккумулятора, что делать первым делом, если техника сломалась, и когда чинить самому, а когда — сразу к мастеру.</p>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="legal-doc reveal">
-      <h2>1. Общие положения</h2>
-      <p>Политика разработана в соответствии с законодательством Российской Федерации, в том числе Федеральным законом от 27.07.2006 №152-ФЗ «О персональных данных». Оператором персональных данных является Индивидуальный предприниматель Сингаевский Амангельды (сервисный центр «Синга Сервис»), ОГРНИП 319619600005650, ИНН 610112921612, адрес: г. Ростов-на-Дону, ул. Заводская, д. 25 (далее — «Оператор»).</p><p>Использование сайта означает согласие пользователя с настоящей Политикой. В случае несогласия пользователю следует воздержаться от использования сайта и его форм.</p>
-      <h2>2. Какие данные обрабатываются</h2>
-      <p>Оператор обрабатывает следующие персональные данные, которые пользователь предоставляет добровольно:</p><ul><li>имя;</li><li>номер телефона;</li><li>сведения об устройстве и характере неисправности, указанные в заявке;</li><li>выбранный адрес сервисной точки (по желанию);</li><li>комментарий пользователя;</li><li>обезличенные данные о посещении сайта, собираемые средствами интернет-статистики и cookies.</li></ul>
-      <h2>3. Цели обработки данных</h2>
-      <p>Персональные данные обрабатываются в целях:</p><ul><li>обратной связи с пользователем по оставленной заявке;</li><li>консультирования по вопросам ремонта техники;</li><li>оформления и выполнения заявок на ремонт;</li><li>информирования о статусе заказа;</li><li>улучшения работы сайта и качества обслуживания.</li></ul>
-      <h2>4. Правовые основания и согласие</h2>
-      <p>Обработка данных осуществляется на основании согласия пользователя, которое он даёт, отправляя форму на сайте или иным образом передавая данные Оператору. Согласие может быть отозвано путём обращения к Оператору по контактным данным.</p>
-      <h2>5. Cookies и аналитика</h2>
-      <p>Сайт использует cookies и сервисы интернет-аналитики (например, Яндекс.Метрику) для сбора обезличенных статистических данных. Пользователь может отключить cookies в настройках браузера, при этом часть функций сайта может работать некорректно.</p>
-      <h2>6. Условия хранения и защиты</h2>
-      <p>Оператор принимает разумные организационные и технические меры для защиты персональных данных от неправомерного доступа, изменения, раскрытия или уничтожения. Данные хранятся не дольше, чем этого требуют цели обработки или законодательство.</p>
-      <h2>7. Передача данных третьим лицам</h2>
-      <p>Оператор не продаёт персональные данные и не передаёт их третьим лицам, за исключением случаев, предусмотренных законодательством, либо когда это необходимо для выполнения заявки пользователя.</p>
-      <h2>8. Права пользователя</h2>
-      <p>Пользователь вправе запросить информацию об обработке своих данных, потребовать их уточнения, блокирования или удаления, а также отозвать согласие на обработку, обратившись к Оператору по контактным данным, указанным на сайте.</p>
-      <h2>9. Контакты и изменения</h2>
-      <p>По вопросам обработки персональных данных, для отзыва согласия, изменения или удаления данных можно обратиться по телефону <a href="tel:+79281618789" style="color:var(--brand)" data-phone-link>8 928 161-87-89</a> или по e-mail <a href="mailto:info@singaservice.pro" style="color:var(--brand)">info@singaservice.pro</a>.</p><p>Оператор вправе изменять настоящую Политику. Актуальная редакция всегда доступна на этой странице.</p>
+    <div class="blog-grid reveal">
+      <a class="blog-card" href="blog-telefon-razryazhaetsya.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#ebf1ff,#dff0ff)">🔋</div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">Телефоны</div>
+          <div class="blog-card__title">Почему телефон быстро разряжается и что делать</div>
+          <div class="blog-card__excerpt">7 главных причин — от фоновых приложений до изношенного аккумулятора. Когда нужен ремонт.</div>
+          <div class="blog-card__meta">5 мин чтения</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-akkumulyator-uhod.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#ebf1ff,#dff0ff)">🔌</div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">Телефоны</div>
+          <div class="blog-card__title">Как продлить жизнь аккумулятора телефона</div>
+          <div class="blog-card__excerpt">7 простых привычек, которые продлят аккумулятор телефона на 2–3 года.</div>
+          <div class="blog-card__meta">4 мин чтения</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-chto-delat-telefon-upal-v-vodu.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#ebf1ff,#dff0ff)">💧</div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">Телефоны</div>
+          <div class="blog-card__title">Телефон упал в воду — что делать первые 10 минут</div>
+          <div class="blog-card__excerpt">Пошаговая инструкция что делать и чего категорически нельзя делать.</div>
+          <div class="blog-card__meta">4 мин чтения</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-pochemu-iphone-greetsya.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#ebf1ff,#dff0ff)">🌡️</div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">Телефоны</div>
+          <div class="blog-card__title">Почему iPhone греется — причины и что делать</div>
+          <div class="blog-card__excerpt">Разбираем 6 причин перегрева при зарядке и использовании — и когда нужен сервис.</div>
+          <div class="blog-card__meta">4 мин чтения</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-noutbuk-peregreva.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#fff3e6,#ffe8d6)">💻</div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">Ноутбуки</div>
+          <div class="blog-card__title">Ноутбук перегревается и выключается — что делать</div>
+          <div class="blog-card__excerpt">Разбираемся в причинах: что можно сделать самому, а когда нужен мастер.</div>
+          <div class="blog-card__meta">5 мин чтения</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-kak-proverit-akkumulyator-noutbuka.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#fff3e6,#ffe8d6)">🔋</div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">Ноутбуки</div>
+          <div class="blog-card__title">Как проверить аккумулятор ноутбука самому</div>
+          <div class="blog-card__excerpt">Как узнать реальную ёмкость и износ батареи на Windows и macOS.</div>
+          <div class="blog-card__meta">4 мин чтения</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-pochemu-noutbuk-ne-vidit-wifi.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#fff3e6,#ffe8d6)">📶</div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">Ноутбуки</div>
+          <div class="blog-card__title">Ноутбук не видит Wi-Fi — причины и решения</div>
+          <div class="blog-card__excerpt">6 причин и способов исправить самостоятельно, прежде чем нести в сервис.</div>
+          <div class="blog-card__meta">4 мин чтения</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-televizor-ne-vklyuchaetsya.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#e6faf5,#d0f5e8)">📺</div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">Телевизоры</div>
+          <div class="blog-card__title">Телевизор не включается — что проверить сначала</div>
+          <div class="blog-card__excerpt">Пошаговый алгоритм: от кнопки питания до признаков, при которых точно нужен мастер.</div>
+          <div class="blog-card__meta">4 мин чтения</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-priznaki-chto-kofemashinu-pora-chistit.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#f5efe6,#ecdfc9)">☕</div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">Кофемашины</div>
+          <div class="blog-card__title">Признаки что кофемашину пора чистить</div>
+          <div class="blog-card__excerpt">5 сигналов что кофемашина требует срочной чистки — и когда нужен мастер.</div>
+          <div class="blog-card__meta">3 мин чтения</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-kak-pochistit-kofemashinu-samomy.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#f5efe6,#ecdfc9)">🧽</div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">Кофемашины</div>
+          <div class="blog-card__title">Как почистить кофемашину самому</div>
+          <div class="blog-card__excerpt">Декальцинация, чистка капучинатора и заварного блока — пошагово.</div>
+          <div class="blog-card__meta">5 мин чтения</div>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-kak-vybrat-servis.html">
+        <div class="blog-card__thumb" style="background:linear-gradient(135deg,#f0ebff,#e5d8ff)">🔍</div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">Советы</div>
+          <div class="blog-card__title">Как выбрать сервисный центр: 7 признаков надёжного места</div>
+          <div class="blog-card__excerpt">На что смотреть при выборе мастерской — и какие вопросы задать заранее.</div>
+          <div class="blog-card__meta">6 мин чтения</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="promo-banner reveal">
+      <div class="promo-banner__content">
+        <h2>Не нашли ответ на свой вопрос?</h2>
+        <p>Опишите проблему мастеру — бесплатная диагностика покажет точную причину и стоимость ремонта.</p>
+        <div class="promo-banner__actions">
+          <button class="promo-banner__cta btn--glow" type="button" data-modal data-goal="open_modal" data-goal-value="blog">Оставить заявку</button>
+          <a class="promo-banner__ghost" href="tel:+79281618789" data-goal="click_phone" data-phone-link>Позвонить сейчас</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -212,10 +312,16 @@ ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:t
       <li><a href="remont-dyson.html">Ремонт Dyson</a></li>
       <li><a href="remont-pylesosov.html">Ремонт роботов-пылесосов</a></li>
       <li><a href="remont-prochey-tehniki.html">Прочая техника</a></li>
+      <li><a href="blog.html">Блог — советы по технике</a></li>
     </ul></div>
     <div><h4>Адреса</h4><ul>
+      <li><a href="kontakty.html">Заводская, 25 (гл. цех)</a></li>
+      <li><a href="kontakty.html">Ткачева, 22</a></li>
+      <li><a href="kontakty.html">Стачки, 200с2</a></li>
+      <li><a href="kontakty.html">Еременко, 58/2</a></li>
+      <li><a href="kontakty.html">Жданова, 18</a></li>
       <li><a href="kontakty.html">Дмитрия Петрова, 7</a></li>
-      <li><a href="kontakty.html">Петренко, 7</a></li>
+      <li><a href="kontakty.html">Петренко, 18</a></li>
       <li><a href="kontakty.html">Шеболдаева, 2м</a></li>
     </ul></div>
     <div class="footer__contact"><h4>Контакты</h4>
@@ -256,8 +362,13 @@ ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:t
         <label for="mAddress">Адрес точки (необязательно)</label>
         <select id="mAddress" name="address" style="width:100%;padding:14px 16px;border-radius:12px;border:1.6px solid var(--line);background:var(--bg-soft);font-weight:600">
           <option value="">— любая ближайшая точка —</option>
+          <option>Заводская, 25 (главный цех)</option>
+          <option>Ткачева, 22</option>
+          <option>Стачки, 200с2</option>
+          <option>Еременко, 58/2</option>
+          <option>Жданова, 18</option>
           <option>Дмитрия Петрова, 7</option>
-          <option>Петренко, 7</option>
+          <option>Петренко, 18</option>
           <option>Шеболдаева, 2м</option>
           <option>Нужен курьер</option>
         </select>
@@ -308,6 +419,9 @@ ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:t
 </div>
 
 <script src="script.js?v=9"></script>
+
+
+
 <script>
 // Reveal animation
 (function(){
@@ -324,6 +438,7 @@ ym(YANDEX_METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:t
   els.forEach(function(el){ obs.observe(el); });
 })();
 </script>
+<script src="assets/ai-chat-widget.js" defer></script>
 <script src="assets/search-index.js" defer></script>
 <script src="assets/site-search.js" defer></script>
 <button class="back-to-top" id="backToTopAuto" aria-label="Наверх">↑</button>
