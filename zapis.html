@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="format-detection" content="telephone=no">
 <title>Онлайн-запись на ремонт — Синга Сервис Ростов-на-Дону</title>
 <meta name="description" content="Запишитесь на ремонт онлайн — выберите дату, время и точку приёма. Без звонков. Синга Сервис, Ростов-на-Дону.">
@@ -12,35 +12,35 @@
 .bk{max-width:640px;margin:0 auto}
 .bk-steps{display:flex;gap:6px;margin-bottom:24px}
 .bk-step-dot{flex:1;height:4px;border-radius:99px;background:#e4edf8;transition:background .3s}
-.bk-step-dot.done{background:#1a5eff}
+.bk-step-dot.done{background:#5b4af0}
 .bk-card{background:#fff;border:1.5px solid #dde8f8;border-radius:24px;padding:32px}
 .bk-stage{display:none}.bk-stage.active{display:block}
 .bk-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#8a9bb5;margin-bottom:14px}
 .bk-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .bk-opt{background:#f5f8ff;border:1.5px solid #dde8f8;border-radius:14px;padding:14px;cursor:pointer;font-size:14px;font-weight:700;text-align:left;transition:all .15s;display:flex;align-items:center;gap:10px;min-height:48px}
-.bk-opt:hover,.bk-opt.sel{border-color:#1a5eff;background:#1a5eff;color:#fff}
+.bk-opt:hover,.bk-opt.sel{border-color:#5b4af0;background:#5b4af0;color:#fff}
 .bk-opt__i{font-size:20px;flex-shrink:0}
 .bk-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:8px}
 .bk-day-h{text-align:center;font-size:11px;font-weight:700;color:#8a9bb5;padding:4px 0}
 .bk-day{aspect-ratio:1;border:1.5px solid #dde8f8;border-radius:12px;background:#fff;cursor:pointer;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:all .15s}
-.bk-day:hover:not(.disabled){border-color:#1a5eff;color:#1a5eff}
-.bk-day.sel{background:#1a5eff;color:#fff;border-color:#1a5eff}
+.bk-day:hover:not(.disabled){border-color:#5b4af0;color:#5b4af0}
+.bk-day.sel{background:#5b4af0;color:#fff;border-color:#5b4af0}
 .bk-day.disabled{opacity:.3;cursor:not-allowed;background:#f5f8ff}
 .bk-day.today{border-color:#00b894;border-width:2px}
 .bk-slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
 .bk-slot{padding:10px;border:1.5px solid #dde8f8;border-radius:10px;background:#fff;cursor:pointer;font-size:13px;font-weight:700;text-align:center;transition:all .15s}
-.bk-slot:hover,.bk-slot.sel{border-color:#1a5eff;background:#1a5eff;color:#fff}
+.bk-slot:hover,.bk-slot.sel{border-color:#5b4af0;background:#5b4af0;color:#fff}
 .bk-field{width:100%;padding:14px 16px;border:1.5px solid #dde8f8;border-radius:14px;font-size:16px;margin-bottom:10px;outline:none;font-family:inherit}
-.bk-field:focus{border-color:#1a5eff;box-shadow:0 0 0 3px rgba(26,94,255,.12)}
+.bk-field:focus{border-color:#5b4af0;box-shadow:0 0 0 3px rgba(91,74,240,.12)}
 .bk-back{background:none;border:none;color:#8a9bb5;font-size:13px;cursor:pointer;margin-top:14px;padding:8px}
 .bk-summary{background:#f0f5ff;border-radius:16px;padding:18px;margin-bottom:20px}
-.bk-sum-row{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;border-bottom:1px solid rgba(26,94,255,.08)}
+.bk-sum-row{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;border-bottom:1px solid rgba(91,74,240,.08)}
 .bk-sum-row:last-child{border:none}
 .bk-sum-row b{font-weight:800}
 @media(max-width:560px){.bk-opts{grid-template-columns:1fr}.bk-slots{grid-template-columns:repeat(3,1fr)}.bk-card{padding:24px 18px}}
 </style>
 </head>
-<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11">
+<body class="premium-v5 design-v6 design-v7 design-v8 design-v9 design-v11"><div id="scrollProgress"></div>
 <style>.reveal{opacity:1!important;transform:none!important}</style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h3.6l1.8 4.6-2.6 1.9a12.5 12.5 0 0 0 5.7 5.7l1.9-2.6L20 17.4V21a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
@@ -237,4 +237,28 @@ renderCal();
 <script src="assets/ai-chat-widget.js" defer></script>
 <script src="assets/search-index.js" defer></script>
 <script src="assets/site-search.js" defer></script>
+<script>
+(function(){
+  var path = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.menu a').forEach(function(a){
+    var href = (a.getAttribute('href')||'').split('#')[0] || 'index.html';
+    if(href === path && href !== 'index.html'){ a.classList.add('is-current'); a.setAttribute('aria-current','page'); }
+  });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrollable = h.scrollHeight - h.clientHeight;
+    var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body></html>
